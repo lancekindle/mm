@@ -356,7 +356,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 <node ID="ID_932026885" CREATED="1442204556032" MODIFIED="1442205451572" LINK="https://www.python.org/dev/peps/pep-0343/"><richcontent TYPE="NODE">
 
@@ -376,7 +375,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1020237672" CREATED="1442204659321" MODIFIED="1442205458892" LINK="http://preshing.com/20110920/the-python-with-statement-by-example/"><richcontent TYPE="NODE">
@@ -391,7 +389,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Suggested Naming Standard" ID="ID_35248848" CREATED="1442204857549" MODIFIED="1442204863813">
@@ -427,7 +424,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Most Likely, you&apos;ll use the one example using @contextmanager to wrap your generator&#xa;However, you can also create a context manager class, which needs to have __enter__&#xa;and __exit__ methods." ID="ID_99819693" CREATED="1442205483471" MODIFIED="1442205609021"/>
