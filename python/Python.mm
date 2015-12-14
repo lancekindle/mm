@@ -50,7 +50,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="1"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="3"/>
 <node TEXT="Data Types:" POSITION="right" ID="ID_58961891" CREATED="1385057099009" MODIFIED="1390585624890">
 <edge COLOR="#ff0000"/>
 <hook NAME="AlwaysUnfoldedNode"/>
@@ -443,6 +443,14 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 </node>
 </node>
 <node TEXT="from contextlib import contextmanager&#xa;&#xa;@contextmanager&#xa;    def opening(filename):&#xa;       f = open(filename) # IOError is untouched by GeneratorContext&#xa;       try:&#xa;           yield f&#xa;       finally:&#xa;           f.close() # Ditto for errors here (however unlikely)" ID="ID_1879401275" CREATED="1442204573315" MODIFIED="1442204617413"/>
+</node>
+</node>
+<node TEXT="Troubleshooting" POSITION="left" ID="ID_790513217" CREATED="1444310295151" MODIFIED="1444310299047">
+<edge COLOR="#0000ff"/>
+<node TEXT="UnboundLocalError" ID="ID_679404407" CREATED="1442884283871" MODIFIED="1442884649033" LINK="https://stackoverflow.com/questions/9264763/unboundlocalerror-in-python">
+<node TEXT="You get this error if you try to access a variable&#xa;before it is in scope. This can actually be trickier&#xa;than you think.." ID="ID_1056120294" CREATED="1442884300676" MODIFIED="1442884382183"/>
+<node TEXT="count = 0&#xa;&#xa;def increment():&#xa;    count += 1&#xa;&#xa;increment()&#xa;&gt;&gt;&gt; UnboundLocalError: local variable &apos;count&apos; referenced before assignment" ID="ID_132579731" CREATED="1442884382917" MODIFIED="1442884493073"/>
+<node TEXT="OK, so count is accessed and defined with count += 1,&#xa;but is accessed first, before it is set.&#xa;The problem is that inside the functions&apos; scope, there is no&#xa;count variable. Granted, the method CAN see a variable&#xa;named count, and would happily let you print that value.&#xa;But if you SET a variable within a method, python will prevent&#xa;access to any outer-scope variable with the same name&#xa;to prevent overwriting that outer-scope value. So to get a&#xa;variable inside a method&apos;s scope, you need to set it first.&#xa;so this would work:&#xa;&#xa;def increment():&#xa;    count = 0&#xa;    count += 1&#xa;&#xa;---this also works----&#xa;&#xa;def increment():&#xa;    print(count)" ID="ID_1556095807" CREATED="1442884501583" MODIFIED="1442885401993"/>
 </node>
 </node>
 <node TEXT="Builtin Functions" POSITION="left" ID="ID_556100384" CREATED="1394573838967" MODIFIED="1428269662825">
