@@ -691,5 +691,12 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 </node>
 </node>
 </node>
+<node TEXT="Terminology" POSITION="right" ID="ID_1572413040" CREATED="1444310476419" MODIFIED="1444310483729">
+<edge COLOR="#00ff00"/>
+<node TEXT="Function vs Method" ID="ID_553299789" CREATED="1444310485228" MODIFIED="1444311190795" LINK="http://www.wellho.net/mouth/900_Python-function-v-method.html">
+<node TEXT="A Method is a instance function. So any function inside a class is usually considered a method" ID="ID_267476289" CREATED="1444310492454" MODIFIED="1444310547001"/>
+<node TEXT="A method has the implicit variable self attached to it, that will be the first variable in the function" ID="ID_381228070" CREATED="1444310599669" MODIFIED="1444310648767"/>
+</node>
+</node>
 </node>
 </map>
