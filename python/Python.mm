@@ -522,6 +522,11 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 </richcontent>
 </node>
 </node>
+<node TEXT="os" ID="ID_1977101915" CREATED="1442865644633" MODIFIED="1442865646737">
+<node TEXT="get current terminal width and height" ID="ID_1734260515" CREATED="1442865648243" MODIFIED="1442865661703">
+<node TEXT="w, h = os.popen(&apos;stty size&apos;, &apos;r&apos;).read().split()" ID="ID_1770764315" CREATED="1442865663423" MODIFIED="1442865679704"/>
+</node>
+</node>
 </node>
 <node TEXT="GUIs" POSITION="left" ID="ID_1334879918" CREATED="1397075705052" MODIFIED="1397075708594">
 <edge COLOR="#00007c"/>
