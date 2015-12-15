@@ -167,7 +167,7 @@
 </node>
 <node TEXT="Operators" POSITION="right" ID="ID_1482632800" CREATED="1450046392615" MODIFIED="1450046397308">
 <edge COLOR="#ff00ff"/>
-<node ID="ID_1634330261" CREATED="1450046971799" MODIFIED="1450047021705"><richcontent TYPE="NODE">
+<node ID="ID_1634330261" CREATED="1450046971799" MODIFIED="1450219634366"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -175,7 +175,7 @@
   </head>
   <body>
     <p>
-      JS has an <b><i>Operator</i></b>&#160;(=, *, -, +), and <b><i>Operands</i></b>&#160; (the values / variables next to operators: 3, x, &quot;cat&quot;)
+      JS has an <b><i>Operator</i></b>&#160;(=, *, -, +), and <b><i>Operands</i></b>&#160; (the values / variables next to operators: 3, x, &quot;cat&quot;, etc.)
     </p>
   </body>
 </html>
@@ -184,19 +184,213 @@
 </node>
 <node TEXT="delete" ID="ID_608051617" CREATED="1450050449076" MODIFIED="1450050643314">
 <font BOLD="true"/>
-<node TEXT="remove a property" ID="ID_1924143928" CREATED="1450050619280" MODIFIED="1450050622171"/>
-<node TEXT="x = {a:4};&#xa;delete x.a;" ID="ID_810545589" CREATED="1450050622679" MODIFIED="1450050640609"/>
+<node TEXT="delete an object&apos;s property OR array element (CAREFUL! It doesn&apos;t change length).&#xa;Cannot delete variables declared with var, or function, or function parameters&#xa;(and although it may be able to delete some vars, delete should be strictly used to delete object properties)&#xa;&quot;strict mode&quot; raises TypeError if attepting to delete a nonconfigurable property" ID="ID_1924143928" CREATED="1450050619280" MODIFIED="1450219391325"/>
+<node TEXT="x = {a:4};&#xa;delete x.a;&#xa;x.a  =&gt; undefined" ID="ID_810545589" CREATED="1450050622679" MODIFIED="1450218787144"/>
+<node ID="ID_1401414544" CREATED="1450218916396" MODIFIED="1450219069726"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Deleting an index in an array removes the index: value and index as well but does NOT change length of array. The array is considered <i>sparse </i>afterwards
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_877853996" CREATED="1450218788946" MODIFIED="1450218885595"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      x = [0,1,2,3];
+    </p>
+    <p>
+      x.length&#160;&#160;=&gt; 4
+    </p>
+    <p>
+      x[1]&#160;&#160;=&gt; 1
+    </p>
+    <p>
+      delete x[1];
+    </p>
+    <p>
+      x[1]&#160;&#160;=&gt; undefined
+    </p>
+    <p>
+      1 in x&#160;&#160;=&gt; false
+    </p>
+    <p>
+      <b>x.length&#160;&#160;=&gt; 4</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="typeof" ID="ID_1256553954" CREATED="1450050453026" MODIFIED="1450050763841">
 <font BOLD="true"/>
+<node TEXT="Return string representing primitive type of variable" ID="ID_1248593518" CREATED="1450217773449" MODIFIED="1450217795836"/>
+<node TEXT="default syntax:    typeof x;&#xa;parenthsis allowed:    typeof(x);" ID="ID_1285610751" CREATED="1450217712188" MODIFIED="1450217771193"/>
+<node ID="ID_269057197" CREATED="1450217796976" MODIFIED="1450218574486"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      typeof undefined&#160;&#160;=&gt; &quot;undefined&quot;
+    </p>
+    <p>
+      typeof null&#160;&#160;=&gt; &quot;object&quot;
+    </p>
+    <p>
+      typeof true&#160;&#160;=&gt; &quot;boolean&quot;&#160;&#160;&#160;// false returns same result
+    </p>
+    <p>
+      typeof 3&#160;&#160;=&gt; &quot;number&quot;&#160;&#160;&#160;//any # such as 3, 4.5, etc returns same result
+    </p>
+    <p>
+      typeof NaN&#160;&#160;=&gt; &quot;number&quot;
+    </p>
+    <p>
+      typeof &quot;foo&quot;&#160;&#160;=&gt; &quot;string&quot;&#160;&#160;&#160;&#160;//any string returns &quot;string&quot;
+    </p>
+    <p>
+      typeof <i>any function&#160; </i>=&gt; &quot;function&quot;
+    </p>
+    <p>
+      typeof <i>any non-function object</i>&#160;&#160;=&gt; &quot;object&quot;
+    </p>
+    <p>
+      typeof <i>callable object</i>&#160;&#160;=&gt; &quot;function&quot;&#160;&#160;// since JS 5 -- callable objects can behave exactly like a fxn, but aren't.
+    </p>
+    <p>
+      typeof <i>any host object</i>&#160;&#160;=&gt;&#160;&#160;?&#160;&#160;// user-created objects can define a return value to typeof
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="eval" ID="ID_758557060" CREATED="1450216588289" MODIFIED="1450216607989">
+<font BOLD="true"/>
+<node TEXT="Evaluate the string inside as if it were JS code. Can be used to create, set, or get JS variables, and execute JS code." ID="ID_301161301" CREATED="1450216994113" MODIFIED="1450217033890"/>
+<node TEXT="Technically, eval() is a function. However, it has many restrictions on it that force it&apos;s behavior to that of an operator." ID="ID_1941027565" CREATED="1450216609118" MODIFIED="1450216648492"/>
+<node ID="ID_1298503639" CREATED="1450216648955" MODIFIED="1450217049485"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Because eval is technically a function, you can reference eval through another variable, if you set the variable to point to eval.
+    </p>
+    <p>
+      f = eval
+    </p>
+    <p>
+      f(&quot;x = 4&quot;)
+    </p>
+    <p>
+      This is called an <b>indirect-call</b>&#160;to eval.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      In an indirect-call to eval, eval is executed in the global scope instead of in the current scope
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      only in a direct call using eval() will the string be executed in the local scope
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_32312009" CREATED="1450217057112" MODIFIED="1450217095682"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      In <b>&quot;strict mode&quot;</b>, eval cannot create new variables, only access or set currently existing variables
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="void" ID="ID_1214862002" CREATED="1450050471291" MODIFIED="1450050771122">
 <font BOLD="true"/>
+<node ID="ID_841419269" CREATED="1450219446511" MODIFIED="1450219602052"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Rarely used. void evaluates it's single operand and then returns <i>undefined </i>regardless of result. Therefore void is only really used where an operand / operation proceeding void has a useful side-effect
+    </p>
+  </body>
+</html>
+
+</richcontent>
 </node>
-<node TEXT="*  (multiplication)" ID="ID_1899971511" CREATED="1450046774365" MODIFIED="1450050411854">
-<font BOLD="true"/>
-<node TEXT="JS always assumes you want an integer with multiplication. As a result JS attempts to convert any object to number before performing multiplication. If conversion fails, it will become NaN" ID="ID_217350981" CREATED="1450046784244" MODIFIED="1450046848675"/>
-<node TEXT="&quot;4&quot; * &quot;3&quot; =&gt; 12" ID="ID_630618564" CREATED="1450046849556" MODIFIED="1450046866691"/>
+<node TEXT="&lt;a href=&quot;javascript:void window.open();&quot;&gt;Open New Window&lt;/a&gt;" ID="ID_1517649571" CREATED="1450219513512" MODIFIED="1450219586487"/>
+</node>
+<node ID="ID_1647218670" CREATED="1450219816109" MODIFIED="1450219825721"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>,&#160;&#160;(comma)</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node ID="ID_302335488" CREATED="1450219829650" MODIFIED="1450219899787"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      evaluates the left operand, then the right operand, then
+    </p>
+    <p>
+      <b>returns value of right operand</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="a = (b = 5, c = 6);  =&gt; 6" ID="ID_1390799619" CREATED="1450219904025" MODIFIED="1450219982085"/>
+<node TEXT="kinda like void, the use of commas for this effect is used rarely and only when a left-side operand has a side-effect, like i++&#xa;the comma usage is most-commonly seen in for loops:&#xa;&#xa;for (var x=5; y=0;   x &gt; y;   x--, y++)" ID="ID_1546540887" CREATED="1450220024213" MODIFIED="1450220216639"/>
 </node>
 <node TEXT="+  (addition)" ID="ID_838015778" CREATED="1450046869685" MODIFIED="1450050411853">
 <font BOLD="true"/>
@@ -224,6 +418,23 @@
 <font BOLD="true"/>
 <node TEXT="Subtract two numbers, or negate a number (if only one operand supplied)" ID="ID_885934219" CREATED="1450047716013" MODIFIED="1450047822233"/>
 </node>
+<node TEXT="*  (multiplication)" ID="ID_1899971511" CREATED="1450046774365" MODIFIED="1450050411854">
+<font BOLD="true"/>
+<node TEXT="JS always assumes you want an integer with multiplication. As a result JS attempts to convert any object to number before performing multiplication. If conversion fails, it will become NaN" ID="ID_217350981" CREATED="1450046784244" MODIFIED="1450046848675"/>
+<node TEXT="&quot;4&quot; * &quot;3&quot; =&gt; 12" ID="ID_630618564" CREATED="1450046849556" MODIFIED="1450046866691"/>
+</node>
+<node TEXT="/  (division)" ID="ID_797929812" CREATED="1450216323312" MODIFIED="1450216406058">
+<font BOLD="true"/>
+<node TEXT="JS always assumes #s in this operation, so it may convert an object to a number using valueOf()" ID="ID_282057614" CREATED="1450216353931" MODIFIED="1450216372707"/>
+<node TEXT="divides 1st operand by 2nd operand" ID="ID_878338967" CREATED="1450216373365" MODIFIED="1450216386838"/>
+<node TEXT="8 / 4  =&gt; 2" ID="ID_140938168" CREATED="1450216387295" MODIFIED="1450216400825"/>
+</node>
+<node TEXT="%  (modulo)" ID="ID_382566124" CREATED="1450216334537" MODIFIED="1450216564540">
+<font BOLD="true"/>
+<node TEXT="JS assumes numbers for both operands. Will attempt to convert an object to it&apos;s value using valueOf(), and failing that, toString()" ID="ID_1033015281" CREATED="1450216409894" MODIFIED="1450216465863"/>
+<node TEXT="divides 1st operand by 2nd, returning remainder" ID="ID_1291616739" CREATED="1450216440108" MODIFIED="1450216487937"/>
+<node TEXT="8 % 4  =&gt; 0&#xa;9 % 4  =&gt; 1&#xa;&#xa;8 % 3  =&gt; 2&#xa;9 % 3  =&gt; 0" ID="ID_952340228" CREATED="1450216488409" MODIFIED="1450216557550"/>
+</node>
 <node TEXT="++  (pre- or post- increment)" ID="ID_99821698" CREATED="1450047824026" MODIFIED="1450050411850">
 <font BOLD="true"/>
 <node TEXT="Increases the value / variable by 1   (may return value before or after increment depending on pre or post increment)" ID="ID_546614655" CREATED="1450048054634" MODIFIED="1450048112782"/>
@@ -233,6 +444,34 @@
 <node TEXT="--  (pre- or post-decrement)" ID="ID_1986212523" CREATED="1450048021133" MODIFIED="1450050411846">
 <font BOLD="true"/>
 <node TEXT="Same as ++ operator, but instead decreases the value by 1. Always use pre-decrement" ID="ID_1735975261" CREATED="1450048033632" MODIFIED="1450048149774"/>
+</node>
+<node TEXT="?:  (conditional)" ID="ID_1975137055" CREATED="1450217324437" MODIFIED="1450217694235">
+<font BOLD="true"/>
+<node ID="ID_163199040" CREATED="1450217345945" MODIFIED="1450217548658"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <i>1st</i>&#160;<b>?</b>&#160;<i>2nd</i>&#160;<b>:</b>&#160;<i>3rd</i>
+    </p>
+    <p>
+      <i>1st</i>&#160;operand can be an expression or variable. It's truthiness will be evaulated.
+    </p>
+    <p>
+      if truthy, <i>2nd</i>&#160;operand will be returned
+    </p>
+    <p>
+      if falsy, <i>3rd </i>operand will be returned
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="name = &quot;my name is &quot; + (username ? username : &quot;Lance&quot;)&#xa;&#xa;is equivalent to:&#xa;name = &quot;my name is &quot;&#xa;if (username)&#xa;    name += username;&#xa;else&#xa;    name += &quot;Lance&quot;;" ID="ID_855485722" CREATED="1450217549279" MODIFIED="1450217664661"/>
 </node>
 <node TEXT="comparison / testing" ID="ID_117183027" CREATED="1450050496688" MODIFIED="1450050523774">
 <node TEXT="instanceOf" ID="ID_221267458" CREATED="1450050474003" MODIFIED="1450050998089">
@@ -336,6 +575,208 @@
 <node TEXT="with negative numbers, can give strange results due to how negative numbers are represented in JS" ID="ID_1488261397" CREATED="1450049967393" MODIFIED="1450050028249"/>
 <node TEXT="shift bits right, discarding right-most bit, and inserting a 0 in the left" ID="ID_1202176368" CREATED="1450049717657" MODIFIED="1450049765276"/>
 <node TEXT="-1 &gt;&gt;&gt; 4  =&gt; 0x0FFFFFFF" ID="ID_1035821873" CREATED="1450050029492" MODIFIED="1450050115169"/>
+</node>
+</node>
+<node TEXT="Operation w/ Assignment" ID="ID_1285198143" CREATED="1450215880319" MODIFIED="1450219748726">
+<node ID="ID_516362165" CREATED="1450215959151" MODIFIED="1450219713474"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Operation with Assignment applies an to operation to the variable on the left side, and then sets that same variable to the result.
+    </p>
+    <p>
+      One distinction, however, is that <b>Operation w/ Assignment&#160;only accesses the variable once, which may make a difference in code that has some callbacks when accessed.</b>
+    </p>
+    <p>
+      a = 3;
+    </p>
+    <p>
+      a += 3;&#160;&#160;//same as a = a + 3
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_348440633" CREATED="1450215887724" MODIFIED="1450216118820"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>+=</b>&#160;&#160;(addition)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_809485523" CREATED="1450215892050" MODIFIED="1450216216528"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>-=</b>&#160;&#160;(subtraction)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_569089303" CREATED="1450215896291" MODIFIED="1450216220345"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>*=</b>&#160;&#160;(multiplication)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_1411047978" CREATED="1450215898649" MODIFIED="1450216224261"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>/=</b>&#160;&#160;(division)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_1865987209" CREATED="1450215915067" MODIFIED="1450216229293"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>%=</b>&#160;&#160;(modulus)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_181954505" CREATED="1450215944907" MODIFIED="1450216234156"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>&amp;=</b>&#160;&#160;(bitwise AND)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_738434971" CREATED="1450215949438" MODIFIED="1450216238261"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>^=</b>&#160;&#160;(bitwise NOT)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_1898216430" CREATED="1450215951298" MODIFIED="1450216242709"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>|=</b>&#160;&#160;(bitwise OR)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_1700310831" CREATED="1450215906936" MODIFIED="1450216248490"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>&lt;&lt;=</b>&#160;&#160;(bit-shift left)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_1800318021" CREATED="1450215904447" MODIFIED="1450216252357"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>&gt;&gt;=</b>&#160;&#160;(bit-shift right)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_1356270750" CREATED="1450215934000" MODIFIED="1450216265501"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>&gt;&gt;&gt;=</b>&#160;&#160;(bit-shift right, ignoring sign)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
 </node>
 </node>
 </node>
