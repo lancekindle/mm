@@ -357,6 +357,34 @@
 </node>
 <node TEXT="&lt;a href=&quot;javascript:void window.open();&quot;&gt;Open New Window&lt;/a&gt;" ID="ID_1517649571" CREATED="1450219513512" MODIFIED="1450219586487"/>
 </node>
+<node TEXT="?:  (conditional)" ID="ID_1975137055" CREATED="1450217324437" MODIFIED="1450217694235">
+<font BOLD="true"/>
+<node ID="ID_163199040" CREATED="1450217345945" MODIFIED="1450217548658"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <i>1st</i>&#160;<b>?</b>&#160;<i>2nd</i>&#160;<b>:</b>&#160;<i>3rd</i>
+    </p>
+    <p>
+      <i>1st</i>&#160;operand can be an expression or variable. It's truthiness will be evaulated.
+    </p>
+    <p>
+      if truthy, <i>2nd</i>&#160;operand will be returned
+    </p>
+    <p>
+      if falsy, <i>3rd </i>operand will be returned
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="name = &quot;my name is &quot; + (username ? username : &quot;Lance&quot;)&#xa;&#xa;is equivalent to:&#xa;name = &quot;my name is &quot;&#xa;if (username)&#xa;    name += username;&#xa;else&#xa;    name += &quot;Lance&quot;;" ID="ID_855485722" CREATED="1450217549279" MODIFIED="1450217664661"/>
+</node>
 <node ID="ID_1647218670" CREATED="1450219816109" MODIFIED="1450219825721"><richcontent TYPE="NODE">
 
 <html>
@@ -371,7 +399,7 @@
 </html>
 
 </richcontent>
-<node ID="ID_302335488" CREATED="1450219829650" MODIFIED="1450219899787"><richcontent TYPE="NODE">
+<node ID="ID_302335488" CREATED="1450219829650" MODIFIED="1450223585117"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -379,7 +407,7 @@
   </head>
   <body>
     <p>
-      evaluates the left operand, then the right operand, then
+      evaluates left operand, then evaluates right operand, then
     </p>
     <p>
       <b>returns value of right operand</b>
@@ -416,7 +444,7 @@
 </node>
 <node TEXT="-  (subtraction)" ID="ID_516623788" CREATED="1450047697458" MODIFIED="1450050411852">
 <font BOLD="true"/>
-<node TEXT="Subtract two numbers, or negate a number (if only one operand supplied)" ID="ID_885934219" CREATED="1450047716013" MODIFIED="1450047822233"/>
+<node TEXT="Subtract two numbers, or negate a number (if only one operand supplied)&#xa;if object is not a number, will attempt to convert, and use NaN if unsuccessful" ID="ID_885934219" CREATED="1450047716013" MODIFIED="1450223752410"/>
 </node>
 <node TEXT="*  (multiplication)" ID="ID_1899971511" CREATED="1450046774365" MODIFIED="1450050411854">
 <font BOLD="true"/>
@@ -432,7 +460,24 @@
 <node TEXT="%  (modulo)" ID="ID_382566124" CREATED="1450216334537" MODIFIED="1450216564540">
 <font BOLD="true"/>
 <node TEXT="JS assumes numbers for both operands. Will attempt to convert an object to it&apos;s value using valueOf(), and failing that, toString()" ID="ID_1033015281" CREATED="1450216409894" MODIFIED="1450216465863"/>
-<node TEXT="divides 1st operand by 2nd, returning remainder" ID="ID_1291616739" CREATED="1450216440108" MODIFIED="1450216487937"/>
+<node ID="ID_1291616739" CREATED="1450216440108" MODIFIED="1450223832982"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>Remainder after division</b>
+    </p>
+    <p>
+      divides 1st operand by 2nd, returning remainder
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 <node TEXT="8 % 4  =&gt; 0&#xa;9 % 4  =&gt; 1&#xa;&#xa;8 % 3  =&gt; 2&#xa;9 % 3  =&gt; 0" ID="ID_952340228" CREATED="1450216488409" MODIFIED="1450216557550"/>
 </node>
 <node TEXT="++  (pre- or post- increment)" ID="ID_99821698" CREATED="1450047824026" MODIFIED="1450050411850">
@@ -445,45 +490,20 @@
 <font BOLD="true"/>
 <node TEXT="Same as ++ operator, but instead decreases the value by 1. Always use pre-decrement" ID="ID_1735975261" CREATED="1450048033632" MODIFIED="1450048149774"/>
 </node>
-<node TEXT="?:  (conditional)" ID="ID_1975137055" CREATED="1450217324437" MODIFIED="1450217694235">
-<font BOLD="true"/>
-<node ID="ID_163199040" CREATED="1450217345945" MODIFIED="1450217548658"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <i>1st</i>&#160;<b>?</b>&#160;<i>2nd</i>&#160;<b>:</b>&#160;<i>3rd</i>
-    </p>
-    <p>
-      <i>1st</i>&#160;operand can be an expression or variable. It's truthiness will be evaulated.
-    </p>
-    <p>
-      if truthy, <i>2nd</i>&#160;operand will be returned
-    </p>
-    <p>
-      if falsy, <i>3rd </i>operand will be returned
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="name = &quot;my name is &quot; + (username ? username : &quot;Lance&quot;)&#xa;&#xa;is equivalent to:&#xa;name = &quot;my name is &quot;&#xa;if (username)&#xa;    name += username;&#xa;else&#xa;    name += &quot;Lance&quot;;" ID="ID_855485722" CREATED="1450217549279" MODIFIED="1450217664661"/>
-</node>
 <node TEXT="comparison / testing" ID="ID_117183027" CREATED="1450050496688" MODIFIED="1450050523774">
 <node TEXT="instanceOf" ID="ID_221267458" CREATED="1450050474003" MODIFIED="1450050998089">
 <font BOLD="true"/>
-<node TEXT="check if object is an instance of a function (like a constructor: Number, Array, etc)" ID="ID_302987960" CREATED="1450050803779" MODIFIED="1450050837715"/>
+<node TEXT="check if object is an instance of a function (like a constructor: Number, Array, etc)" ID="ID_302987960" CREATED="1450050803779" MODIFIED="1450225324044">
+<font BOLD="true"/>
+</node>
 <node TEXT="var x = [];  // or var a = new Array();    (either is valid here)&#xa;x instanceOf Array;  //true&#xa;x instanceOf Object;  //true -- all objects are instances of Object wrapper&#xa;x instanceOf Number;  // false" ID="ID_1013139257" CREATED="1450050838328" MODIFIED="1450050977589"/>
 </node>
 <node TEXT="in" ID="ID_1788439627" CREATED="1450050489319" MODIFIED="1450051008720">
 <font BOLD="true"/>
-</node>
-<node TEXT="!=" ID="ID_987145542" CREATED="1450050560290" MODIFIED="1450051009524">
+<node TEXT="x in y&#xa;evaluates if string version of x is name of property of y&#xa;CAREFUL! x in arrays DOES NOT work as expected" ID="ID_855718507" CREATED="1450224759151" MODIFIED="1450225259318">
 <font BOLD="true"/>
+</node>
+<node TEXT="var color = {r: 0, g:255, b:127};&#xa;&quot;r&quot; in color  =&gt;  true&#xa;0 in color  =&gt;  false  // &quot;0&quot; is not a property of color object&#xa;var x = [1,2];&#xa;0 in x  =&gt;  true  // x array has property &quot;0&quot; (it&apos;s index of 0)&#xa;2 in x  =&gt;  false  // x array does NOT have property &quot;2&quot; (it does NOT have a value at index 2)&#xa;&quot;fill&quot; in x  =&gt;  true  // x array has property &quot;fill&quot;  (a function)" ID="ID_597289344" CREATED="1450224908150" MODIFIED="1450225204622"/>
 </node>
 <node TEXT="==  (test for equality)" ID="ID_182144399" CREATED="1450046398368" MODIFIED="1450050411855">
 <font BOLD="true"/>
@@ -521,11 +541,58 @@
 </richcontent>
 </node>
 </node>
-<node TEXT="===" ID="ID_460657421" CREATED="1450050579729" MODIFIED="1450051011250">
+<node TEXT="===  (test for strict equality)" ID="ID_460657421" CREATED="1450050579729" MODIFIED="1450223931419">
 <font BOLD="true"/>
 </node>
-<node TEXT="!==" ID="ID_770950058" CREATED="1450050586221" MODIFIED="1450051011825">
+<node TEXT="!=  (test for NOT equality)" ID="ID_987145542" CREATED="1450050560290" MODIFIED="1450223969775">
 <font BOLD="true"/>
+</node>
+<node TEXT="!==  (test for NOT strict equality)" ID="ID_770950058" CREATED="1450050586221" MODIFIED="1450223950390">
+<font BOLD="true"/>
+</node>
+<node TEXT="&gt;, &lt;, &gt;=, &lt;= comparisons" ID="ID_481372811" CREATED="1450224439231" MODIFIED="1450224450501">
+<node ID="ID_1629991479" CREATED="1450224138370" MODIFIED="1450224680461"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>&gt;, &lt;, &lt;=, &gt;=&#160;Compares only numbers and strings.</b>&#160; Where an object is neither, it is converted to a number/string (try to convert to # first).
+    </p>
+    <p>
+      string comparison is only done if both objects convert to a string.
+    </p>
+    <p>
+      numerical comparison is done if at least one object converted to a number (and the other is then converted to a number)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      string comparisons are WEIRD. strings are compared character-by-character
+    </p>
+    <p>
+      JS uses unicode, but in ASCII, uppercase letters are less than lowercase. so &quot;Abc&quot; &lt; &quot;abc&quot;
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="&gt;  (greater than)" ID="ID_1949845696" CREATED="1450224005155" MODIFIED="1450224046702">
+<font BOLD="true"/>
+</node>
+<node TEXT="&lt;  (less than)" ID="ID_1707618736" CREATED="1450224017136" MODIFIED="1450224047193">
+<font BOLD="true"/>
+</node>
+<node TEXT="&gt;=  (greater than or equal)" ID="ID_963455367" CREATED="1450224020615" MODIFIED="1450224047735">
+<font BOLD="true"/>
+</node>
+<node TEXT="&lt;=  (less than or equal)" ID="ID_874604199" CREATED="1450224038615" MODIFIED="1450224048264">
+<font BOLD="true"/>
+</node>
 </node>
 </node>
 <node TEXT="bitwise operators" ID="ID_448112280" CREATED="1450048175796" MODIFIED="1450048179838">
