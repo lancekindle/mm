@@ -69,7 +69,7 @@
 <node TEXT="in case of OVERflow,&#xa;# becomes Infinity / -Infinity&#xa;(depending on if # overflowed past max positive or negative #)" ID="ID_1954928476" CREATED="1450044305395" MODIFIED="1450044422186"/>
 <node TEXT="in case of UNDERflow,&#xa;# becomes 0" ID="ID_844173018" CREATED="1450044398575" MODIFIED="1450044415508"/>
 <node TEXT="NaN" ID="ID_5441324" CREATED="1450044506991" MODIFIED="1450044516514">
-<node TEXT="any numerical operation with NaN (Not a Number) will return NaN" ID="ID_383729347" CREATED="1450044434111" MODIFIED="1450044504774"/>
+<node TEXT="any numerical operation with NaN (Not a Number) will return NaN&#xa;e.g:  2 + NaN = NaN" ID="ID_383729347" CREATED="1450044434111" MODIFIED="1452016242919"/>
 <node TEXT="NaN != NaN  (NaN is never equal to anything)" ID="ID_1970653407" CREATED="1450044523453" MODIFIED="1450044541486"/>
 <node TEXT="NaN is generated when javascript attempts to convert an object to number using valueOf() but fails" ID="ID_1120271469" CREATED="1450044550174" MODIFIED="1450044583090"/>
 </node>
@@ -118,7 +118,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="new Number(&quot;1.2&quot;) =&gt; 1.2" ID="ID_584358319" CREATED="1450045828176" MODIFIED="1450045838212"/>
@@ -219,14 +218,11 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="delete" ID="ID_608051617" CREATED="1450050449076" MODIFIED="1450050643314">
 <font BOLD="true"/>
-<node TEXT="delete an object&apos;s property OR array element (CAREFUL! It doesn&apos;t change length).&#xa;Cannot delete variables declared with var, or function, or function parameters&#xa;(and although it may be able to delete some vars, delete should be strictly used to delete object properties)&#xa;&quot;strict mode&quot; raises TypeError if attepting to delete a nonconfigurable property" ID="ID_1924143928" CREATED="1450050619280" MODIFIED="1450219391325"/>
-<node TEXT="x = {a:4};&#xa;delete x.a;&#xa;x.a  =&gt; undefined" ID="ID_810545589" CREATED="1450050622679" MODIFIED="1450218787144"/>
-<node ID="ID_1401414544" CREATED="1450218916396" MODIFIED="1450219069726"><richcontent TYPE="NODE">
+<node ID="ID_1924143928" CREATED="1450050619280" MODIFIED="1450226715372"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -234,11 +230,46 @@
   </head>
   <body>
     <p>
-      Deleting an index in an array removes the index: value and index as well but does NOT change length of array. The array is considered <i>sparse </i>afterwards
+      <b>delete an object's property OR array element (CAREFUL! see below), </b>
+    </p>
+    <p>
+      <b>AND returns true/false&#160;&#160;(to indicate success of delete operation)</b>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Cannot delete variables declared with var, or function, or function parameters
+    </p>
+    <p>
+      (in &quot;strict mode&quot; this would raise SyntaxError)
+    </p>
+    <p>
+      (and although <i>delete</i>&#160;may be able to delete some vars, delete should be strictly used to delete object properties)
+    </p>
+    <p>
+      in &quot;strict mode&quot; attepting to delete a nonconfigurable property raises TypeError
     </p>
   </body>
 </html>
+</richcontent>
+</node>
+<node TEXT="x = {a:4};&#xa;delete x.a;&#xa;x.a  =&gt; undefined" ID="ID_810545589" CREATED="1450050622679" MODIFIED="1450218787144"/>
+<node ID="ID_1401414544" CREATED="1450218916396" MODIFIED="1450226868198"><richcontent TYPE="NODE">
 
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Deleting an index in an array removes the index and its associated value but
+    </p>
+    <p>
+      <b>does NOT change length of array</b>. The array is considered <i>sparse </i>afterwards
+    </p>
+  </body>
+</html>
 </richcontent>
 </node>
 <node ID="ID_877853996" CREATED="1450218788946" MODIFIED="1450218885595"><richcontent TYPE="NODE">
@@ -271,9 +302,15 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
+</node>
+<node TEXT="instanceOf" ID="ID_221267458" CREATED="1450050474003" MODIFIED="1450050998089">
+<font BOLD="true"/>
+<node TEXT="check if object is an instance of a function (like a constructor: Number, Array, etc)" ID="ID_302987960" CREATED="1450050803779" MODIFIED="1450225324044">
+<font BOLD="true"/>
+</node>
+<node TEXT="var x = [];  // or var a = new Array();    (either is valid here)&#xa;x instanceOf Array;  //true&#xa;x instanceOf Object;  //true -- all objects are instances of Object wrapper&#xa;x instanceOf Number;  // false" ID="ID_1013139257" CREATED="1450050838328" MODIFIED="1450050977589"/>
 </node>
 <node TEXT="typeof" ID="ID_1256553954" CREATED="1450050453026" MODIFIED="1450050763841">
 <font BOLD="true"/>
@@ -318,7 +355,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -359,7 +395,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_32312009" CREATED="1450217057112" MODIFIED="1450217095682"><richcontent TYPE="NODE">
@@ -374,7 +409,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -392,12 +426,48 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="&lt;a href=&quot;javascript:void window.open();&quot;&gt;Open New Window&lt;/a&gt;" ID="ID_1517649571" CREATED="1450219513512" MODIFIED="1450219586487"/>
 </node>
-<node TEXT="?:  (conditional)" ID="ID_1975137055" CREATED="1450217324437" MODIFIED="1450217694235">
+<node TEXT="in" ID="ID_1788439627" CREATED="1450050489319" MODIFIED="1450051008720">
+<font BOLD="true"/>
+<node TEXT="As a conditional: if (x in y)" ID="ID_534132930" CREATED="1452016345736" MODIFIED="1452016360469">
+<node TEXT="x in y&#xa;evaluates if string version of x is name of property of y&#xa;CAREFUL! x in arrays DOES NOT work as expected" ID="ID_855718507" CREATED="1450224759151" MODIFIED="1450225259318">
+<font BOLD="true"/>
+</node>
+<node TEXT="var color = {r: 0, g:255, b:127};&#xa;&quot;r&quot; in color  =&gt;  true&#xa;0 in color  =&gt;  false  // &quot;0&quot; is not a property of color object&#xa;var x = [1,2];&#xa;0 in x  =&gt;  true  // x array has property &quot;0&quot; (it&apos;s index of 0)&#xa;2 in x  =&gt;  false  // x array does NOT have property &quot;2&quot; (it does NOT have a value at index 2)&#xa;&quot;fill&quot; in x  =&gt;  true  // x array has property &quot;fill&quot;  (a function)" ID="ID_597289344" CREATED="1450224908150" MODIFIED="1450225204622"/>
+</node>
+<node TEXT="As a for loop:  for (x in y)" ID="ID_1561955749" CREATED="1452016368514" MODIFIED="1452016397409">
+<node ID="ID_1309647507" CREATED="1452016398482" MODIFIED="1452017041871"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>enumerates all enumerable properties. </b>
+    </p>
+    <p>
+      <b>aka enumerates all nonstandard properties of an object </b>
+    </p>
+    <p>
+      <b>aka enumerates all user-defined properties of an object*</b>
+    </p>
+    <p>
+      <b>&#160;&#160;&#160;&#160;*it is possible to hide user-defined properties from a for-in loop</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="an example:&#xa;var obj = {x:99, y:90, z:89};&#xa;var arr = []; i = 0;&#xa;for ( arr[ i++ ] in obj) {}&#xa;arr  // [&apos;x&apos;, &apos;y&apos;, &apos;z&apos;]" ID="ID_1369035045" CREATED="1452016606298" MODIFIED="1452016950050"/>
+<node TEXT="All browsers enumerate an object&apos;s properties in the order they were defined:&#xa;oldest to newest. However, it is worthwhile to note that JS specification does&#xa;not require this behavior. But in all browsers that&apos;s how its implemented" ID="ID_1414313893" CREATED="1452016950730" MODIFIED="1452017023869"/>
+</node>
+</node>
+<node TEXT="?:  (conditional)" ID="ID_1975137055" CREATED="1450217324437" MODIFIED="1452018695096">
 <font BOLD="true"/>
 <node ID="ID_163199040" CREATED="1450217345945" MODIFIED="1450217548658"><richcontent TYPE="NODE">
 
@@ -420,7 +490,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="name = &quot;my name is &quot; + (username ? username : &quot;Lance&quot;)&#xa;&#xa;is equivalent to:&#xa;name = &quot;my name is &quot;&#xa;if (username)&#xa;    name += username;&#xa;else&#xa;    name += &quot;Lance&quot;;" ID="ID_855485722" CREATED="1450217549279" MODIFIED="1450217664661"/>
@@ -437,7 +506,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node ID="ID_302335488" CREATED="1450219829650" MODIFIED="1450223585117"><richcontent TYPE="NODE">
 
@@ -454,7 +522,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="a = (b = 5, c = 6);  =&gt; 6" ID="ID_1390799619" CREATED="1450219904025" MODIFIED="1450219982085"/>
@@ -474,7 +541,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="If only one operand is supplied, converts the object to number:&#xa;+x =&gt; new Number(x)" ID="ID_1148777880" CREATED="1450046876270" MODIFIED="1450047062069"/>
@@ -515,7 +581,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="8 % 4  =&gt; 0&#xa;9 % 4  =&gt; 1&#xa;&#xa;8 % 3  =&gt; 2&#xa;9 % 3  =&gt; 0" ID="ID_952340228" CREATED="1450216488409" MODIFIED="1450216557550"/>
@@ -530,21 +595,7 @@
 <font BOLD="true"/>
 <node TEXT="Same as ++ operator, but instead decreases the value by 1. Always use pre-decrement" ID="ID_1735975261" CREATED="1450048033632" MODIFIED="1450048149774"/>
 </node>
-<node TEXT="comparison / testing" ID="ID_117183027" CREATED="1450050496688" MODIFIED="1450050523774">
-<node TEXT="instanceOf" ID="ID_221267458" CREATED="1450050474003" MODIFIED="1450050998089">
-<font BOLD="true"/>
-<node TEXT="check if object is an instance of a function (like a constructor: Number, Array, etc)" ID="ID_302987960" CREATED="1450050803779" MODIFIED="1450225324044">
-<font BOLD="true"/>
-</node>
-<node TEXT="var x = [];  // or var a = new Array();    (either is valid here)&#xa;x instanceOf Array;  //true&#xa;x instanceOf Object;  //true -- all objects are instances of Object wrapper&#xa;x instanceOf Number;  // false" ID="ID_1013139257" CREATED="1450050838328" MODIFIED="1450050977589"/>
-</node>
-<node TEXT="in" ID="ID_1788439627" CREATED="1450050489319" MODIFIED="1450051008720">
-<font BOLD="true"/>
-<node TEXT="x in y&#xa;evaluates if string version of x is name of property of y&#xa;CAREFUL! x in arrays DOES NOT work as expected" ID="ID_855718507" CREATED="1450224759151" MODIFIED="1450225259318">
-<font BOLD="true"/>
-</node>
-<node TEXT="var color = {r: 0, g:255, b:127};&#xa;&quot;r&quot; in color  =&gt;  true&#xa;0 in color  =&gt;  false  // &quot;0&quot; is not a property of color object&#xa;var x = [1,2];&#xa;0 in x  =&gt;  true  // x array has property &quot;0&quot; (it&apos;s index of 0)&#xa;2 in x  =&gt;  false  // x array does NOT have property &quot;2&quot; (it does NOT have a value at index 2)&#xa;&quot;fill&quot; in x  =&gt;  true  // x array has property &quot;fill&quot;  (a function)" ID="ID_597289344" CREATED="1450224908150" MODIFIED="1450225204622"/>
-</node>
+<node TEXT="comparisons" ID="ID_117183027" CREATED="1450050496688" MODIFIED="1452016301683">
 <node TEXT="==  (test for equality)" ID="ID_182144399" CREATED="1450046398368" MODIFIED="1450050411855">
 <font BOLD="true"/>
 <node ID="ID_917089983" CREATED="1450046407860" MODIFIED="1450046620426"><richcontent TYPE="NODE">
@@ -577,7 +628,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -618,7 +668,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="&gt;  (greater than)" ID="ID_1949845696" CREATED="1450224005155" MODIFIED="1450224046702">
@@ -635,7 +684,19 @@
 </node>
 </node>
 </node>
-<node TEXT="bitwise operators" ID="ID_448112280" CREATED="1450048175796" MODIFIED="1450048179838">
+<node ID="ID_448112280" CREATED="1450048175796" MODIFIED="1450226412309"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>&amp;, |, ^</b>&#160;&#160;bitwise operators
+    </p>
+  </body>
+</html>
+</richcontent>
 <node TEXT="Remember that numbers are represented as 32bits.&#xa;So technically 0x0F == 0x0000000F" ID="ID_384673399" CREATED="1450049082820" MODIFIED="1450049138077">
 <font ITALIC="true"/>
 </node>
@@ -684,6 +745,20 @@
 <node TEXT="-1 &gt;&gt;&gt; 4  =&gt; 0x0FFFFFFF" ID="ID_1035821873" CREATED="1450050029492" MODIFIED="1450050115169"/>
 </node>
 </node>
+<node ID="ID_1312436147" CREATED="1450226381289" MODIFIED="1450226430686"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>&amp;&amp;, ||, !</b>&#160;&#160;logical operators
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 <node TEXT="Operation w/ Assignment" ID="ID_1285198143" CREATED="1450215880319" MODIFIED="1450219748726">
 <node ID="ID_516362165" CREATED="1450215959151" MODIFIED="1450219713474"><richcontent TYPE="NODE">
 
@@ -706,7 +781,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_348440633" CREATED="1450215887724" MODIFIED="1450216118820"><richcontent TYPE="NODE">
@@ -721,7 +795,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -737,7 +810,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -753,7 +825,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -769,7 +840,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -785,7 +855,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -801,7 +870,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -817,7 +885,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -833,7 +900,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -849,7 +915,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -865,7 +930,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -881,7 +945,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -904,7 +967,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node ID="ID_460754955" CREATED="1450051064001" MODIFIED="1450051511489"><richcontent TYPE="NODE">
 
@@ -918,7 +980,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1800837246" CREATED="1450051105391" MODIFIED="1450051449154"><richcontent TYPE="NODE">
@@ -933,7 +994,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node ID="ID_1785906591" CREATED="1450051182536" MODIFIED="1450051537932"><richcontent TYPE="NODE">
 
@@ -950,7 +1010,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
