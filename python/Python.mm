@@ -50,7 +50,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="3"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="9"/>
 <node TEXT="Data Types:" POSITION="right" ID="ID_58961891" CREATED="1385057099009" MODIFIED="1390585624890">
 <edge COLOR="#ff0000"/>
 <hook NAME="AlwaysUnfoldedNode"/>
@@ -223,8 +223,50 @@
 </node>
 <node TEXT="Programming Lessons" POSITION="left" ID="ID_1471298900" CREATED="1387912548901" MODIFIED="1387912852841">
 <edge COLOR="#00ff00"/>
-<node TEXT="Comprehension (for-loops)" ID="ID_425253099" CREATED="1391699999115" MODIFIED="1391700011961">
+<node TEXT="Decorators" ID="ID_275699305" CREATED="1435852637812" MODIFIED="1435852641573">
+<node ID="ID_428020255" CREATED="1435852665284" MODIFIED="1435852827332"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Decorators are used for wrapping a function with some additional logic.
+    </p>
+    <p>
+      it actually <i>Replaces</i>&#160;the function during runtime by calling the decorator
+    </p>
+    <p>
+      and passing it the defined function. The decorator returns an altered
+    </p>
+    <p>
+      version of the function, which is then used when you call it
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="I got this example from http://stackoverflow.com/a/1594484" ID="ID_979028902" CREATED="1435857792714" MODIFIED="1435857821015" LINK="http://stackoverflow.com/a/1594484"/>
+<node TEXT="Decorator Basics" ID="ID_1501432159" CREATED="1435857850841" MODIFIED="1435857852645">
+<node TEXT="Python&#x2019;s functions are objects" ID="ID_1701945347" CREATED="1435857855071" MODIFIED="1435857866200">
+<node TEXT="To understand decorators, you must first understand that functions are objects in Python. This has important consequences. Let&#x2019;s see why with a simple example :" ID="ID_836176803" CREATED="1435857867374" MODIFIED="1435857877506"/>
+<node TEXT="def shout(word=&quot;yes&quot;):&#xa;    return word.capitalize()+&quot;!&quot;&#xa;&#xa;print shout()&#xa;# outputs : &apos;Yes!&apos;&#xa;&#xa;# As an object, you can assign the function to a variable like any&#xa;# other object&#xa;&#xa;scream = shout&#xa;&#xa;# Notice we don&apos;t use parentheses: we are not calling the function, we are&#xa;# putting the function &quot;shout&quot; into the variable &quot;scream&quot;.&#xa;# It means you can then call &quot;shout&quot; from &quot;scream&quot;:&#xa;&#xa;print scream()&#xa;# outputs : &apos;Yes!&apos;&#xa;&#xa;# More than that, it means you can remove the old name &apos;shout&apos;, and&#xa;# the function will still be accessible from &apos;scream&apos;&#xa;&#xa;del shout&#xa;try:&#xa;    print shout()&#xa;except NameError, e:&#xa;    print e&#xa;    #outputs: &quot;name &apos;shout&apos; is not defined&quot;&#xa;&#xa;print scream()&#xa;# outputs: &apos;Yes!&apos;" ID="ID_1007787517" CREATED="1435857879222" MODIFIED="1435857896707"/>
+<node TEXT="Okay! Keep this in mind. We&#x2019;ll circle back to it shortly.&#xa;&#xa;Another interesting property of Python functions is they can be defined... inside another function!" ID="ID_581304681" CREATED="1435857909455" MODIFIED="1435857910771"/>
+<node TEXT="def talk():&#xa;&#xa;    # You can define a function on the fly in &quot;talk&quot; ...&#xa;    def whisper(word=&quot;yes&quot;):&#xa;        return word.lower()+&quot;...&quot;&#xa;&#xa;    # ... and use it right away!&#xa;&#xa;    print whisper()&#xa;&#xa;# You call &quot;talk&quot;, that defines &quot;whisper&quot; EVERY TIME you call it, then&#xa;# &quot;whisper&quot; is called in &quot;talk&quot;.&#xa;talk()&#xa;# outputs:&#xa;# &quot;yes...&quot;&#xa;&#xa;# But &quot;whisper&quot; DOES NOT EXIST outside &quot;talk&quot;:&#xa;&#xa;try:&#xa;    print whisper()&#xa;except NameError, e:&#xa;    print e&#xa;    #outputs : &quot;name &apos;whisper&apos; is not defined&quot;*&#xa;    Python&apos;s functions are objects" ID="ID_45309217" CREATED="1435857911954" MODIFIED="1435857923362"/>
+</node>
+<node TEXT="Functions references" ID="ID_1359961884" CREATED="1435857927358" MODIFIED="1435857940418">
+<node TEXT="Okay, still here? Now the fun part...&#xa;&#xa;You&#x2019;ve seen that functions are objects. Therefore, functions:&#xa;&#xa;can be assigned to a variable&#xa;can be defined in another function&#xa;That means that a function can return another function. Have a look! &#x263a;" ID="ID_349000286" CREATED="1435857954656" MODIFIED="1435857970309"/>
+<node TEXT="def getTalk(kind=&quot;shout&quot;):&#xa;&#xa;    # We define functions on the fly&#xa;    def shout(word=&quot;yes&quot;):&#xa;        return word.capitalize()+&quot;!&quot;&#xa;&#xa;    def whisper(word=&quot;yes&quot;) :&#xa;        return word.lower()+&quot;...&quot;;&#xa;&#xa;    # Then we return one of them&#xa;    if kind == &quot;shout&quot;:&#xa;        # We don&apos;t use &quot;()&quot;, we are not calling the function,&#xa;        # we are returning the function object&#xa;        return shout &#xa;    else:&#xa;        return whisper&#xa;&#xa;# How do you use this strange beast?&#xa;&#xa;# Get the function and assign it to a variable&#xa;talk = getTalk()     &#xa;&#xa;# You can see that &quot;talk&quot; is here a function object:&#xa;print talk&#xa;#outputs : &lt;function shout at 0xb7ea817c&gt;&#xa;&#xa;# The object is the one returned by the function:&#xa;print talk()&#xa;#outputs : Yes!&#xa;&#xa;# And you can even use it directly if you feel wild:&#xa;print getTalk(&quot;whisper&quot;)()&#xa;#outputs : yes..." ID="ID_1368718732" CREATED="1435859107374" MODIFIED="1435859109277"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="Features (PEPs)" POSITION="left" ID="ID_792014072" CREATED="1452304832804" MODIFIED="1452304843652">
+<edge COLOR="#7c0000"/>
+<node TEXT="Comprehension (for-loops)" ID="ID_425253099" CREATED="1391699999115" MODIFIED="1452304853245">
 <node TEXT="List Comprehension" ID="ID_59927465" CREATED="1387912629847" MODIFIED="1387912635093">
+<node TEXT="PEP 202" ID="ID_1742152017" CREATED="1452304989193" MODIFIED="1452305017070" LINK="https://www.python.org/dev/peps/pep-0202/"/>
 <node TEXT="Stack Overflow" ID="ID_222436418" CREATED="1387912636327" MODIFIED="1387912773831" LINK="http://stackoverflow.com/a/2397192"/>
 <node ID="ID_486440109" CREATED="1387912776303" MODIFIED="1428270895537"><richcontent TYPE="NODE">
 
@@ -246,6 +288,7 @@ bag </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face=
 </node>
 </node>
 <node TEXT="Dictionary Comprehension" ID="ID_1911467174" CREATED="1391699872946" MODIFIED="1391699878394">
+<node TEXT="PEP 274" ID="ID_390619484" CREATED="1452305027686" MODIFIED="1452305058840" LINK="https://www.python.org/dev/peps/pep-0274/"/>
 <node ID="ID_27099931" CREATED="1387912776303" MODIFIED="1428270793623"><richcontent TYPE="NODE">
 
 <html>
@@ -266,6 +309,11 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 </html>
 </richcontent>
 </node>
+</node>
+<node TEXT="Generator Comprehension" ID="ID_170829617" CREATED="1452305066317" MODIFIED="1452305071512">
+<node TEXT="PEP289" ID="ID_1160664979" CREATED="1452305087038" MODIFIED="1452305096424" LINK="https://www.python.org/dev/peps/pep-0289/"/>
+<node TEXT="Generator Comprehension is just like List or Dict Comprehension, except that you enclose the comprehension expression inside parenthesis, kinda like a tuple:&#xa;(x**2 for x in range(5))&#xa;&#xa;But the cool thing is that it is a generator. So results are calculated on-the-fly, rather than all-at-once. This can be extremely useful for writing a list comprehension that you only intend to iterate partly over." ID="ID_1220938371" CREATED="1452305098255" MODIFIED="1452305226824"/>
+<node TEXT="TL;DR: use generator comprehension in place of list comprehensions when you don&apos;t intend to iterate full list" ID="ID_1977250604" CREATED="1452305228624" MODIFIED="1452305254943"/>
 </node>
 <node TEXT="Advanced Comprehension" ID="ID_936319093" CREATED="1391700020426" MODIFIED="1391700025358">
 <node ID="ID_1596288214" CREATED="1391700026327" MODIFIED="1428270684094"><richcontent TYPE="NODE">
@@ -306,45 +354,7 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 </node>
 </node>
 </node>
-<node TEXT="Decorators" ID="ID_275699305" CREATED="1435852637812" MODIFIED="1435852641573">
-<node ID="ID_428020255" CREATED="1435852665284" MODIFIED="1435852827332"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Decorators are used for wrapping a function with some additional logic.
-    </p>
-    <p>
-      it actually <i>Replaces</i>&#160;the function during runtime by calling the decorator
-    </p>
-    <p>
-      and passing it the defined function. The decorator returns an altered
-    </p>
-    <p>
-      version of the function, which is then used when you call it
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node TEXT="I got this example from http://stackoverflow.com/a/1594484" ID="ID_979028902" CREATED="1435857792714" MODIFIED="1435857821015" LINK="http://stackoverflow.com/a/1594484"/>
-<node TEXT="Decorator Basics" ID="ID_1501432159" CREATED="1435857850841" MODIFIED="1435857852645">
-<node TEXT="Python&#x2019;s functions are objects" ID="ID_1701945347" CREATED="1435857855071" MODIFIED="1435857866200">
-<node TEXT="To understand decorators, you must first understand that functions are objects in Python. This has important consequences. Let&#x2019;s see why with a simple example :" ID="ID_836176803" CREATED="1435857867374" MODIFIED="1435857877506"/>
-<node TEXT="def shout(word=&quot;yes&quot;):&#xa;    return word.capitalize()+&quot;!&quot;&#xa;&#xa;print shout()&#xa;# outputs : &apos;Yes!&apos;&#xa;&#xa;# As an object, you can assign the function to a variable like any&#xa;# other object&#xa;&#xa;scream = shout&#xa;&#xa;# Notice we don&apos;t use parentheses: we are not calling the function, we are&#xa;# putting the function &quot;shout&quot; into the variable &quot;scream&quot;.&#xa;# It means you can then call &quot;shout&quot; from &quot;scream&quot;:&#xa;&#xa;print scream()&#xa;# outputs : &apos;Yes!&apos;&#xa;&#xa;# More than that, it means you can remove the old name &apos;shout&apos;, and&#xa;# the function will still be accessible from &apos;scream&apos;&#xa;&#xa;del shout&#xa;try:&#xa;    print shout()&#xa;except NameError, e:&#xa;    print e&#xa;    #outputs: &quot;name &apos;shout&apos; is not defined&quot;&#xa;&#xa;print scream()&#xa;# outputs: &apos;Yes!&apos;" ID="ID_1007787517" CREATED="1435857879222" MODIFIED="1435857896707"/>
-<node TEXT="Okay! Keep this in mind. We&#x2019;ll circle back to it shortly.&#xa;&#xa;Another interesting property of Python functions is they can be defined... inside another function!" ID="ID_581304681" CREATED="1435857909455" MODIFIED="1435857910771"/>
-<node TEXT="def talk():&#xa;&#xa;    # You can define a function on the fly in &quot;talk&quot; ...&#xa;    def whisper(word=&quot;yes&quot;):&#xa;        return word.lower()+&quot;...&quot;&#xa;&#xa;    # ... and use it right away!&#xa;&#xa;    print whisper()&#xa;&#xa;# You call &quot;talk&quot;, that defines &quot;whisper&quot; EVERY TIME you call it, then&#xa;# &quot;whisper&quot; is called in &quot;talk&quot;.&#xa;talk()&#xa;# outputs:&#xa;# &quot;yes...&quot;&#xa;&#xa;# But &quot;whisper&quot; DOES NOT EXIST outside &quot;talk&quot;:&#xa;&#xa;try:&#xa;    print whisper()&#xa;except NameError, e:&#xa;    print e&#xa;    #outputs : &quot;name &apos;whisper&apos; is not defined&quot;*&#xa;    Python&apos;s functions are objects" ID="ID_45309217" CREATED="1435857911954" MODIFIED="1435857923362"/>
-</node>
-<node TEXT="Functions references" ID="ID_1359961884" CREATED="1435857927358" MODIFIED="1435857940418">
-<node TEXT="Okay, still here? Now the fun part...&#xa;&#xa;You&#x2019;ve seen that functions are objects. Therefore, functions:&#xa;&#xa;can be assigned to a variable&#xa;can be defined in another function&#xa;That means that a function can return another function. Have a look! &#x263a;" ID="ID_349000286" CREATED="1435857954656" MODIFIED="1435857970309"/>
-<node TEXT="def getTalk(kind=&quot;shout&quot;):&#xa;&#xa;    # We define functions on the fly&#xa;    def shout(word=&quot;yes&quot;):&#xa;        return word.capitalize()+&quot;!&quot;&#xa;&#xa;    def whisper(word=&quot;yes&quot;) :&#xa;        return word.lower()+&quot;...&quot;;&#xa;&#xa;    # Then we return one of them&#xa;    if kind == &quot;shout&quot;:&#xa;        # We don&apos;t use &quot;()&quot;, we are not calling the function,&#xa;        # we are returning the function object&#xa;        return shout &#xa;    else:&#xa;        return whisper&#xa;&#xa;# How do you use this strange beast?&#xa;&#xa;# Get the function and assign it to a variable&#xa;talk = getTalk()     &#xa;&#xa;# You can see that &quot;talk&quot; is here a function object:&#xa;print talk&#xa;#outputs : &lt;function shout at 0xb7ea817c&gt;&#xa;&#xa;# The object is the one returned by the function:&#xa;print talk()&#xa;#outputs : Yes!&#xa;&#xa;# And you can even use it directly if you feel wild:&#xa;print getTalk(&quot;whisper&quot;)()&#xa;#outputs : yes..." ID="ID_1368718732" CREATED="1435859107374" MODIFIED="1435859109277"/>
-</node>
-</node>
-</node>
-<node ID="ID_68247838" CREATED="1442204525345" MODIFIED="1442204553214"><richcontent TYPE="NODE">
+<node ID="ID_68247838" CREATED="1442204525345" MODIFIED="1452304856042"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -432,13 +442,16 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 <node TEXT="If you don&apos;t want to handle any errors, use the main example. When wrapping your function with @contextmanager, you can handle errors by simply catching specified errors with except:&#xa;so for example:&#xa;......&#xa;try:&#xa;    yield f&#xa;except FileReadError:&#xa;    # i dunno, do something here to clear up the error&#xa;finally:&#xa;    f.close()&#xa;&#xa;Because FileReadError was caught in the wrapped function, @contextmanager will not bubble the error up further, and your program will be safe." ID="ID_646504440" CREATED="1442205615109" MODIFIED="1442205795974"/>
 <node TEXT="Error Handling within a class:&#xa;If you built a context manager class, you&apos;ll have to handle errors through the __exit__ function. __exit__ actually takes 4 arguments.&#xa;self, err_type, err_value, err_traceback&#xa;obviously, self is just for the instance.&#xa;err_type passes the type of error that occurred&#xa;err_value is ....&#xa;err_traceback is the full traceback of the error&#xa;If you wish to handle the error, do so in the __exit__ function and then return True, indicating you&apos;ve handled it. Returning False or None will cause an error (if one exists) to continue bubbling up.&#xa;If there is no error, the last 3 arguments will be None, None, None" ID="ID_1141410216" CREATED="1442205796998" MODIFIED="1442205999635"/>
 </node>
+<node TEXT="using with unittest" ID="ID_362606904" CREATED="1452304619895" MODIFIED="1452304626429">
+<node TEXT="in unittest you can use self.assertRaises to execute a block of code and verify error gets raised&#xa;&#xa;d = {}&#xa;self.assertRaises(KeyError):&#xa;    v = d[&apos;key&apos;]" ID="ID_1036102215" CREATED="1452304629016" MODIFIED="1452304758515"/>
+</node>
 <node TEXT="2 ways to make a context manager" ID="ID_103310715" CREATED="1442208668817" MODIFIED="1442208682463">
 <node TEXT="using @contextmanager to wrap a generator function (easiest)" ID="ID_1088125140" CREATED="1442208687799" MODIFIED="1442208703623"/>
 <node TEXT="create your own contextmanager class. Needs an __enter__ and __exit__ function" ID="ID_1744187339" CREATED="1442208704594" MODIFIED="1442208726670">
 <node TEXT="class ContextManagerExample:&#xa;    def __enter__(self, arg1, *args):&#xa;        self.stored = do_something(arg1)&#xa;   &#xa;    def __exit__(self, err_type, err_val, err_traceback):&#xa;        undo_something(self.stored)" ID="ID_1568153517" CREATED="1442208730028" MODIFIED="1442208865622"/>
 </node>
 </node>
-<node TEXT="from contextlib import contextmanager&#xa;&#xa;@contextmanager&#xa;    def opening(filename):&#xa;       f = open(filename) # IOError is untouched by GeneratorContext&#xa;       try:&#xa;           yield f&#xa;       finally:&#xa;           f.close() # Ditto for errors here (however unlikely)" ID="ID_1879401275" CREATED="1442204573315" MODIFIED="1442204617413"/>
+<node TEXT="from contextlib import contextmanager&#xa;&#xa;@contextmanager&#xa;def opening(filename):&#xa;    f = open(filename) # IOError is untouched by GeneratorContext&#xa;    try:&#xa;        yield f&#xa;    finally:&#xa;        f.close() # Ditto for errors here (however unlikely)" ID="ID_1879401275" CREATED="1442204573315" MODIFIED="1452304590388"/>
 </node>
 </node>
 <node TEXT="Troubleshooting" POSITION="left" ID="ID_790513217" CREATED="1444310295151" MODIFIED="1444310299047">
@@ -588,6 +601,21 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="A specific example: an install.bat file you use to create the executable" ID="ID_874674152" CREATED="1397164467126" MODIFIED="1397512246464">
 <node TEXT="C:\python27\python.exe C:\Python27\Lib\site-packages\PyInstaller-2.1-py2.7.egg\PyInstaller\main.py --onefile --windowed dragn.py" ID="ID_363463007" CREATED="1397164444047" MODIFIED="1397164460613"/>
 </node>
+</node>
+<node TEXT="--OR--" ID="ID_1894482854" CREATED="1451433788925" MODIFIED="1451433792018"/>
+<node ID="ID_815755497" CREATED="1397164546936" MODIFIED="1451433786249"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      python -m PyInstaller&#160;--onefile&#160;&#160;--icon=<i><b>icon.ico</b></i>&#160; --windowed<i><b>&#160;script.py</b></i>
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
 </node>
 <node TEXT="PyInstaller.bat" ID="ID_995972033" CREATED="1397164676030" MODIFIED="1397164676030" LINK="code_examples/PyInstaller.bat"/>
