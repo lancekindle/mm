@@ -160,6 +160,46 @@
     </p>
   </body>
 </html>
+</richcontent>
+</node>
+</node>
+<node TEXT="Labelling:" ID="ID_1341835317" CREATED="1452017266482" MODIFIED="1452017273324">
+<node ID="ID_347864413" CREATED="1452017274607" MODIFIED="1452017835435"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Any JS statement can be labeled like:
+    </p>
+    <p>
+      <b>label</b>: statement
+    </p>
+    <p>
+      However it's only useful at the beginning of a conditional or a loop.
+    </p>
+    <p>
+      Then certain keywords can jump execution back to the labelled statement.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      <i>Very useful in breaking out of nested loops </i>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      break <b>label</b>;&#160;&#160;// break out of current loop and start/continue execution at label statement
+    </p>
+    <p>
+      continue <b>label</b>;&#160;&#160;// start execution at next iteration of label statement
+    </p>
+  </body>
+</html>
 
 </richcontent>
 </node>
