@@ -50,7 +50,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="9"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="11"/>
 <node TEXT="Data Types:" POSITION="right" ID="ID_58961891" CREATED="1385057099009" MODIFIED="1390585624890">
 <edge COLOR="#ff0000"/>
 <hook NAME="AlwaysUnfoldedNode"/>
@@ -124,6 +124,8 @@
 <node TEXT="Float:          0.0" ID="ID_1665747132" CREATED="1385057162332" MODIFIED="1385057169611">
 <node TEXT="Convert:    float(variable)" ID="ID_784306578" CREATED="1386110787599" MODIFIED="1386110796085"/>
 </node>
+<node TEXT="Set:             set()" ID="ID_843204120" CREATED="1452731269046" MODIFIED="1452731305079"/>
+<node TEXT="Frozenset:    set()" ID="ID_1139526758" CREATED="1452731282134" MODIFIED="1452731297480"/>
 </node>
 <node TEXT="Gotcha&apos;s" POSITION="left" ID="ID_1459293715" CREATED="1385058961989" MODIFIED="1385058964963">
 <edge COLOR="#0000ff"/>
@@ -220,6 +222,52 @@
 </node>
 </node>
 <node TEXT="Lists Are Passed by Reference" ID="ID_682795164" CREATED="1394647371865" MODIFIED="1394647458106" LINK="#ID_1775989327"/>
+<node TEXT="Closures in a Loop" ID="ID_1057109660" CREATED="1454342520101" MODIFIED="1454342542594">
+<node TEXT="A definition of Closure" ID="ID_410134399" CREATED="1454342544405" MODIFIED="1454343676393" LINK="#ID_1987367637"/>
+<node TEXT="A closure depends on the environment variables during which is was created" ID="ID_896290905" CREATED="1454342556791" MODIFIED="1454342850979"/>
+<node TEXT="x = 8&#xa;x_r = lambda : x&#xa;print(x_r())&#xa;&gt;&gt;&gt; 8" ID="ID_415776546" CREATED="1454342852793" MODIFIED="1454344924769"/>
+<node ID="ID_876227008" CREATED="1454342871059" MODIFIED="1454343903199"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      but what if the environment variables <i>changed.</i>&#160;Normally, that's impossible since the environment variable is set at any point in code. <i>But inside loops,</i>&#160;the environment variables are not so solid.&#160; <b>(click inside to see more examples of bad closures)</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node TEXT="printers = []&#xa;for x in range(3):&#xa;    px = lambda : print(x)&#xa;    printers.append(px)&#xa;for p in printers():&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_1235798941" CREATED="1454343059308" MODIFIED="1454343292113"/>
+<node TEXT="This also plagues in-loop-defined functions!&#xa;printers = []&#xa;for x in range(3):&#xa;    def print_x():&#xa;        print(x)&#xa;    printers.append(print_x)&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_261022292" CREATED="1454343000150" MODIFIED="1454344240274"/>
+</node>
+<node TEXT="printers = [lambda : print(x) for x in range(3)]&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_365000931" CREATED="1454343296303" MODIFIED="1454343932742"/>
+<node TEXT="This happens because the environment variables in a loop are &quot;finalized&quot; when the loop finishes. Since lookup of the variable &apos;x&apos; happens post-loop, &apos;x&apos; is always its last-known value from the loop." ID="ID_810503771" CREATED="1454343937898" MODIFIED="1454344042043"/>
+<node ID="ID_1998718680" CREATED="1454344059562" MODIFIED="1454344317148"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      So how to get around it?
+    </p>
+    <p>
+      Find some way to store the value of x. Pre-compute it, cast it to int, etc, in such a way that the returned value is not associated with a loop-defined variable
+    </p>
+    <p>
+      <b>(click inside to see more examples of fixing a closure)</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="An example of a fix:&#xa;printers = [lambda x=x: print(x) for x in range(3)]&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 0&#xa;&gt;&gt;&gt; 1&#xa;&gt;&gt;&gt; 2" ID="ID_1019736122" CREATED="1454343296303" MODIFIED="1454344273910"/>
+</node>
 </node>
 <node TEXT="Programming Lessons" POSITION="left" ID="ID_1471298900" CREATED="1387912548901" MODIFIED="1387912852841">
 <edge COLOR="#00ff00"/>
@@ -488,6 +536,9 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 </node>
 </node>
 <node TEXT="Interfacing with a Class" ID="ID_176961056" CREATED="1389984715386" MODIFIED="1389984722703"/>
+<node TEXT="Metaclasses" ID="ID_1517718856" CREATED="1452888062509" MODIFIED="1452888083409">
+<node TEXT="stackoverflow intro to metaclasses" ID="ID_1651414991" CREATED="1452888084553" MODIFIED="1452888139496" LINK="https://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python/6581949#6581949"/>
+</node>
 </node>
 <node TEXT="Modules:" POSITION="right" ID="ID_117299702" CREATED="1393903966273" MODIFIED="1393903979308">
 <edge COLOR="#00ffff"/>
@@ -725,6 +776,40 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="Function vs Method" ID="ID_553299789" CREATED="1444310485228" MODIFIED="1444311190795" LINK="http://www.wellho.net/mouth/900_Python-function-v-method.html">
 <node TEXT="A Method is a instance function. So any function inside a class is usually considered a method" ID="ID_267476289" CREATED="1444310492454" MODIFIED="1444310547001"/>
 <node TEXT="A method has the implicit variable self attached to it, that will be the first variable in the function" ID="ID_381228070" CREATED="1444310599669" MODIFIED="1444310648767"/>
+</node>
+<node TEXT="Closure" ID="ID_1987367637" CREATED="1454341992192" MODIFIED="1454341995718">
+<node ID="ID_865141585" CREATED="1454341997763" MODIFIED="1454342242578"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      A closure is a function or definition that indirectly uses a variable not defined in it's scope.
+    </p>
+    <p>
+      So for example,
+    </p>
+    <p>
+      x = 8
+    </p>
+    <p>
+      x_return = lambda : x
+    </p>
+    <p>
+      is a closure becase x_return takes no arguments yet technically returns 'x'.
+    </p>
+    <p>
+      x_return <i>closes</i>&#160;around x.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="A closure is a function that has to look up some of its variables in the scope in which is was created. So when x_return fails to find the variable &apos;x&apos; in its list of variables, it looked up one scope into the list of local variables present when it was created. There, it finds &apos;x&apos; and returns it. But... this &quot;look up the variable once you need it&quot; is called closure, and can wreak havoc" ID="ID_1258602867" CREATED="1454342243289" MODIFIED="1454342486309"/>
+<node TEXT="See a Closure Gotcha Here" ID="ID_298016091" CREATED="1454342487074" MODIFIED="1454343688310" LINK="#ID_1057109660"/>
 </node>
 </node>
 </node>
