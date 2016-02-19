@@ -238,7 +238,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="printers = []&#xa;for x in range(3):&#xa;    px = lambda : print(x)&#xa;    printers.append(px)&#xa;for p in printers():&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_1235798941" CREATED="1454343059308" MODIFIED="1454343292113"/>
 <node TEXT="This also plagues in-loop-defined functions!&#xa;printers = []&#xa;for x in range(3):&#xa;    def print_x():&#xa;        print(x)&#xa;    printers.append(print_x)&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_261022292" CREATED="1454343000150" MODIFIED="1454344240274"/>
@@ -263,7 +262,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="An example of a fix:&#xa;printers = [lambda x=x: print(x) for x in range(3)]&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 0&#xa;&gt;&gt;&gt; 1&#xa;&gt;&gt;&gt; 2" ID="ID_1019736122" CREATED="1454343296303" MODIFIED="1454344273910"/>
@@ -520,19 +518,284 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 <node TEXT="Classes:" POSITION="right" ID="ID_187362562" CREATED="1389984674824" MODIFIED="1393903976536">
 <edge COLOR="#ff00ff"/>
 <node TEXT="Programming a Class:" ID="ID_762496858" CREATED="1389984699701" MODIFIED="1389984714723">
-<node TEXT="@classmethod: creating a method that doesn&apos;t require a class instance" ID="ID_960457109" CREATED="1389984727329" MODIFIED="1389984748579">
+<node TEXT="@classmethod: method is passed &quot;class&quot; reference rather than &quot;self&quot; instance" ID="ID_960457109" CREATED="1389984727329" MODIFIED="1455910948821">
 <node TEXT="@classmethod&#xa;def classFunction(cls, arg1):&#xa;    return arg1 + 3" ID="ID_624844149" CREATED="1389984750942" MODIFIED="1392161574772"/>
 <node TEXT="classmethod functions can be called without an instance&#xa;i.e. no need for pi = Pi()" ID="ID_691005096" CREATED="1392161529557" MODIFIED="1392161566238"/>
 <node TEXT="Notice that the function does not have self.&#xa;classFunction(self, arg1)&#xa;-&#xa;It has a cls  (class)&#xa;classFunction(cls, arg1)" ID="ID_1600975850" CREATED="1389984793145" MODIFIED="1392226414592"/>
 <node TEXT="If you use a classmethod, any class variables can be changed across all instances of the class at once" ID="ID_514941837" CREATED="1389985037727" MODIFIED="1389985065917"/>
 <node TEXT="to change class variables, use cls.variable = new_value&#xa;&#xa;class example():&#xa;    v = 5&#xa;    @classmethod&#xa;    def update(cls, val):&#xa;        cls.v = val&#xa;&#xa;a = example()&#xa;a.v  &#xa;&gt;&gt; 5&#xa;example.v  &#xa;&gt;&gt; 5&#xa;example.update(6)&#xa;a.v  &#xa;&gt;&gt; 6&#xa;example.v  &#xa;&gt;&gt; 6&#xa;b = example()&#xa;b.v&#xa;&gt;&gt; 6" ID="ID_1684752536" CREATED="1392161581727" MODIFIED="1392161873832"/>
 </node>
+<node TEXT="@staticmethod: decorated method does not accept a cls or self variable" ID="ID_361963801" CREATED="1455910133635" MODIFIED="1455910164777"/>
 <node TEXT="__init__()" ID="ID_74830249" CREATED="1389985074318" MODIFIED="1389985093257">
 <node TEXT="Called when initializing instance" ID="ID_241287521" CREATED="1389985094950" MODIFIED="1389985109677"/>
 </node>
+</node>
 <node TEXT="Python Magic Methods" ID="ID_995289910" CREATED="1397669668092" MODIFIED="1397669686970" LINK="http://www.rafekettler.com/magicmethods.html">
-<node TEXT="Magic Methods are methods that get called when special events happen to your class&#xa;all __MagicMethods__ are surrounded by double underscores.&#xa;Some examples include:&#xa;__init__" ID="ID_1884304004" CREATED="1397669688882" MODIFIED="1397669798344"/>
+<node TEXT="Magic Methods are methods that get called when special events happen to your class&#xa;all __MagicMethods__ are surrounded by double underscores.&#xa;Some examples include:&#xa;__init__&#xa;__str__&#xa;__getitem__" ID="ID_1884304004" CREATED="1397669688882" MODIFIED="1455911425419"/>
 <node TEXT="__get__, __set__ are for descriptor classes. These call __get__ any time its variables is accessed.&#xa;NOTE: such a class is called a descriptor, and can ONLY HAVE ONE VARIABLE (in general). It is called when the value of object is retrieved, i.e.&#xa;&gt;&gt;&gt; m.x" ID="ID_1925339946" CREATED="1397670780298" MODIFIED="1397671591246" LINK="https://docs.python.org/2/howto/descriptor.html#id6"/>
+<node TEXT="math operators" ID="ID_1045192011" CREATED="1455909316665" MODIFIED="1455909895153">
+<node ID="ID_1683788453" CREATED="1455911580163" MODIFIED="1455912556739"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      each operator has a corresponding
+    </p>
+    <p>
+      <b>reflected</b>&#160;operator and <b>augmented / in-place </b>operator
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node TEXT="It&apos;s not necessary to implement augmented / in-place operators" ID="ID_489443285" CREATED="1455912562620" MODIFIED="1455913498225">
+<font BOLD="true"/>
+</node>
+<node ID="ID_294272564" CREATED="1455912592676" MODIFIED="1455913465033"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>Use a reflected operator (e.g. __rsub__) if your object interacts with anything more than other instances of itself.</b>
+    </p>
+    <p>
+      IE if you want to subtract your object from an integer, you need to implement both __rsub__
+    </p>
+    <p>
+      to subtract integer from your object, implement __sub__
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="__rsub__ is called if other object&apos;s __sub__ cannot handle input (aka python&apos;s integer object is not built to handle your object)" ID="ID_171611770" CREATED="1455912740908" MODIFIED="1455913312341"/>
+<node TEXT="order is important!&#xa;__sub__(self, other)    =&gt;   self - other&#xa;__rsub__(self, other)   =&gt;   other - self    (iff other couldn&apos;t handle subtracting self)&#xa;&#xa;(only in __radd__ and __add__ is order generally not important)" ID="ID_1676608387" CREATED="1455913001596" MODIFIED="1455913817190"/>
+</node>
+<node ID="ID_518092783" CREATED="1455909277270" MODIFIED="1455915035639"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <font size="2">__add__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font size="1">&#160; <i>__radd__ &#160;&#160;__iadd__</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font SIZE="10"/>
+</node>
+<node ID="ID_1831173414" CREATED="1455909286088" MODIFIED="1455915031596"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __sub__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <font size="4">-</font>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rsub__&#160;&#160;__isub__</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_260398759" CREATED="1455909342562" MODIFIED="1455915027510"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __mul__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rmul__&#160;&#160;&#160;__imul__</font></i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_938241818" CREATED="1455909619256" MODIFIED="1455915021592"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __truediv__&#160;&#160;&#160;&#160;&#160;&#160;&#160;/&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rtruediv__&#160;&#160;&#160;__itruediv__</font></i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node TEXT="Implements float division. In python3 standard division is __truediv__" ID="ID_1396920415" CREATED="1455911964931" MODIFIED="1455914677078"/>
+<node TEXT="in python 2,  __div__ is used (unless from __future__ import true_division is used)" ID="ID_321967045" CREATED="1455914681127" MODIFIED="1455914703268"/>
+</node>
+<node ID="ID_848427440" CREATED="1455909351901" MODIFIED="1455914856743"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __floordiv__&#160;&#160;&#160;&#160;&#160;&#160;//&#160;&#160;&#160;&#160;<font size="1"><i>__rfloordiv__&#160;&#160;&#160;__ifloordiv__</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node ID="ID_780038305" CREATED="1455909933458" MODIFIED="1455910005397"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>4 // 5 = 0&#160;&#160;&#160;&#160;*__floordiv__*</b>
+    </p>
+    <p>
+      4 / 5 = 0.8
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="Python3 division returns float UNLESS // is used. Then floordiv is used instead" ID="ID_1334578541" CREATED="1455909903379" MODIFIED="1455910029565"/>
+<node TEXT="python3 syntax. To use this in python2, use&#xa;from __future__ import true_division" ID="ID_1329828692" CREATED="1455914734884" MODIFIED="1455914759765"/>
+</node>
+<node ID="ID_1948155947" CREATED="1455909617032" MODIFIED="1455915015759"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __mod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__imod__</font></i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1064699779" CREATED="1455909659951" MODIFIED="1455913692299"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __divmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rdivmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__idivmod__</font></i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1200732710" CREATED="1455909663445" MODIFIED="1455915011238"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __pow__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;**&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rpow__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ipow__</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1542009614" CREATED="1455909667393" MODIFIED="1455915041268"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __lshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&gt;&gt;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rlshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ilshift__</font></i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1501852632" CREATED="1455909674881" MODIFIED="1455915045045"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __rshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;&lt;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rrshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__irshift__</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1889833793" CREATED="1455909682337" MODIFIED="1455915049164"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __and__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&amp;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rand__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__iand__</font></i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1126583837" CREATED="1455909684989" MODIFIED="1455915055118"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __or__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__ror__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ior__</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_173205810" CREATED="1455909687182" MODIFIED="1455915059722"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      __xor__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;^&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rxor__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ixor__</i></font>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 </node>
 <node TEXT="Interfacing with a Class" ID="ID_176961056" CREATED="1389984715386" MODIFIED="1389984722703"/>
@@ -805,7 +1068,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="A closure is a function that has to look up some of its variables in the scope in which is was created. So when x_return fails to find the variable &apos;x&apos; in its list of variables, it looked up one scope into the list of local variables present when it was created. There, it finds &apos;x&apos; and returns it. But... this &quot;look up the variable once you need it&quot; is called closure, and can wreak havoc" ID="ID_1258602867" CREATED="1454342243289" MODIFIED="1454342486309"/>
