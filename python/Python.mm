@@ -508,11 +508,15 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 <node TEXT="OK, so count is accessed and defined with count += 1,&#xa;but is accessed first, before it is set.&#xa;The problem is that inside the functions&apos; scope, there is no&#xa;count variable. Granted, the method CAN see a variable&#xa;named count, and would happily let you print that value.&#xa;But if you SET a variable within a method, python will prevent&#xa;access to any outer-scope variable with the same name&#xa;to prevent overwriting that outer-scope value. So to get a&#xa;variable inside a method&apos;s scope, you need to set it first.&#xa;so this would work:&#xa;&#xa;def increment():&#xa;    count = 0&#xa;    count += 1&#xa;&#xa;---this also works----&#xa;&#xa;def increment():&#xa;    print(count)" ID="ID_1556095807" CREATED="1442884501583" MODIFIED="1442885401993"/>
 </node>
 </node>
-<node TEXT="Builtin Functions" POSITION="left" ID="ID_556100384" CREATED="1394573838967" MODIFIED="1428269662825">
+<node TEXT="Built-in Functions" POSITION="left" ID="ID_556100384" CREATED="1394573838967" MODIFIED="1455915577398">
 <edge COLOR="#ff0000"/>
-<node TEXT="Zip()" ID="ID_806344194" CREATED="1394573849465" MODIFIED="1394573854456">
+<node TEXT="zip()" ID="ID_806344194" CREATED="1394573849465" MODIFIED="1455915570344">
 <node TEXT="Can Zip several lists together, producing a list of tuples:&#xa;&#xa;a = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]&#xa;b = [1,2,3]&#xa;z = list(zip(a, b))&#xa;z&#xa;&gt;&gt;&gt; [(&apos;a&apos;, 1), (&apos;b&apos;, 2), (&apos;c&apos;, 3)]" ID="ID_774131615" CREATED="1394573855601" MODIFIED="1394573970462"/>
 <node TEXT="In Python 3, Zip() produces a zip object.&#xa;Hence if you want a list, you&apos;ll need to use list(zip(a,b))" ID="ID_444296715" CREATED="1394573977846" MODIFIED="1394574009615"/>
+</node>
+<node TEXT="divmod()" ID="ID_1357185450" CREATED="1455915392801" MODIFIED="1455915396138">
+<node TEXT="q, r = divmod(7, 2)&#xa;q&#xa;&gt;&gt;&gt; 3   # 7 // 2 = 3&#xa;r&#xa;&gt;&gt;&gt; 1   # 7 % 2 = 1" ID="ID_561917436" CREATED="1455915473220" MODIFIED="1455915555905"/>
+<node TEXT="implements division with modulus. Returns quotient and remainder" ID="ID_1497567794" CREATED="1455915397330" MODIFIED="1455915472599"/>
 </node>
 </node>
 <node TEXT="Classes:" POSITION="right" ID="ID_187362562" CREATED="1389984674824" MODIFIED="1393903976536">
@@ -691,7 +695,7 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 
 </richcontent>
 </node>
-<node ID="ID_1064699779" CREATED="1455909659951" MODIFIED="1455913692299"><richcontent TYPE="NODE">
+<node ID="ID_1064699779" CREATED="1455909659951" MODIFIED="1455915347310"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -699,12 +703,13 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
   </head>
   <body>
     <p>
-      __divmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rdivmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__idivmod__</font></i>
+      __divmod__&#160;&#160;&#160;&#160;&#160;divmod() &#160;&#160;&#160;&#160;<i><font size="1">__rdivmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__idivmod__</font></i>
     </p>
   </body>
 </html>
 
 </richcontent>
+<node TEXT="overrides behavior when python&apos;s builtin divmod() is called" ID="ID_1412116113" CREATED="1455915356972" MODIFIED="1455915623746" LINK="#ID_1357185450"/>
 </node>
 <node ID="ID_1200732710" CREATED="1455909663445" MODIFIED="1455915011238"><richcontent TYPE="NODE">
 
