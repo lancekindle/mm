@@ -125,7 +125,7 @@
 <node TEXT="Convert:    float(variable)" ID="ID_784306578" CREATED="1386110787599" MODIFIED="1386110796085"/>
 </node>
 <node TEXT="Set:             set()" ID="ID_843204120" CREATED="1452731269046" MODIFIED="1452731305079"/>
-<node TEXT="Frozenset:    set()" ID="ID_1139526758" CREATED="1452731282134" MODIFIED="1452731297480"/>
+<node TEXT="Frozenset:    frozenset()" ID="ID_1139526758" CREATED="1452731282134" MODIFIED="1455916063681"/>
 </node>
 <node TEXT="Gotcha&apos;s" POSITION="left" ID="ID_1459293715" CREATED="1385058961989" MODIFIED="1385058964963">
 <edge COLOR="#0000ff"/>
@@ -553,7 +553,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="It&apos;s not necessary to implement augmented / in-place operators" ID="ID_489443285" CREATED="1455912562620" MODIFIED="1455913498225">
 <font BOLD="true"/>
@@ -576,7 +575,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="__rsub__ is called if other object&apos;s __sub__ cannot handle input (aka python&apos;s integer object is not built to handle your object)" ID="ID_171611770" CREATED="1455912740908" MODIFIED="1455913312341"/>
@@ -594,7 +592,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 <font SIZE="10"/>
 </node>
@@ -610,7 +607,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_260398759" CREATED="1455909342562" MODIFIED="1455915027510"><richcontent TYPE="NODE">
@@ -625,7 +621,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_938241818" CREATED="1455909619256" MODIFIED="1455915021592"><richcontent TYPE="NODE">
@@ -640,7 +635,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="Implements float division. In python3 standard division is __truediv__" ID="ID_1396920415" CREATED="1455911964931" MODIFIED="1455914677078"/>
 <node TEXT="in python 2,  __div__ is used (unless from __future__ import true_division is used)" ID="ID_321967045" CREATED="1455914681127" MODIFIED="1455914703268"/>
@@ -657,7 +651,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 <node ID="ID_780038305" CREATED="1455909933458" MODIFIED="1455910005397"><richcontent TYPE="NODE">
 
@@ -674,7 +667,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Python3 division returns float UNLESS // is used. Then floordiv is used instead" ID="ID_1334578541" CREATED="1455909903379" MODIFIED="1455910029565"/>
@@ -692,7 +684,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1064699779" CREATED="1455909659951" MODIFIED="1455915347310"><richcontent TYPE="NODE">
@@ -707,7 +698,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="overrides behavior when python&apos;s builtin divmod() is called" ID="ID_1412116113" CREATED="1455915356972" MODIFIED="1455915623746" LINK="#ID_1357185450"/>
 </node>
@@ -723,7 +713,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1542009614" CREATED="1455909667393" MODIFIED="1455915041268"><richcontent TYPE="NODE">
@@ -738,7 +727,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1501852632" CREATED="1455909674881" MODIFIED="1455915045045"><richcontent TYPE="NODE">
@@ -753,7 +741,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1889833793" CREATED="1455909682337" MODIFIED="1455915049164"><richcontent TYPE="NODE">
@@ -768,7 +755,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1126583837" CREATED="1455909684989" MODIFIED="1455915055118"><richcontent TYPE="NODE">
@@ -783,7 +769,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_173205810" CREATED="1455909687182" MODIFIED="1455915059722"><richcontent TYPE="NODE">
@@ -798,7 +783,6 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -853,6 +837,30 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="os" ID="ID_1977101915" CREATED="1442865644633" MODIFIED="1442865646737">
 <node TEXT="get current terminal width and height" ID="ID_1734260515" CREATED="1442865648243" MODIFIED="1442865661703">
 <node TEXT="w, h = os.popen(&apos;stty size&apos;, &apos;r&apos;).read().split()" ID="ID_1770764315" CREATED="1442865663423" MODIFIED="1442865679704"/>
+</node>
+</node>
+<node TEXT="numpy" ID="ID_211744449" CREATED="1456374165351" MODIFIED="1456374167038">
+<node TEXT="import numpy as np&#xa;# numpy is a numeric library that allows incredibly-fast matrix and array operations&#xa;# which can be used for reducing for-loop use, editting images, etc." ID="ID_991219174" CREATED="1456374169964" MODIFIED="1456374575751"/>
+<node TEXT="Speed-strategy: Losing your loops (pycon talk)" ID="ID_86993717" CREATED="1456374243848" MODIFIED="1456374330344" LINK="https://www.youtube.com/watch?v=EEUXKG97YRw">
+<node TEXT="four different strategies to help with losing loops" ID="ID_329377211" CREATED="1456374274513" MODIFIED="1456375212901"/>
+<node TEXT="ufuncs" ID="ID_1169157160" CREATED="1456374287431" MODIFIED="1456374289351">
+<node TEXT="numpy&apos;s universal functions / operators that overload typical math operators +, -, &gt;, &lt;=, etc and performs the operation over the entire array, element-by-element&#xa;a = np.array([1,2,3,4])&#xa;b = a + 5&#xa;print(b)&#xa;&gt;&gt;&gt;[6,7,8,9]" ID="ID_1332263710" CREATED="1456374519679" MODIFIED="1456374623402"/>
+<node TEXT="arithmetic operators for element-wise operations:&#xa;+  -  *  /  //  %  **" ID="ID_197768298" CREATED="1456374577726" MODIFIED="1456374651741"/>
+<node TEXT="bitwises operators:&#xa;&amp;  |  ~  ^  &gt;&gt;  &lt;&lt;" ID="ID_1315035076" CREATED="1456374653248" MODIFIED="1456374669981"/>
+<node TEXT="trigonomotry functions for element-wise operations:&#xa;np.sin,  np.cos,  np.tan,  ..." ID="ID_1924062311" CREATED="1456374702687" MODIFIED="1456374734854"/>
+<node TEXT="exponential functions:&#xa;np.exp,  np.log,  np.log10,  ..." ID="ID_229689721" CREATED="1456374735312" MODIFIED="1456374754440"/>
+<node TEXT="special functions (like guassian???)&#xa;scipy.special.*" ID="ID_444630151" CREATED="1456374755787" MODIFIED="1456374773062"/>
+</node>
+<node TEXT="aggregations" ID="ID_590006236" CREATED="1456374289967" MODIFIED="1456374801399">
+<node TEXT="functions that loop through the elements of array and return result depending on array contents:  It&apos;s any easy way to calculate minimum of an array or the variance: np.var()" ID="ID_1110085828" CREATED="1456374802632" MODIFIED="1456375182592"/>
+<node TEXT="np.min()  np.max()  np.sum()  np.prod()" ID="ID_960338554" CREATED="1456375038597" MODIFIED="1456375051364"/>
+<node TEXT="np.median()  np.mean()  np.std()  np.var()  np.percentile()" ID="ID_262211921" CREATED="1456375051704" MODIFIED="1456375091393"/>
+<node TEXT="np.any()  np.all()" ID="ID_1743918299" CREATED="1456375064468" MODIFIED="1456375070704"/>
+<node TEXT="np.argmin()  np.argmax()" ID="ID_191605570" CREATED="1456375094650" MODIFIED="1456375102360"/>
+<node TEXT="#these ignore any NaN results&#xa;np.nanmin()  np.nanmax()  np.nansum()" ID="ID_1768541443" CREATED="1456375103383" MODIFIED="1456375125625"/>
+</node>
+<node TEXT="broadcasting" ID="ID_1698488954" CREATED="1456375185544" MODIFIED="1456375204061"/>
+<node TEXT="slicing, masking, and fancy indexing" ID="ID_1705773825" CREATED="1456375941035" MODIFIED="1456375968502"/>
 </node>
 </node>
 </node>
@@ -1042,7 +1050,7 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="Terminology" POSITION="right" ID="ID_1572413040" CREATED="1444310476419" MODIFIED="1444310483729">
 <edge COLOR="#00ff00"/>
 <node TEXT="Function vs Method" ID="ID_553299789" CREATED="1444310485228" MODIFIED="1444311190795" LINK="http://www.wellho.net/mouth/900_Python-function-v-method.html">
-<node TEXT="A Method is a instance function. So any function inside a class is usually considered a method" ID="ID_267476289" CREATED="1444310492454" MODIFIED="1444310547001"/>
+<node TEXT="A Method is type of function bound to a particular instance of a class. Any function inside a class is usually considered a method" ID="ID_267476289" CREATED="1444310492454" MODIFIED="1455915870161"/>
 <node TEXT="A method has the implicit variable self attached to it, that will be the first variable in the function" ID="ID_381228070" CREATED="1444310599669" MODIFIED="1444310648767"/>
 </node>
 <node TEXT="Closure" ID="ID_1987367637" CREATED="1454341992192" MODIFIED="1454341995718">
