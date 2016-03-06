@@ -62,7 +62,10 @@
 <node TEXT="Calibre   --   works with any ereader, and can convert between formats" ID="ID_964610589" CREATED="1455908684803" MODIFIED="1455908704335"/>
 </node>
 <node TEXT="Text Editor" ID="ID_1705641148" CREATED="1455908783390" MODIFIED="1455908824674">
-<node TEXT="vim   --   for editing code / plaintext files. Very extensible" ID="ID_1343219244" CREATED="1455908827533" MODIFIED="1455908857471"/>
+<node TEXT="vim   --   for editing code / plaintext files. Very extensible" ID="ID_1343219244" CREATED="1455908827533" MODIFIED="1455908857471">
+<node TEXT="Keybindings:" ID="ID_215421764" CREATED="1456979929722" MODIFIED="1456979935720"/>
+<node TEXT="gq   (GQ)  wraps any lines highlighted to &quot;textwidth&quot;" ID="ID_1047739094" CREATED="1456979936439" MODIFIED="1456979959730"/>
+</node>
 <node TEXT="haroopad   --   edit markdown documents. Includes live-preview" ID="ID_1114147174" CREATED="1455908857905" MODIFIED="1455908883917"/>
 </node>
 </node>
