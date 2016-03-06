@@ -65,8 +65,10 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="1"/>
-<node POSITION="right" ID="ID_949094641" CREATED="1457049101160" MODIFIED="1457049231864" LINK="https://www.youtube.com/watch?v=iTyi3RvNoB0&amp;index=1&amp;list=PLy2022BX6Esr6yxwDzhqYZyuuenJE2s5B"><richcontent TYPE="NODE">
+<hook NAME="AutomaticEdgeColor" COUNTER="2"/>
+<node TEXT="Links to documentation / etc" POSITION="right" ID="ID_573174418" CREATED="1457296982404" MODIFIED="1457296988922">
+<edge COLOR="#0000ff"/>
+<node ID="ID_949094641" CREATED="1457049101160" MODIFIED="1457296991565" LINK="https://www.youtube.com/watch?v=iTyi3RvNoB0&amp;index=1&amp;list=PLy2022BX6Esr6yxwDzhqYZyuuenJE2s5B"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -82,7 +84,25 @@
   </body>
 </html>
 </richcontent>
-<edge COLOR="#ff0000"/>
+</node>
+<node ID="ID_1570677491" CREATED="1457296993060" MODIFIED="1457297117685" LINK="http://kicad-pcb.org/help/file-formats/"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      file-format documentation
+    </p>
+    <p>
+      <a href="http://kicad-pcb.org/help/file-formats/">http://kicad-pcb.org/help/file-formats/ </a>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="Part 0: controlling kicad" POSITION="right" ID="ID_476526640" CREATED="1456882993342" MODIFIED="1456883005394">
 <edge COLOR="#7c0000"/>
@@ -326,6 +346,9 @@
 </richcontent>
 </node>
 <node TEXT="double-click footprint (in right pane) to associate it with highlighted component (in middle pane)" ID="ID_1927995542" CREATED="1457056492306" MODIFIED="1457057717206"/>
+<node TEXT="Save component association" ID="ID_1742886997" CREATED="1457294176240" MODIFIED="1457296050814">
+<hook URI="images/location_save_CvPcb_component_association.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
 </node>
 </node>
 <node TEXT="Part 3: placing components on the PCB" POSITION="right" ID="ID_105238034" CREATED="1454960032074" MODIFIED="1456880385206">
