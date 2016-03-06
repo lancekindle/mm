@@ -863,6 +863,11 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="slicing, masking, and fancy indexing" ID="ID_1705773825" CREATED="1456375941035" MODIFIED="1456375968502"/>
 </node>
 </node>
+<node TEXT="radon" ID="ID_1310242732" CREATED="1457078384456" MODIFIED="1457078387083">
+<node TEXT="radon is a library for checking python code complexity" ID="ID_1835392283" CREATED="1457078388665" MODIFIED="1457078404250"/>
+<node TEXT="run it like: radon cc ./ -a&#xa;where ./ is the directory you want to recursively analyze" ID="ID_1953095505" CREATED="1457078404619" MODIFIED="1457078465673"/>
+<node TEXT="It identifies each class / method / function and gives it an A-F rating based on complexity." ID="ID_64763412" CREATED="1457078466078" MODIFIED="1457078485923"/>
+</node>
 </node>
 <node TEXT="GUIs" POSITION="left" ID="ID_1334879918" CREATED="1397075705052" MODIFIED="1397075708594">
 <edge COLOR="#00007c"/>
