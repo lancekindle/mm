@@ -65,7 +65,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="2"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="3"/>
 <node TEXT="Links to documentation / etc" POSITION="right" ID="ID_573174418" CREATED="1457296982404" MODIFIED="1457296988922">
 <edge COLOR="#0000ff"/>
 <node ID="ID_949094641" CREATED="1457049101160" MODIFIED="1457296991565" LINK="https://www.youtube.com/watch?v=iTyi3RvNoB0&amp;index=1&amp;list=PLy2022BX6Esr6yxwDzhqYZyuuenJE2s5B"><richcontent TYPE="NODE">
@@ -100,7 +100,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -353,7 +352,59 @@
 </node>
 <node TEXT="Part 3: placing components on the PCB" POSITION="right" ID="ID_105238034" CREATED="1454960032074" MODIFIED="1456880385206">
 <edge COLOR="#00ff00"/>
-<node TEXT="IF YOU CHANGED SOMETHING IN COMPONENTS, FOOTPRINTS, ETC, YOU MAY NEED TO RE-GENERATE NETLIST IN EESCHEMA AND RELOAD NETLIST IN PCBNEW" ID="ID_71010981" CREATED="1457297248073" MODIFIED="1457297296167"/>
+<node ID="ID_1206395919" CREATED="1457642766734" MODIFIED="1457643364649"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>How to reload footprints in pcbnew (see inside)</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node ID="ID_26842501" CREATED="1457642806450" MODIFIED="1457643070929"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      When you change a footprint, pcbnew does NOT update it's circuit board layout unless you specifically update the footprint. To do so, select footprint you wish to update on screen (right-click, select proper footprint. A menu should pop-up), and navigate to:
+    </p>
+    <p>
+      <b>Footprint <i>part you selected</i>&#160;&#160;&gt;&#160;&#160;Exchange Footprint(s)</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/pcbnew_edit_footprint_menu_nav.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_1639362910" CREATED="1457643218379" MODIFIED="1457643290286"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Now a window will pop up allowing you to change the currently selected footprint or all of them. To change all of them, select
+    </p>
+    <p>
+      &quot;<b>Update all footprints of the board</b>&quot; and hit apply. All footprint should be updated
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/pcbnew_change_footprint_menu.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+</node>
 <node ID="ID_499675665" CREATED="1454960574540" MODIFIED="1454960607344"><richcontent TYPE="NODE">
 
 <html>
@@ -417,6 +468,7 @@
 </richcontent>
 <hook URI="images/modefootprint_icon.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
+<node TEXT="Now begin moving them as you&apos;d like using &apos;M&apos; and &apos;R&apos; to move and rotate footprints respectively" ID="ID_19178342" CREATED="1457643373682" MODIFIED="1457643402857"/>
 </node>
 <node TEXT="Part 4: working with PCB layers" POSITION="right" ID="ID_1741621662" CREATED="1456872289679" MODIFIED="1456872305766">
 <edge COLOR="#ff00ff"/>
