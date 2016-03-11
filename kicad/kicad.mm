@@ -520,6 +520,7 @@
 <node TEXT="Part 6: Laying out the copper tracings on pcb board" POSITION="right" ID="ID_369563604" CREATED="1456881811189" MODIFIED="1456881827229">
 <edge COLOR="#ffff00"/>
 <node TEXT="Press X to begin drawing traces (it will immediately place the beginning trace at your mouse&apos;s location). Make sure that you have a copper trace layer selected&#xa;Click once to bend/curve from that point. Doubleclick to finalize the trace. Click once to start a new trace." ID="ID_1319224371" CREATED="1456881910170" MODIFIED="1456882350765"/>
+<node TEXT="While drawing a trace, Press V to flip between front and back layers. V will create a Via at that point, which is a hollow copper tubing connecting the front and back layers" ID="ID_393355289" CREATED="1457569658257" MODIFIED="1457572006059"/>
 <node TEXT="You can adjust the width of the trace, and clearance (blank area surrounding each trace), respectively with the pull-down options on the overhead bar." ID="ID_1127818944" CREATED="1456881945456" MODIFIED="1456882127161">
 <hook URI="images/tracing_options.png" SIZE="0.7246377" NAME="ExternalObject"/>
 </node>

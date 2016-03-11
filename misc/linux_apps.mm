@@ -67,6 +67,9 @@
 <node TEXT="gq   (GQ)  wraps any lines highlighted to &quot;textwidth&quot;" ID="ID_1047739094" CREATED="1456979936439" MODIFIED="1456979959730"/>
 </node>
 <node TEXT="haroopad   --   edit markdown documents. Includes live-preview" ID="ID_1114147174" CREATED="1455908857905" MODIFIED="1455908883917"/>
+<node TEXT="console applications:" ID="ID_1945774233" CREATED="1457580364319" MODIFIED="1457580370020">
+<node TEXT="Ctrl+R: start typing and it&apos;ll use your last matching bash command&#xa;            super handy to find that old command you used that&apos;s buried in history" ID="ID_1275409141" CREATED="1457580372453" MODIFIED="1457580411708"/>
+</node>
 </node>
 </node>
 <node TEXT="CD / DVD" POSITION="right" ID="ID_1909422048" CREATED="1455908404968" MODIFIED="1455908409493">
