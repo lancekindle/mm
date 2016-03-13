@@ -517,9 +517,24 @@
 <node TEXT="Part 6: Laying out the copper tracings on pcb board" POSITION="right" ID="ID_982342538" CREATED="1457762433220" MODIFIED="1457762464402">
 <edge COLOR="#00007c"/>
 <node TEXT="Press X to begin drawing traces (it will immediately place the beginning trace at your mouse&apos;s location). Make sure that you have a copper trace layer selected&#xa;Click once to bend/curve from that point. Doubleclick to finalize the trace. Click once to start a new trace." ID="ID_1319224371" CREATED="1456881910170" MODIFIED="1456882350765"/>
-<node TEXT="Select the layer (front or back) to draw on each" ID="ID_1310111675" CREATED="1456882485389" MODIFIED="1456882496414"/>
-<node TEXT="You can adjust the width of the trace, and size of vias, respectively with the pull-down options on the overhead bar. Vias are the through-board hole that connects front and back layers. It is a way to flip traces from the top to the bottom of the board." ID="ID_1127818944" CREATED="1456881945456" MODIFIED="1457908541083">
+<node TEXT="While drawing a trace, Press V to flip between front and back layers. If currently drawing a trace, V will also create a Via at that point, which is a hollow copper tubing connecting the front and back layers. Then you can continue drawing your trace" ID="ID_393355289" CREATED="1457569658257" MODIFIED="1457735419643"/>
+<node TEXT="You can adjust the width of the trace, and clearance (blank area surrounding each trace), respectively with the pull-down options on the overhead bar." ID="ID_1127818944" CREATED="1456881945456" MODIFIED="1456882127161">
 <hook URI="images/tracing_options.png" SIZE="0.7246377" NAME="ExternalObject"/>
+</node>
+<node TEXT="Select the layer (front or back) to draw on each" ID="ID_1310111675" CREATED="1456882485389" MODIFIED="1456882496414"/>
+</node>
+<node TEXT="Part 6.5: Laying out other layers on pcb board" POSITION="right" ID="ID_1045354261" CREATED="1457735451140" MODIFIED="1457735462938">
+<edge COLOR="#00ffff"/>
+<node TEXT="If you wish to expose the copper at specific points, draw using the F.mask or B.mask (for front or back mask). The full name of F.mask if Front Solder-Mask Relief -- meaning solder-mask is removed at specificied locations. This is counter-intuitive because wherever mask is drawn, solder-mask will NOT be placed on actual pcb." ID="ID_738578023" CREATED="1457735463736" MODIFIED="1457737403028"/>
+<node TEXT="If you wish to draw text / graphics in exposed copper (looks pretty), then you can draw text using the copper layer and then re-draw that in mask-layer right on top, to expose the copper." ID="ID_1433603232" CREATED="1457735869211" MODIFIED="1457735870255"/>
+<node TEXT="Using Fillzones" ID="ID_514084120" CREATED="1457736697146" MODIFIED="1457736701341">
+<node TEXT="You can fill outlined areas with specific layers using the fill-zones button." ID="ID_1740028612" CREATED="1457735976418" MODIFIED="1457736122492">
+<hook URI="images/location_fill_zone_icon.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node TEXT="Click on the board to begin drawing. It should pop up a window asking what layer you wish to fill with, and what pin (if any) to associate it with. If you do associate a pin, all pins with the same label will be connected with this fill-zone." ID="ID_472954435" CREATED="1457736146298" MODIFIED="1457736468365"/>
+<node TEXT="After you&apos;ve filled out an outline and still have fill-zone selected, you can right click on board to select &quot;fill zones&quot; or &quot;unfill zones&quot;. Everytime you edit an area within the fill-zone, you will probably want to Refill the zones. Removing filled areas can be useful for seeing the result of tracing or other operations. But remember that fill-zone will not automatically re-fill when you export." ID="ID_734328299" CREATED="1457736468887" MODIFIED="1457736689043">
+<hook URI="images/rclick_menu_fill_zone.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
 </node>
 </node>
 <node TEXT="Part 7: Reviewing your work" POSITION="right" ID="ID_928753829" CREATED="1457643584130" MODIFIED="1457643593299">
