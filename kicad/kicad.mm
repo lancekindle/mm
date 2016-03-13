@@ -65,7 +65,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="4"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="8"/>
 <node TEXT="Links to documentation / etc" POSITION="right" ID="ID_573174418" CREATED="1457296982404" MODIFIED="1457296988922">
 <edge COLOR="#0000ff"/>
 <node ID="ID_949094641" CREATED="1457049101160" MODIFIED="1457296991565" LINK="https://www.youtube.com/watch?v=iTyi3RvNoB0&amp;index=1&amp;list=PLy2022BX6Esr6yxwDzhqYZyuuenJE2s5B"><richcontent TYPE="NODE">
@@ -364,7 +364,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node ID="ID_26842501" CREATED="1457642806450" MODIFIED="1457643070929"><richcontent TYPE="NODE">
 
@@ -381,7 +380,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/pcbnew_edit_footprint_menu_nav.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -400,7 +398,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/pcbnew_change_footprint_menu.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -517,17 +514,24 @@
 <hook URI="images/pcb_components_arranged_example.png" SIZE="0.74626863" NAME="ExternalObject"/>
 </node>
 </node>
-<node TEXT="Part 6: Laying out the copper tracings on pcb board" POSITION="right" ID="ID_369563604" CREATED="1456881811189" MODIFIED="1456881827229">
-<edge COLOR="#ffff00"/>
+<node TEXT="Part 6: Laying out the copper tracings on pcb board" POSITION="right" ID="ID_982342538" CREATED="1457762433220" MODIFIED="1457762464402">
+<edge COLOR="#00007c"/>
 <node TEXT="Press X to begin drawing traces (it will immediately place the beginning trace at your mouse&apos;s location). Make sure that you have a copper trace layer selected&#xa;Click once to bend/curve from that point. Doubleclick to finalize the trace. Click once to start a new trace." ID="ID_1319224371" CREATED="1456881910170" MODIFIED="1456882350765"/>
-<node TEXT="You can adjust the width of the trace, and clearance (blank area surrounding each trace), respectively with the pull-down options on the overhead bar." ID="ID_1127818944" CREATED="1456881945456" MODIFIED="1456882127161">
+<node TEXT="Select the layer (front or back) to draw on each" ID="ID_1310111675" CREATED="1456882485389" MODIFIED="1456882496414"/>
+<node TEXT="You can adjust the width of the trace, and size of vias, respectively with the pull-down options on the overhead bar. Vias are the through-board hole that connects front and back layers. It is a way to flip traces from the top to the bottom of the board." ID="ID_1127818944" CREATED="1456881945456" MODIFIED="1457908541083">
 <hook URI="images/tracing_options.png" SIZE="0.7246377" NAME="ExternalObject"/>
 </node>
-<node TEXT="Select the layer (front or back) to draw on each" ID="ID_1310111675" CREATED="1456882485389" MODIFIED="1456882496414"/>
 </node>
 <node TEXT="Part 7: Reviewing your work" POSITION="right" ID="ID_928753829" CREATED="1457643584130" MODIFIED="1457643593299">
 <edge COLOR="#ff00ff"/>
 <node TEXT="in Pcbnew, press Alt+3 to enter 3D mode to view your pcb in 3D" ID="ID_193188219" CREATED="1457643595240" MODIFIED="1457643632051"/>
+</node>
+<node TEXT="Part 8: Exporting to readable file" POSITION="right" ID="ID_1799944150" CREATED="1457762387520" MODIFIED="1457762400249">
+<edge COLOR="#00ffff"/>
+<node TEXT="Kicad does not have any way to specify board thickness. That is done when sending the files to the fab house" ID="ID_1410247913" CREATED="1457763723511" MODIFIED="1457763762696" LINK="https://forum.kicad.info/t/how-to-set-pcb-thickness-before-exporting-from-kicad/345"/>
+</node>
+<node TEXT="Part 9: Sending file off for fabrication" POSITION="right" ID="ID_326686727" CREATED="1457762403870" MODIFIED="1457762505915">
+<edge COLOR="#7c0000"/>
 </node>
 </node>
 </map>
