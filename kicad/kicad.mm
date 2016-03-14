@@ -106,7 +106,10 @@
 <node TEXT="Part 0: controlling kicad" POSITION="right" ID="ID_476526640" CREATED="1456882993342" MODIFIED="1456883005394">
 <edge COLOR="#7c0000"/>
 <node TEXT="Kicad relies heavily on keyboard shortcuts and mouse movement and plenty of mouse zooming" ID="ID_304358708" CREATED="1456883007571" MODIFIED="1456883035572"/>
-<node TEXT="Generally you enter a mode by pressing a keyboard shortcut. Once click of the mouse completes the action. If a single click does not complete the action (like in creating traces), then double-clicking will finish the action." ID="ID_1037635421" CREATED="1456883241584" MODIFIED="1456883306445"/>
+<node TEXT="You can find many keyboard shortcuts by right-clicking on item you wish to manipulate to see various actions (and associated keyboard shortcuts) that you can do to each item" ID="ID_773001572" CREATED="1457924356030" MODIFIED="1457924398622">
+<font BOLD="true"/>
+</node>
+<node TEXT="Generally you enter a mode by pressing a keyboard shortcut. One click of the mouse completes the action. If a single click does not complete the action (like in creating traces), then double-clicking will finish the action." ID="ID_1037635421" CREATED="1456883241584" MODIFIED="1457924350896"/>
 <node TEXT="Use mouse zooming to recenter yourself. Zoom out, then back in, and board recenters around zoom-point. Alternatively, dragging the mouse to the edge of the screen will move the board view in a smooth manner" ID="ID_591436293" CREATED="1456883308419" MODIFIED="1456883358304"/>
 <node TEXT="Some Keyboard shortcuts  (that usually deal with the area / component under the mouse):&#xa;A  -&gt; Add a component&#xa;M  -&gt; Move components around board&#xa;R  -&gt;  Rotate components on board. Usually need to be moving component already&#xa;E   -&gt;  Edit component values (over which mouse hovers)&#xa;Del  -&gt;   Delete component / anything under mouse&#xa;BackSpace  -&gt; Delete part of component?? Can use it to delete sections of tracing..." ID="ID_1326430921" CREATED="1456883035978" MODIFIED="1456953971679"/>
 <node TEXT="Some Mouse shortcuts&#xa;middle click  -&gt; center drawing on cursor&#xa;scroll  -&gt; zoom in/out  (board centers around zoom point)&#xa;shift + scroll  -&gt; move drawing vertically&#xa;ctrl + scroll  -&gt; move drawing horizontally" ID="ID_604459951" CREATED="1456953736177" MODIFIED="1456953862899"/>
@@ -584,6 +587,7 @@
 
 </richcontent>
 </node>
+<node TEXT="Some keyboard shortcuts while in auto-routing mode:&#xa;Ctrl + click -&gt; Select and drag (maintaining connection) via/segment/corner to new location&#xa;D -&gt; same as Ctrl + click&#xa;E -&gt; popup preferences for autorouting mode + options" ID="ID_1038105682" CREATED="1457923591782" MODIFIED="1457924481628"/>
 <node TEXT="You can revise any track by clicking on the trace you wish to revise at the location you wish to fork off from. If you connect it to the same end destination, the old duplicate section will be automatically deleted (except vias)" ID="ID_1632636995" CREATED="1457920014468" MODIFIED="1457923148208"/>
 <node ID="ID_1662280344" CREATED="1457923153919" MODIFIED="1457923271561"><richcontent TYPE="NODE">
 
@@ -649,6 +653,41 @@
 <node TEXT="Part 8: Exporting to readable file" POSITION="right" ID="ID_1799944150" CREATED="1457762387520" MODIFIED="1457762400249">
 <edge COLOR="#00ffff"/>
 <node TEXT="Kicad does not have any way to specify board thickness. That is done when sending the files to the fab house" ID="ID_1410247913" CREATED="1457763723511" MODIFIED="1457763762696" LINK="https://forum.kicad.info/t/how-to-set-pcb-thickness-before-exporting-from-kicad/345"/>
+<node TEXT="You&apos;ll need to generate two things: the gerber files and drill files" ID="ID_1610311423" CREATED="1457928959145" MODIFIED="1457928972614"/>
+<node TEXT="To generate the gerber files, click on the Plot icon on the top-bar" ID="ID_67340583" CREATED="1457928973121" MODIFIED="1457929112523">
+<hook URI="images/location_plot_icon.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node TEXT="This will pop up a menu to allow you to export to gerber files. Make plot format is Gerber.&#xa;Select all the layers that you&apos;ve used to export:&#xa;F.Cu, B.Cu&#xa;B.SilkS, F.SilkS&#xa;B.Mask, F.Mask&#xa;Edge.Cuts&#xa;and also under Gerber Options, check the box for naming filenames &quot;properly&quot; (Protel extensions)" ID="ID_834326073" CREATED="1457929117491" MODIFIED="1457931204777">
+<hook URI="images/plot_to_gerber.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_1959569024" CREATED="1457930736512" MODIFIED="1457931136373" LINK="http://docs.oshpark.com/submitting-orders/drill-issues/"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      On that same window, you can select Generate Drill File, which opens a window for drill file stuff
+    </p>
+    <p>
+      OSHpark has some specific rules regarding drills:
+    </p>
+    <p>
+      <i>Your drill file needs to be in text &quot;NC Drills&quot; or &quot;Excellon&quot; format, generated with &quot;2:4&quot; (for In) or &quot;3:3&quot; (for mm) precision, and with &quot;no zero suppression&quot;. </i>
+    </p>
+    <p>
+      Osh also does not take more than one drill file. So select the <b>Merge PTH and NPTH holes into one file. </b>
+    </p>
+    <p>
+      Click the drill file button to generate the drill file
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/generate_drill_files.png" SIZE="0.8941878" NAME="ExternalObject"/>
+</node>
 </node>
 <node TEXT="Part 9: Sending file off for fabrication" POSITION="right" ID="ID_326686727" CREATED="1457762403870" MODIFIED="1457762505915">
 <edge COLOR="#7c0000"/>
