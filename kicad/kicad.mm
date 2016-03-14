@@ -516,12 +516,117 @@
 </node>
 <node TEXT="Part 6: Laying out the copper tracings on pcb board" POSITION="right" ID="ID_982342538" CREATED="1457762433220" MODIFIED="1457762464402">
 <edge COLOR="#00007c"/>
-<node TEXT="Press X to begin drawing traces (it will immediately place the beginning trace at your mouse&apos;s location). Make sure that you have a copper trace layer selected&#xa;Click once to bend/curve from that point. Doubleclick to finalize the trace. Click once to start a new trace." ID="ID_1319224371" CREATED="1456881910170" MODIFIED="1456882350765"/>
+<node TEXT="Press X to begin drawing traces (it will immediately place the beginning trace at your mouse&apos;s location). Or, click on the &quot;add tracks and vias&quot; button.&#xa;Make sure that you have a copper trace layer selected&#xa;Click once to bend/curve from that point. Doubleclick to finalize the trace. Click once to start a new trace." ID="ID_1319224371" CREATED="1456881910170" MODIFIED="1457919437816">
+<hook URI="images/icon_add_tracks_and_vias.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
 <node TEXT="While drawing a trace, Press V to flip between front and back layers. If currently drawing a trace, V will also create a Via at that point, which is a hollow copper tubing connecting the front and back layers. Then you can continue drawing your trace" ID="ID_393355289" CREATED="1457569658257" MODIFIED="1457735419643"/>
-<node TEXT="You can adjust the width of the trace, and clearance (blank area surrounding each trace), respectively with the pull-down options on the overhead bar." ID="ID_1127818944" CREATED="1456881945456" MODIFIED="1456882127161">
+<node TEXT="You can adjust the width of the trace, and size of vias (connection point between top and bottom layer), respectively with the pull-down options on the overhead bar." ID="ID_1127818944" CREATED="1456881945456" MODIFIED="1457909344167">
 <hook URI="images/tracing_options.png" SIZE="0.7246377" NAME="ExternalObject"/>
 </node>
-<node TEXT="Select the layer (front or back) to draw on each" ID="ID_1310111675" CREATED="1456882485389" MODIFIED="1456882496414"/>
+<node TEXT="Select the layer (front or back) to draw on each. Or simply press V to swap between top and bottom layers if you are not currently drawing a trace." ID="ID_1310111675" CREATED="1456882485389" MODIFIED="1457909398698"/>
+<node ID="ID_1759689992" CREATED="1457917179294" MODIFIED="1457917189412"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>Using the routing assist tool:</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node ID="ID_1729232466" CREATED="1457917190998" MODIFIED="1457919345001"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      The routing assist tool can help in creating routes between points with less manual work on your part. To use it, set Canvas backend to OpenGL
+    </p>
+    <p>
+      <b>View &gt; Switch Canvas to OpenGL</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/location_switch_canvas_to_opengl.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_1951371302" CREATED="1457919462325" MODIFIED="1457919702215"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Then enter Tracks mode by clicking on the Tracks and Vias button or pressing X. Routing assist is now enabled. To change how routing assistance behaves, right-click on board and select
+    </p>
+    <p>
+      <b>Routing Options</b>. You can choose between three different modes:
+    </p>
+    <p>
+      1) Highlight collisions&#160;&#160;(just highlight conflicting traces)
+    </p>
+    <p>
+      2) Shove (your trace shoves previous traces away so you can fit a trace in
+    </p>
+    <p>
+      3) Walkaround (your trace walks around every obstacle to get to its desired location)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="You can revise any track by clicking on the trace you wish to revise at the location you wish to fork off from. If you connect it to the same end destination, the old duplicate section will be automatically deleted (except vias)" ID="ID_1632636995" CREATED="1457920014468" MODIFIED="1457923148208"/>
+<node ID="ID_1662280344" CREATED="1457923153919" MODIFIED="1457923271561"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      In addition, you'll want to set track clearance mode for auto-routing. Navigate
+    </p>
+    <p>
+      <b>Design Rules &gt; Design Rules</b>&#160;and change the clearance and track width to desired widths.
+    </p>
+    <p>
+      This is vital to support fab-houses with a minimum distance between tracks
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="While in OpenGL track placing mode, Ctrl + Z and Delete don&apos;t seem to work.&#xa;You&apos;ll have to select a different tool (like normal mode) to be able to undo tracks" ID="ID_1182094286" CREATED="1457919711291" MODIFIED="1457923130029"/>
+<node TEXT="Also, delete only deletes track segments in OpenGL mode" ID="ID_1849833414" CREATED="1457919767097" MODIFIED="1457919782687"/>
+<node ID="ID_748478444" CREATED="1457919836919" MODIFIED="1457921681362"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      To delete a full trace, right-click on wire, select <b>Select &gt; Trivial Connection</b>&#160;and then press Delete once it's highlighted the full track
+    </p>
+    <p>
+      You can also press U to select the full trivial connection track
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
 </node>
 <node TEXT="Part 6.5: Laying out other layers on pcb board" POSITION="right" ID="ID_1045354261" CREATED="1457735451140" MODIFIED="1457735462938">
 <edge COLOR="#00ffff"/>
