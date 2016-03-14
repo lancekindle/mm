@@ -102,6 +102,26 @@
 </html>
 </richcontent>
 </node>
+<node TEXT="OSHPark documentation about &quot;preflight check&quot;" ID="ID_1861602801" CREATED="1457937391333" MODIFIED="1457937410009" LINK="http://docs.oshpark.com/submitting-orders/preflight-checklist/"/>
+<node TEXT="OSHPark documentation on working with Kicad and them" ID="ID_1016626691" CREATED="1457937538831" MODIFIED="1457937554626" LINK="http://docs.oshpark.com/design-tools/kicad/"/>
+<node ID="ID_836657089" CREATED="1457937656875" MODIFIED="1457937813472" LINK="http://docs.oshpark.com/design-tools/kicad/kicad-design-rules/"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Also recommended Design Rules to work with OSHPark
+    </p>
+    <p>
+      You can download the design rules in a kicad template here: <a href="https://prjct.net/download/osh-park_2_layer_standard_order.zip">https://prjct.net/download/osh-park_2_layer_standard_order.zip</a>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="Part 0: controlling kicad" POSITION="right" ID="ID_476526640" CREATED="1456882993342" MODIFIED="1456883005394">
 <edge COLOR="#7c0000"/>
@@ -649,6 +669,24 @@
 <node TEXT="Part 7: Reviewing your work" POSITION="right" ID="ID_928753829" CREATED="1457643584130" MODIFIED="1457643593299">
 <edge COLOR="#ff00ff"/>
 <node TEXT="in Pcbnew, press Alt+3 to enter 3D mode to view your pcb in 3D" ID="ID_193188219" CREATED="1457643595240" MODIFIED="1457643632051"/>
+<node ID="ID_984154475" CREATED="1457938794571" MODIFIED="1457939266740"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Click on the &quot;Perform Design Rules Check&quot; button to begin bug-checking your design.
+    </p>
+    <p>
+      <b>If your canvas is rendered with Default</b>&#160;&#160;(View &gt; Switch Canvas to Default), then any <b>incorrect items found can be fixed by just clicking on them</b>. Each fixed item will then be highlighted. Re-run debugger to remove the markers that signify errors (because it should be fixed now) and save.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="Part 8: Exporting to readable file" POSITION="right" ID="ID_1799944150" CREATED="1457762387520" MODIFIED="1457762400249">
 <edge COLOR="#00ffff"/>
