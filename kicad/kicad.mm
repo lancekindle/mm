@@ -119,7 +119,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -559,7 +558,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node ID="ID_1729232466" CREATED="1457917190998" MODIFIED="1457919345001"><richcontent TYPE="NODE">
 
@@ -576,7 +574,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/location_switch_canvas_to_opengl.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -604,7 +601,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Some keyboard shortcuts while in auto-routing mode:&#xa;Ctrl + click -&gt; Select and drag (maintaining connection) via/segment/corner to new location&#xa;D -&gt; same as Ctrl + click&#xa;E -&gt; popup preferences for autorouting mode + options" ID="ID_1038105682" CREATED="1457923591782" MODIFIED="1457924481628"/>
@@ -627,7 +623,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="While in OpenGL track placing mode, Ctrl + Z and Delete don&apos;t seem to work.&#xa;You&apos;ll have to select a different tool (like normal mode) to be able to undo tracks" ID="ID_1182094286" CREATED="1457919711291" MODIFIED="1457923130029"/>
@@ -647,10 +642,10 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
+<node TEXT="After you&apos;re done, make sure all wires are connected properly, and there&apos;s no hanging/dead-end traces&#xa;Edit &gt; Cleanup Tracks and Vias &gt; check all options and press OK." ID="ID_1032678334" CREATED="1460158126267" MODIFIED="1460158185425"/>
 </node>
 <node TEXT="Part 6.5: Laying out other layers on pcb board" POSITION="right" ID="ID_1045354261" CREATED="1457735451140" MODIFIED="1457735462938">
 <edge COLOR="#00ffff"/>
@@ -684,7 +679,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -722,7 +716,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/generate_drill_files.png" SIZE="0.8941878" NAME="ExternalObject"/>
 </node>
