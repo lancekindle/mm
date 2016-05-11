@@ -50,7 +50,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="11"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="12"/>
 <node TEXT="Data Types:" POSITION="right" ID="ID_58961891" CREATED="1385057099009" MODIFIED="1390585624890">
 <edge COLOR="#ff0000"/>
 <hook NAME="AlwaysUnfoldedNode"/>
@@ -1091,6 +1091,230 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="A closure is a function that has to look up some of its variables in the scope in which is was created. So when x_return fails to find the variable &apos;x&apos; in its list of variables, it looked up one scope into the list of local variables present when it was created. There, it finds &apos;x&apos; and returns it. But... this &quot;look up the variable once you need it&quot; is called closure, and can wreak havoc" ID="ID_1258602867" CREATED="1454342243289" MODIFIED="1454342486309"/>
 <node TEXT="See a Closure Gotcha Here" ID="ID_298016091" CREATED="1454342487074" MODIFIED="1454343688310" LINK="#ID_1057109660"/>
 </node>
+</node>
+<node TEXT="PDB (Python Debugger)" POSITION="right" ID="ID_1717942384" CREATED="1461388351452" MODIFIED="1461388366089">
+<edge COLOR="#7c7c00"/>
+<node TEXT="You can trace a scripts&apos; execution using pdb.&#xa;Normally you&apos;d call:&#xa;python my_script.py arg1 arg2&#xa;now you call&#xa;pdb myscrip.py arg1 arg2&#xa;--or--&#xa;to run pdb within a script:&#xa;import pdb&#xa;pdb.set_trace()  # run at location where you wish to break into debugger" ID="ID_1421582536" CREATED="1461388367508" MODIFIED="1462990546926" LINK="https://docs.python.org/3/library/pdb.html"/>
+<node TEXT="With Pdb you can navigate a script&apos;s execution, setting breakpoints at line numbers or when certain conditions are met&#xa;Most pdb keywords can be a single letter, or the full word, such as n(ext). typing n &lt;enter&gt; or next &lt;enter&gt; do the same thing" ID="ID_265855851" CREATED="1462990704362" MODIFIED="1462990948227"/>
+<node TEXT="Navigation" ID="ID_813987520" CREATED="1462990734848" MODIFIED="1462990738119">
+<node TEXT="jumping up or down the stack trace does NOT rewind the program. It just jumps up / down a level, making each step execute more / less per step, respectively" ID="ID_1740887898" CREATED="1462991228492" MODIFIED="1462991279692"/>
+<node ID="ID_1133349188" CREATED="1462991048362" MODIFIED="1462991421143"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>n(ext)</b>
+    </p>
+    <p>
+      continue to next line in current frame
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_435026073" CREATED="1462991422152" MODIFIED="1462991463650"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>s(tep)</b>
+    </p>
+    <p>
+      execute next statement, jumping up or down frame to follow thread. This is THE incremental execution command
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1897071944" CREATED="1462991497384" MODIFIED="1462991503079"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>unt(il) [lineno]</b>
+    </p>
+    <p>
+      Without argument, continue execution until the line with a number greater than the current one is reached.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      With a line number, continue execution until a line with a number greater or equal to that is reached. In both cases, also stop when the current frame returns.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_975431603" CREATED="1462991591889" MODIFIED="1462991608591"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>r(eturn)</b>
+    </p>
+    <p>
+      continue execution until current function returns
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1256386260" CREATED="1462991170552" MODIFIED="1462991328502"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>d(own)&#160;&#160;[count]</b>
+    </p>
+    <p>
+      Move the current frame count (default one) levels down in the stack trace (to a newer frame).
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_985613570" CREATED="1462991216882" MODIFIED="1462991331376"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>u(p) [count]</b>
+    </p>
+    <p>
+      Move the current frame count (default one) levels up in the stack trace (to an older frame).
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1009582822" CREATED="1462991560074" MODIFIED="1462991572503"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>l(ist)</b>
+    </p>
+    <p>
+      list 11 lines around the current line or continue the previous listing.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="Breakpoints" ID="ID_1064042866" CREATED="1462990738504" MODIFIED="1462990740986">
+<node ID="ID_1795438608" CREATED="1462991059553" MODIFIED="1462991355925"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      b(reak) 34 -&gt;&#160;&#160;set breakpoint at specified line no.
+    </p>
+    <p>
+      b(reak) <i>function_name</i>&#160;&#160;-&gt;&#160;&#160;set breakpoint at first line within function
+    </p>
+    <p>
+      <b>b(reak) (line_no&#160;&#160;or&#160;&#160;&#160;function_name)&#160;&#160;[, condition] </b>
+    </p>
+    <p>
+      break at line_no or function entrance only if specified condition is met
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_530264174" CREATED="1462991313169" MODIFIED="1462991362808"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>tbreak [([filename:]lineno | function) [, condition]]</b>
+    </p>
+    <p>
+      Temporary breakpoint, which is removed automatically when it is first hit. The arguments are the same as for break.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_1766221923" CREATED="1462991392034" MODIFIED="1462991395699"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>condition bpnumber [condition]</b>
+    </p>
+    <p>
+      Set a new condition for the breakpoint, an expression which must evaluate to true before the breakpoint is honored. If condition is absent, any existing condition is removed; i.e., the breakpoint is made unconditional.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="Information" ID="ID_1256014673" CREATED="1462991657296" MODIFIED="1462991666280">
+<node ID="ID_472000108" CREATED="1462991668514" MODIFIED="1462991690124"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>source <i>object_name</i></b>
+    </p>
+    <p>
+      Try to get source code for the given object and display it.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="w(here)  -&gt;  print a stack trace with most recent frame at bottom" ID="ID_966921872" CREATED="1462990860572" MODIFIED="1462990890244"/>
+<node TEXT="h(elp)  -&gt;  print list of commands.&#xa;h(elp) [command]  -&gt;  print help information on command" ID="ID_1878884477" CREATED="1462990893545" MODIFIED="1462990983989"/>
 </node>
 </node>
 </map>
