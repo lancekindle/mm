@@ -1,6 +1,23 @@
 <map version="freeplane 1.3.0">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="SQL" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1462215419095"><hook NAME="MapStyle">
+<node ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1462992214967"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="text-align: center">
+      SQL
+    </p>
+    <p style="text-align: center">
+      (sequel)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook NAME="MapStyle">
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node">
@@ -49,7 +66,51 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="1"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="2"/>
+<node TEXT="Creating a table" POSITION="left" ID="ID_1394845256" CREATED="1462216426878" MODIFIED="1462216436084">
+<edge COLOR="#0000ff"/>
+<node ID="ID_833581929" CREATED="1462215431531" MODIFIED="1462817338499"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Create a table (to put stuff into)
+    </p>
+    <p>
+      <b>CREATE TABLE <i>table_name </i>(id INTEGER PRIMARY KEY, <i>v1 V1_TYPE, v2 V2_TYPE);</i></b>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="Usually the first item within the create table is an id, of type INTEGER." ID="ID_1205239299" CREATED="1462215540840" MODIFIED="1462215560743"/>
+<node TEXT="Then, because it&apos;s the main item with which we identify them, we label it the PRIMARY KEY" ID="ID_1552198805" CREATED="1462215561063" MODIFIED="1462215578511"/>
+<node TEXT="PRIMARY KEYS shouldn&apos;t contain duplicate values.... but I don&apos;t know if that&apos;s a requirement or just a suggestion" ID="ID_341873894" CREATED="1462216150223" MODIFIED="1462216265984"/>
+<node TEXT="value types can be&#xa;TEXT&#xa;INTEGER&#xa;NUMERIC&#xa;REAL&#xa;NONE" ID="ID_1900490649" CREATED="1462215580778" MODIFIED="1462215624359"/>
+</node>
+<node TEXT="Insert rows into table" POSITION="left" ID="ID_574954708" CREATED="1462216446664" MODIFIED="1462216468652">
+<edge COLOR="#ff00ff"/>
+<node TEXT="aka insert in a whole set of values corresponding to the value-types you associated with the given table.&#xa;If your table has 3 values, you must supply 3 values when INSERT&apos;ing INTO a new row" ID="ID_78228432" CREATED="1462216044358" MODIFIED="1462216298891"/>
+<node ID="ID_168293429" CREATED="1462216002666" MODIFIED="1462216491231"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      INSERT INTO <i>table_name</i>&#160;VALUES (<i>1, value_1, value_2</i>);
+    </p>
+  </body>
+</html>
+</richcontent>
+<font BOLD="true"/>
+</node>
+<node TEXT="Even though id is a primary key, apparently we must supply an id with each row.&#xa;Care must be taken that each ID is unique" ID="ID_276794561" CREATED="1462216135423" MODIFIED="1462216337334"/>
+</node>
 <node TEXT="Basics" POSITION="right" ID="ID_1129613788" CREATED="1462215428609" MODIFIED="1462215430921">
 <edge COLOR="#ff0000"/>
 <node TEXT="value types" ID="ID_1103347880" CREATED="1462215629793" MODIFIED="1462215635177">
@@ -138,54 +199,8 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
-</node>
-<node TEXT="Creating a table" POSITION="right" ID="ID_1394845256" CREATED="1462216426878" MODIFIED="1462216436084">
-<edge COLOR="#0000ff"/>
-<node ID="ID_833581929" CREATED="1462215431531" MODIFIED="1462817338499"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Create a table (to put stuff into)
-    </p>
-    <p>
-      <b>CREATE TABLE <i>table_name </i>(id INTEGER PRIMARY KEY, <i>v1 V1_TYPE, v2 V2_TYPE);</i></b>
-    </p>
-  </body>
-</html>
-
-</richcontent>
-</node>
-<node TEXT="Usually the first item within the create table is an id, of type INTEGER." ID="ID_1205239299" CREATED="1462215540840" MODIFIED="1462215560743"/>
-<node TEXT="Then, because it&apos;s the main item with which we identify them, we label it the PRIMARY KEY" ID="ID_1552198805" CREATED="1462215561063" MODIFIED="1462215578511"/>
-<node TEXT="PRIMARY KEYS shouldn&apos;t contain duplicate values.... but I don&apos;t know if that&apos;s a requirement or just a suggestion" ID="ID_341873894" CREATED="1462216150223" MODIFIED="1462216265984"/>
-<node TEXT="value types can be&#xa;TEXT&#xa;INTEGER&#xa;NUMERIC&#xa;REAL&#xa;NONE" ID="ID_1900490649" CREATED="1462215580778" MODIFIED="1462215624359"/>
-</node>
-<node TEXT="Insert rows into table" POSITION="right" ID="ID_574954708" CREATED="1462216446664" MODIFIED="1462216468652">
-<edge COLOR="#ff00ff"/>
-<node TEXT="aka insert in a whole set of values corresponding to the value-types you associated with the given table.&#xa;If your table has 3 values, you must supply 3 values when INSERT&apos;ing INTO a new row" ID="ID_78228432" CREATED="1462216044358" MODIFIED="1462216298891"/>
-<node ID="ID_168293429" CREATED="1462216002666" MODIFIED="1462216491231"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      INSERT INTO <i>table_name</i>&#160;VALUES (<i>1, value_1, value_2</i>);
-    </p>
-  </body>
-</html>
-</richcontent>
-<font BOLD="true"/>
-</node>
-<node TEXT="Even though id is a primary key, apparently we must supply an id with each row.&#xa;Care must be taken that each ID is unique" ID="ID_276794561" CREATED="1462216135423" MODIFIED="1462216337334"/>
 </node>
 <node TEXT="Querying tables" POSITION="right" ID="ID_274117032" CREATED="1462821374343" MODIFIED="1462821381046">
 <edge COLOR="#ff0000"/>
@@ -274,7 +289,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -308,7 +322,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -332,7 +345,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1248976239" CREATED="1462835805613" MODIFIED="1462835976248"><richcontent TYPE="NODE">
@@ -350,7 +362,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -376,7 +387,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -393,7 +403,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Any other names to include beside an aggregate function will be selected by the first value to show up.&#xa;Which means that THE ONLY MEANINGFUL VALUE_NAME TO INCLUDE IN THE RESULTS BESIDE AN AGGREGATE FUNCTION IS THE VALUE_NAME BY WHICH YOU GROUP" ID="ID_298984740" CREATED="1462818714298" MODIFIED="1462818725820">
@@ -424,7 +433,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_786460757" CREATED="1462818874264" MODIFIED="1462818975186"><richcontent TYPE="NODE">
@@ -439,7 +447,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -461,7 +468,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -489,7 +495,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_43156484" CREATED="1462818088274" MODIFIED="1462818382184"><richcontent TYPE="NODE">
@@ -516,7 +521,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="SUM, AVG, MIN, MAX, ROUND, COUNT" ID="ID_266239695" CREATED="1462922332313" MODIFIED="1462922592995"/>
@@ -548,7 +552,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -583,7 +586,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_445905013" CREATED="1462912718261" MODIFIED="1462913427862"><richcontent TYPE="NODE">
@@ -613,7 +615,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="The difference between HAVING and WHERE is that WHERE filters rows from the table (such as books). HAVING filters rows from the results that are being returned" ID="ID_570726473" CREATED="1462912855056" MODIFIED="1462913512734"/>
@@ -638,7 +639,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -685,7 +685,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -702,6 +701,76 @@
 <node TEXT="Updating Data" POSITION="right" ID="ID_433486840" CREATED="1462820825270" MODIFIED="1462820831977">
 <edge COLOR="#7c7c00"/>
 <node TEXT="UPDATE" ID="ID_226965453" CREATED="1462820916461" MODIFIED="1462820952883"/>
+</node>
+<node TEXT="Joining Tables" POSITION="right" ID="ID_214469588" CREATED="1462992239208" MODIFIED="1462992245387">
+<edge COLOR="#0000ff"/>
+<node TEXT="Tables often contain repeat information, such as one table relating student to email address, student to grades, etc etc.&#xa;Since it&apos;s wasteful of space to keep repeating the student name as a relation (and there can always be two people with the same name), tables are often broken into small tables and allow joining of tables by id." ID="ID_474644903" CREATED="1462992731808" MODIFIED="1462993408479"/>
+<node TEXT="So for example, persons table may relate id to person name&#xa;emails table may relate person_id to email&#xa;grades table may relate person_id to grade" ID="ID_115377563" CREATED="1462993408840" MODIFIED="1462993484397"/>
+<node TEXT="use the JOIN ... ON keyword to join two tables" ID="ID_392573247" CREATED="1462993485117" MODIFIED="1462993509832"/>
+<node TEXT="email JOIN persons&#xa;ON email.person_id == persons.id;&#xa;joins the two tables email and person and relates them using the ID" ID="ID_1752944328" CREATED="1462993510271" MODIFIED="1462993570772"/>
+<node TEXT="SELECT persons.name, email.address FROM&#xa;    email JOIN persons&#xa;    ON email.person_id == persons.id;" ID="ID_379702693" CREATED="1462993571394" MODIFIED="1462993622140"/>
+<node TEXT="However, if persons or email lacks cannot match to a row from the other, it is dropped.&#xa;So for example, if &quot;Lance Reddick&quot; has an email address but does not yet have any grades (it&apos;s his first semester), then a query that joins student names, emails and grades will not include Lance Reddick" ID="ID_1493819885" CREATED="1462993988237" MODIFIED="1462994068043"/>
+<node TEXT="To include rows that don&apos;t have corresponding rows in another joining table, use&#xa;LEFT OUTER JOIN, which tells SQL to retain all rows from the left table, even if it doesn&apos;t match up with the table rows from the right.&#xa;SELECT persons.name, grades.grade FROM&#xa;    persons LEFT OUTER JOIN grades&#xa;    ON persons.id == grades.person_id;&#xa;&#xa;Now Lance Reddick will be included, and the grade row will show NULL" ID="ID_1325268777" CREATED="1462994070442" MODIFIED="1462994373763"/>
+<node TEXT="Self-joining tables" ID="ID_1299997524" CREATED="1462997789867" MODIFIED="1462997798604">
+<node ID="ID_1085368829" CREATED="1462997825263" MODIFIED="1462998264508"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Self-joining tables are problematic because you are joining the same table in order to include specific information.
+    </p>
+    <p>
+      For example, if a books table has a column &quot;sequel&quot; which lists the next-in-line book sequel.
+    </p>
+    <p>
+      However, to save space, instead sequel is the book.id of the sequel book in the books table
+    </p>
+    <p>
+      |++ id ++|++ name ++|++ sequel_id ++|
+    </p>
+    <p>
+      |&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;&#160;&#160;&#160;fire&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|
+    </p>
+    <p>
+      |&#160;&#160;&#160;&#160;&#160;&#160;&#160;2&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ice&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NULL&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      to list it as
+    </p>
+    <p>
+      |++ name ++|++ sequel++|
+    </p>
+    <p>
+      |&#160;&#160;&#160;&#160;&#160;&#160;&#160;fire&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ice&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|
+    </p>
+    <p>
+      we'll need to self-join the books table to set the name of sequel (only for the result)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      <b>SELECT books.name, sequels.name </b>
+    </p>
+    <p>
+      <b>&#160;&#160;&#160;&#160;FROM books JOIN books AS sequels </b>
+    </p>
+    <p>
+      <b>&#160;&#160;&#160;&#160;ON books.sequel_id == sequels.id;</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="The solution is to rename the second table (temporarily). This can be done by listing the new name right after the table name itself. inserting AS between the table name and new name is acceptable and makes it more readable" ID="ID_56762554" CREATED="1462998231406" MODIFIED="1462998302073"/>
+</node>
 </node>
 </node>
 </map>
