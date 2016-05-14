@@ -15,7 +15,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook NAME="MapStyle">
 
@@ -66,7 +65,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="2"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="6"/>
 <node TEXT="Creating a table" POSITION="left" ID="ID_1394845256" CREATED="1462216426878" MODIFIED="1462216436084">
 <edge COLOR="#0000ff"/>
 <node ID="ID_833581929" CREATED="1462215431531" MODIFIED="1462817338499"><richcontent TYPE="NODE">
@@ -700,7 +699,111 @@
 </node>
 <node TEXT="Updating Data" POSITION="right" ID="ID_433486840" CREATED="1462820825270" MODIFIED="1462820831977">
 <edge COLOR="#7c7c00"/>
-<node TEXT="UPDATE" ID="ID_226965453" CREATED="1462820916461" MODIFIED="1462820952883"/>
+<node ID="ID_226965453" CREATED="1462820916461" MODIFIED="1463091458987"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      UPDATE <i>table</i>&#160;SET <i>field=value;</i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="true"/>
+</node>
+<node TEXT="Be very CAREFUL: If you don&apos;t set a WHERE clause, then you will overwrite ALL columns with that value. Which is obviously not what you want. So ALWAYS USE A WHERE CLAUSE" ID="ID_1081973895" CREATED="1463091477729" MODIFIED="1463091545795"/>
+<node TEXT="Sets specific field at value given in table" ID="ID_419554206" CREATED="1463091397151" MODIFIED="1463091408812"/>
+<node TEXT="UPDATE books SET author = &quot;JKR&quot; WHERE author = &quot;JK Rawling&quot;;" ID="ID_1907752775" CREATED="1463091412677" MODIFIED="1463092827221"/>
+</node>
+<node TEXT="Deleting Data" POSITION="right" ID="ID_505344697" CREATED="1463091591474" MODIFIED="1463091597357">
+<edge COLOR="#00ff00"/>
+<node TEXT="You can delete individual rows or specific columns within a table" ID="ID_1568901540" CREATED="1463091598372" MODIFIED="1463091611083"/>
+<node ID="ID_804593068" CREATED="1463091611528" MODIFIED="1463091763708"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      delete a row:
+    </p>
+    <p>
+      <b>DELETE * FROM books WHERE title == &quot;Fahrenheit 451&quot;; </b>
+    </p>
+    <p>
+      <b>DELETE FROM books WHERE title == &quot;Fahrenheit 451&quot;;</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="To delete individual columns....&#xa;DELETE author FROM books WHERE title == &quot;Anonymous&quot;;" ID="ID_1881588594" CREATED="1463091722466" MODIFIED="1463091754176"/>
+</node>
+<node TEXT="Alter Table" POSITION="right" ID="ID_1837883581" CREATED="1463092006577" MODIFIED="1463092058255">
+<edge COLOR="#ff00ff"/>
+<node TEXT="Tables can be altered post-creation to add new columns" ID="ID_1476384242" CREATED="1463092058928" MODIFIED="1463092074708"/>
+<node ID="ID_1719261611" CREATED="1463092075530" MODIFIED="1463092709432"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>ALTER TABLE <i>table</i>&#160;ADD <i>field TYPE;</i></b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="ALTER TABLE books ADD year INTEGER;" ID="ID_794750729" CREATED="1463092122543" MODIFIED="1463092714126"/>
+<node TEXT="ALTER TABLE books ADD coauthor TEXT default NULL" ID="ID_1892548415" CREATED="1463092336072" MODIFIED="1463092718260"/>
+</node>
+<node TEXT="Safer operations" POSITION="right" ID="ID_206979175" CREATED="1463093118806" MODIFIED="1463093122675">
+<edge COLOR="#00ffff"/>
+<node TEXT="SQL alterations are dangerous, so often protections are advised." ID="ID_1427689203" CREATED="1463093123213" MODIFIED="1463093139887"/>
+<node TEXT="For example, just have a column called &quot;deleted&quot; and set it to true when requesting to delete a column, rather than actually deleting. Then filter by deleted == &quot;false&quot;" ID="ID_400884154" CREATED="1463093141050" MODIFIED="1463093230570"/>
+<node TEXT="You Can LIMIT the number of delete or update operations that take place&#xa;UPDATE books SET author = &quot;JKR&quot; LIMIT 1;&#xa;DELETE FROM books where author == &quot;S. Meyer&quot; LIMIT 1;" ID="ID_926402763" CREATED="1463093286157" MODIFIED="1463093359104"/>
+<node ID="ID_1204621383" CREATED="1463093393318" MODIFIED="1463093616491"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      --All or Nothing operations--
+    </p>
+    <p>
+      Sometimes you want to do several operations at once, but only want them permanent if all changes are accepted. Do block operations with BEGIN TRANSACTION and COMMIT
+    </p>
+    <p>
+      <b>BEGIN TRANSACTION; </b>
+    </p>
+    <p>
+      <b>UPDATE books SET author = &quot;me&quot; WHERE author == &quot;you&quot; AND title = &quot;mine&quot; </b>
+    </p>
+    <p>
+      <b>UPDATE books SET author = &quot;you&quot; WHERE author == &quot;me&quot; AND title = &quot;swap&quot; </b>
+    </p>
+    <p>
+      <b>COMMIT; </b>
+    </p>
+    <p>
+      If the any of those operations fail, the changes are rolled back before BEGIN TRANSACTION
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="Joining Tables" POSITION="right" ID="ID_214469588" CREATED="1462992239208" MODIFIED="1462992245387">
 <edge COLOR="#0000ff"/>
@@ -766,10 +869,46 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="The solution is to rename the second table (temporarily). This can be done by listing the new name right after the table name itself. inserting AS between the table name and new name is acceptable and makes it more readable" ID="ID_56762554" CREATED="1462998231406" MODIFIED="1462998302073"/>
+</node>
+</node>
+<node TEXT="Database Administration" POSITION="left" ID="ID_1561674634" CREATED="1463093755634" MODIFIED="1463093765256">
+<edge COLOR="#ffff00"/>
+<node TEXT="Granting permissions" ID="ID_237205219" CREATED="1463093766366" MODIFIED="1463093779016">
+<node ID="ID_1732362722" CREATED="1463093779837" MODIFIED="1463093898475"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      GRANT FULL ON TABLE <i>books</i>&#160;TO <i>super_user</i>;
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
+<node ID="ID_1796332697" CREATED="1463093837543" MODIFIED="1463093897929"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      GRANT SELECT ON TABLE <i>books</i>&#160;TO <i>sloppy_joe</i>;
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<font BOLD="false"/>
+</node>
 </node>
 </node>
 </node>
