@@ -868,6 +868,10 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="run it like: radon cc ./ -a&#xa;where ./ is the directory you want to recursively analyze" ID="ID_1953095505" CREATED="1457078404619" MODIFIED="1457078465673"/>
 <node TEXT="It identifies each class / method / function and gives it an A-F rating based on complexity." ID="ID_64763412" CREATED="1457078466078" MODIFIED="1457078485923"/>
 </node>
+<node TEXT="datetime" ID="ID_1389508761" CREATED="1464463189871" MODIFIED="1464463194925">
+<node TEXT="from datetime import date, timedelta&#xa;d = date.today()&#xa;d.isoformat()&#xa;&gt;&gt;&gt; &apos;2016-05-28&apos;&#xa;d += timedelta(5)  # add five days to date&#xa;d.isoformat()&#xa;&gt;&gt;&gt; &apos;2016-06-02&apos;" ID="ID_1398995755" CREATED="1464463196016" MODIFIED="1464463387281"/>
+<node TEXT="date module handles dates&#xa;datetime.datetime module handles combination of date and time&#xa;timedelta is used to add or subtract days / hours / minutes from a given datetime (Default is days)" ID="ID_1181890536" CREATED="1464463279720" MODIFIED="1464463378213"/>
+</node>
 </node>
 <node TEXT="GUIs" POSITION="left" ID="ID_1334879918" CREATED="1397075705052" MODIFIED="1397075708594">
 <edge COLOR="#00007c"/>
@@ -1113,7 +1117,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_435026073" CREATED="1462991422152" MODIFIED="1462991463650"><richcontent TYPE="NODE">
@@ -1131,7 +1134,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1897071944" CREATED="1462991497384" MODIFIED="1462991503079"><richcontent TYPE="NODE">
@@ -1155,7 +1157,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_975431603" CREATED="1462991591889" MODIFIED="1462991608591"><richcontent TYPE="NODE">
@@ -1173,7 +1174,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1256386260" CREATED="1462991170552" MODIFIED="1462991328502"><richcontent TYPE="NODE">
@@ -1191,7 +1191,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_985613570" CREATED="1462991216882" MODIFIED="1462991331376"><richcontent TYPE="NODE">
@@ -1209,7 +1208,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1009582822" CREATED="1462991560074" MODIFIED="1462991572503"><richcontent TYPE="NODE">
@@ -1227,7 +1225,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -1253,7 +1250,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_530264174" CREATED="1462991313169" MODIFIED="1462991362808"><richcontent TYPE="NODE">
@@ -1271,7 +1267,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_1766221923" CREATED="1462991392034" MODIFIED="1462991395699"><richcontent TYPE="NODE">
@@ -1289,7 +1284,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -1309,7 +1303,6 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
