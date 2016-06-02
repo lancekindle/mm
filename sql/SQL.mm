@@ -711,7 +711,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="true"/>
 </node>
@@ -721,7 +720,7 @@
 </node>
 <node TEXT="Deleting Data" POSITION="right" ID="ID_505344697" CREATED="1463091591474" MODIFIED="1463091597357">
 <edge COLOR="#00ff00"/>
-<node TEXT="You can delete individual rows or specific columns within a table" ID="ID_1568901540" CREATED="1463091598372" MODIFIED="1463091611083"/>
+<node TEXT="You can delete individual rows or specific columns within a table, or even the table itself" ID="ID_1568901540" CREATED="1463091598372" MODIFIED="1464463097787"/>
 <node ID="ID_804593068" CREATED="1463091611528" MODIFIED="1463091763708"><richcontent TYPE="NODE">
 
 <html>
@@ -740,10 +739,27 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="To delete individual columns....&#xa;DELETE author FROM books WHERE title == &quot;Anonymous&quot;;" ID="ID_1881588594" CREATED="1463091722466" MODIFIED="1463091754176"/>
+<node ID="ID_1736115662" CREATED="1464463099364" MODIFIED="1464463138974"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      To delete the table from database:
+    </p>
+    <p>
+      DROP TABLE <i>table_name</i>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="Alter Table" POSITION="right" ID="ID_1837883581" CREATED="1463092006577" MODIFIED="1463092058255">
 <edge COLOR="#ff00ff"/>
@@ -760,7 +776,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="ALTER TABLE books ADD year INTEGER;" ID="ID_794750729" CREATED="1463092122543" MODIFIED="1463092714126"/>
@@ -801,7 +816,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -889,7 +903,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
@@ -905,7 +918,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <font BOLD="false"/>
 </node>
