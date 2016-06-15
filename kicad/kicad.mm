@@ -65,8 +65,8 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="8"/>
-<node TEXT="Links to documentation / etc" POSITION="right" ID="ID_573174418" CREATED="1457296982404" MODIFIED="1457296988922">
+<hook NAME="AutomaticEdgeColor" COUNTER="9"/>
+<node TEXT="Links to documentation / etc" POSITION="left" ID="ID_573174418" CREATED="1457296982404" MODIFIED="1457296988922">
 <edge COLOR="#0000ff"/>
 <node ID="ID_949094641" CREATED="1457049101160" MODIFIED="1457296991565" LINK="https://www.youtube.com/watch?v=iTyi3RvNoB0&amp;index=1&amp;list=PLy2022BX6Esr6yxwDzhqYZyuuenJE2s5B"><richcontent TYPE="NODE">
 
@@ -722,6 +722,138 @@
 </node>
 <node TEXT="Part 9: Sending file off for fabrication" POSITION="right" ID="ID_326686727" CREATED="1457762403870" MODIFIED="1457762505915">
 <edge COLOR="#7c0000"/>
+</node>
+<node TEXT="Troubleshooting" POSITION="left" ID="ID_285441984" CREATED="1466022188760" MODIFIED="1466022194900">
+<edge COLOR="#007c00"/>
+<node ID="ID_658978585" CREATED="1466022197159" MODIFIED="1466022232671"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>Errors were encountered loading footprints</b>
+    </p>
+    <p>
+      During association of footprints to schematics
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node TEXT="https://github.com/KiCad/Connect.pretty/issues/8" ID="ID_1117768164" CREATED="1466022383225" MODIFIED="1466022390536" LINK="https://github.com/KiCad/Connect.pretty/issues/8"/>
+<node TEXT="https://forum.kicad.info/t/cvpcb-error-loading-footprints/1747/13" ID="ID_222858499" CREATED="1466022354666" MODIFIED="1466022370314" LINK="https://forum.kicad.info/t/cvpcb-error-loading-footprints/1747/13"/>
+<node TEXT="I often get this error when trying to associate a footprint to schematic symbols. What this means is that the built-in footprints are not fully loaded. Trying several times seems to load different footprints each time. These footprints are loaded on github and somehow the local cache is corrupted/wrong such that you can&apos;t simply sync up." ID="ID_1646803867" CREATED="1466022236274" MODIFIED="1466022339965"/>
+<node TEXT="To fix, you&apos;ll have to delete the footprint cache and add them all again to the list" ID="ID_581959847" CREATED="1466022296173" MODIFIED="1466022432295"/>
+<node TEXT="WARNING. Do not follow these instrrucitons yet. They failed." ID="ID_822346072" CREATED="1466026647468" MODIFIED="1466026660314"/>
+<node ID="ID_110621548" CREATED="1466026509969" MODIFIED="1466026600306"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Go to
+    </p>
+    <p>
+      <b>Preferences &gt; Footprint Libraries</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/pcb_library_tables_default.png" SIZE="0.8298755" NAME="ExternalObject"/>
+</node>
+<node TEXT="Delete all Global github-connected libraries" ID="ID_1432996925" CREATED="1466026601425" MODIFIED="1466026643000">
+<hook URI="images/pcb_library_tables_empty_global.png" SIZE="0.82304525" NAME="ExternalObject"/>
+</node>
+<node ID="ID_1110589177" CREATED="1466026664309" MODIFIED="1466026795913"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Then Try to add 1 (and only ONE) footprint library using &quot;<b>Append with Wizard</b>&quot;. It takes a long time and I ran into trouble here. You'll have to <b>Browse </b>to a new folder to save local copy.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/pcb_library_add_footprint_wizard0.png" SIZE="0.9478673" NAME="ExternalObject"/>
+</node>
+<node TEXT="Select all libraries to add. Initially just verify with one." ID="ID_1751261024" CREATED="1466026797373" MODIFIED="1466026827934">
+<hook URI="images/pcb_library_add_footprint_wizard1.png" SIZE="0.95238096" NAME="ExternalObject"/>
+</node>
+</node>
+<node TEXT="Changing width of existing Track" ID="ID_1739152516" CREATED="1466034396876" MODIFIED="1466034406120">
+<node ID="ID_1209935207" CREATED="1466034410350" MODIFIED="1466034471928"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Requires you to enable different default values.
+    </p>
+    <p>
+      with pcbnew open,
+    </p>
+    <p>
+      <b>Design Rules &gt; Design Rules </b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_39191545" CREATED="1466034483292" MODIFIED="1466034511270"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Add a new net class:
+    </p>
+    <p>
+      <b>Add </b>
+    </p>
+    <p>
+      Change track width to be the new track width you desire
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="Underneath are two &quot;membership&quot; lists. You now need to find the track(s) you wish to change in the LEFT-side of the list. On the RIGHT side, be sure the new class style (with thicker lines) is selected. Then move the track from the left side to right side. Click OK once all desired tracks are moved over to thicker list" ID="ID_1061085819" CREATED="1466034511719" MODIFIED="1466034779941">
+<hook URI="images/design_rules_switch_track_style.png" SIZE="0.9852217" NAME="ExternalObject"/>
+</node>
+<node ID="ID_1839351778" CREATED="1466034612015" MODIFIED="1466034703516"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Now you must right-click on track in the pcbnew GUI and select <b>Change Track Width </b>
+    </p>
+    <p>
+      Track width should switch to new width
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
 </node>
 </node>
 </map>
