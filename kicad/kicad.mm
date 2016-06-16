@@ -689,10 +689,7 @@
 <node TEXT="To generate the gerber files, click on the Plot icon on the top-bar" ID="ID_67340583" CREATED="1457928973121" MODIFIED="1457929112523">
 <hook URI="images/location_plot_icon.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
-<node TEXT="This will pop up a menu to allow you to export to gerber files. Make plot format is Gerber.&#xa;Select all the layers that you&apos;ve used to export:&#xa;F.Cu, B.Cu&#xa;B.SilkS, F.SilkS&#xa;B.Mask, F.Mask&#xa;Edge.Cuts&#xa;and also under Gerber Options, check the box for naming filenames &quot;properly&quot; (Protel extensions)" ID="ID_834326073" CREATED="1457929117491" MODIFIED="1457931204777">
-<hook URI="images/plot_to_gerber.png" SIZE="1.0" NAME="ExternalObject"/>
-</node>
-<node ID="ID_1959569024" CREATED="1457930736512" MODIFIED="1457931136373" LINK="http://docs.oshpark.com/submitting-orders/drill-issues/"><richcontent TYPE="NODE">
+<node ID="ID_834326073" CREATED="1457929117491" MODIFIED="1466061359995"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -700,7 +697,44 @@
   </head>
   <body>
     <p>
-      On that same window, you can select Generate Drill File, which opens a window for drill file stuff
+      This will pop up a menu to allow you to export to gerber files. Make sure plot format is Gerber.
+    </p>
+    <p>
+      Select all the layers that you've used to export:
+    </p>
+    <p>
+      F.Cu, B.Cu
+    </p>
+    <p>
+      B.SilkS, F.SilkS
+    </p>
+    <p>
+      B.Mask, F.Mask
+    </p>
+    <p>
+      Edge.Cuts
+    </p>
+    <p>
+      and also under Gerber Options, check the box for naming filenames &quot;properly&quot; (Protel extensions).
+    </p>
+    <p>
+      Finally click <b>Plot</b>&#160;to create the files
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/plot_to_gerber.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_1959569024" CREATED="1457930736512" MODIFIED="1466061326393" LINK="http://docs.oshpark.com/submitting-orders/drill-issues/"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      On that same plot window, you can select Generate Drill File, which opens a window for drill file stuff
     </p>
     <p>
       OSHpark has some specific rules regarding drills:
@@ -709,19 +743,27 @@
       <i>Your drill file needs to be in text &quot;NC Drills&quot; or &quot;Excellon&quot; format, generated with &quot;2:4&quot; (for In) or &quot;3:3&quot; (for mm) precision, and with &quot;no zero suppression&quot;. </i>
     </p>
     <p>
-      Osh also does not take more than one drill file. So select the <b>Merge PTH and NPTH holes into one file. </b>
+      Osh also does not take more than one drill file. So select the <b>Merge PTH and NPTH holes into one file.</b>
     </p>
     <p>
       Click the drill file button to generate the drill file
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/generate_drill_files.png" SIZE="0.8941878" NAME="ExternalObject"/>
 </node>
+<node TEXT="**Drill Map File format is not used (we generate only a drill file). But if it makes you feel better you can set it to Gerber." ID="ID_1673635408" CREATED="1466061221430" MODIFIED="1466061256393"/>
 </node>
 <node TEXT="Part 9: Sending file off for fabrication" POSITION="right" ID="ID_326686727" CREATED="1457762403870" MODIFIED="1457762505915">
 <edge COLOR="#7c0000"/>
+<node TEXT="You should now have ~8 Gerber files." ID="ID_589839228" CREATED="1466061366935" MODIFIED="1466061712154">
+<hook URI="images/gerber_file_list.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node TEXT="Zip all the gerber files together. You can now upload that to OSHpark and it should work correctly" ID="ID_239918836" CREATED="1466061714228" MODIFIED="1466061758061">
+<hook URI="images/gerber_files_zipping.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
 </node>
 <node TEXT="Troubleshooting" POSITION="left" ID="ID_285441984" CREATED="1466022188760" MODIFIED="1466022194900">
 <edge COLOR="#007c00"/>
@@ -740,7 +782,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <node TEXT="https://github.com/KiCad/Connect.pretty/issues/8" ID="ID_1117768164" CREATED="1466022383225" MODIFIED="1466022390536" LINK="https://github.com/KiCad/Connect.pretty/issues/8"/>
 <node TEXT="https://forum.kicad.info/t/cvpcb-error-loading-footprints/1747/13" ID="ID_222858499" CREATED="1466022354666" MODIFIED="1466022370314" LINK="https://forum.kicad.info/t/cvpcb-error-loading-footprints/1747/13"/>
@@ -762,7 +803,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/pcb_library_tables_default.png" SIZE="0.8298755" NAME="ExternalObject"/>
 </node>
@@ -781,7 +821,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/pcb_library_add_footprint_wizard0.png" SIZE="0.9478673" NAME="ExternalObject"/>
 </node>
@@ -808,7 +847,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node ID="ID_39191545" CREATED="1466034483292" MODIFIED="1466034511270"><richcontent TYPE="NODE">
@@ -829,7 +867,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Underneath are two &quot;membership&quot; lists. You now need to find the track(s) you wish to change in the LEFT-side of the list. On the RIGHT side, be sure the new class style (with thicker lines) is selected. Then move the track from the left side to right side. Click OK once all desired tracks are moved over to thicker list" ID="ID_1061085819" CREATED="1466034511719" MODIFIED="1466034779941">
@@ -850,7 +887,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
