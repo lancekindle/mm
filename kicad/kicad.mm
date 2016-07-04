@@ -65,7 +65,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="9"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="11"/>
 <node TEXT="Links to documentation / etc" POSITION="left" ID="ID_573174418" CREATED="1457296982404" MODIFIED="1457296988922">
 <edge COLOR="#0000ff"/>
 <node ID="ID_949094641" CREATED="1457049101160" MODIFIED="1457296991565" LINK="https://www.youtube.com/watch?v=iTyi3RvNoB0&amp;index=1&amp;list=PLy2022BX6Esr6yxwDzhqYZyuuenJE2s5B"><richcontent TYPE="NODE">
@@ -650,7 +650,9 @@
 <node TEXT="Part 6.5: Laying out other layers on pcb board" POSITION="right" ID="ID_1045354261" CREATED="1457735451140" MODIFIED="1457735462938">
 <edge COLOR="#00ffff"/>
 <node TEXT="If you wish to expose the copper at specific points, draw using the F.mask or B.mask (for front or back mask). The full name of F.mask if Front Solder-Mask Relief -- meaning solder-mask is removed at specificied locations. This is counter-intuitive because wherever mask is drawn, solder-mask will NOT be placed on actual pcb." ID="ID_738578023" CREATED="1457735463736" MODIFIED="1457737403028"/>
-<node TEXT="If you wish to draw text / graphics in exposed copper (looks pretty), then you can draw text using the copper layer and then re-draw that in mask-layer right on top, to expose the copper." ID="ID_1433603232" CREATED="1457735869211" MODIFIED="1457735870255"/>
+<node TEXT="If you wish to draw text / graphics in exposed copper (looks pretty), then you can draw text using the copper layer and then re-draw that in mask-layer right on top, to expose the copper.&#xa;OR the better option is to create the graphic as a footprint and import is using the &quot;Add Footprint&quot; button on the right-side of the pcb layout program. (See Part 6.8: Adding custom silkscreen and copper graphics to board)" ID="ID_1433603232" CREATED="1457735869211" MODIFIED="1467577911978">
+<hook URI="images/location_add_footprint_to_pcb.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
 <node TEXT="Using Fillzones" ID="ID_514084120" CREATED="1457736697146" MODIFIED="1457736701341">
 <node TEXT="You can fill outlined areas with specific layers using the fill-zones button." ID="ID_1740028612" CREATED="1457735976418" MODIFIED="1457736122492">
 <hook URI="images/location_fill_zone_icon.png" SIZE="1.0" NAME="ExternalObject"/>
@@ -659,6 +661,164 @@
 <node TEXT="After you&apos;ve filled out an outline and still have fill-zone selected, you can right click on board to select &quot;fill zones&quot; or &quot;unfill zones&quot;. Everytime you edit an area within the fill-zone, you will probably want to Refill the zones. Removing filled areas can be useful for seeing the result of tracing or other operations. But remember that fill-zone will not automatically re-fill when you export." ID="ID_734328299" CREATED="1457736468887" MODIFIED="1457736689043">
 <hook URI="images/rclick_menu_fill_zone.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
+</node>
+</node>
+<node TEXT="Part 6.8: Adding custom silkscreen and copper graphics to board" POSITION="right" ID="ID_1443811479" CREATED="1467577913332" MODIFIED="1467577928935">
+<edge COLOR="#7c007c"/>
+<node TEXT="The best way to add graphics is to create the graphic as a footprint, then add it to the pcb board" ID="ID_1263880845" CREATED="1467577940508" MODIFIED="1467577974902"/>
+<node TEXT="Contextual electronics goes through this process of creating a custom footprint silkscreen" ID="ID_1934147982" CREATED="1467579114632" MODIFIED="1467579137850" LINK="https://www.youtube.com/watch?v=xFCheaOsYFA"/>
+<node TEXT="There are two ways to accomplish this:" ID="ID_454831602" CREATED="1467592838808" MODIFIED="1467592849292"/>
+<node TEXT="1 ) draw your own simple graphics" ID="ID_1610353802" CREATED="1467592849741" MODIFIED="1467592858512">
+<node ID="ID_147550733" CREATED="1467577975520" MODIFIED="1467578142564"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      To create a graphic, open the <b>PCB Footprint Editor</b>&#160;from the main kicad menu
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/icon_pcb_footprint_editor.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node TEXT="Be sure to set the active library to your project-specific library (or a separate one for logo&apos;s / graphics)&#xa;File &gt; Set Active Library&#xa;If you don&apos;t see yours, You&apos;ll have to add your Project Specific library&#xa;Preferences &gt; Footprint Libraries Manager" ID="ID_370333750" CREATED="1467578167379" MODIFIED="1467578286810"/>
+<node TEXT="Create a new footprint&#xa;File &gt; New Footprint&#xa;And give it an appropriate name such as &quot;logo_test&quot;&#xa;Be aware that names have restrictions, such as No Spaces." ID="ID_1175956798" CREATED="1467578311686" MODIFIED="1467578865538"/>
+<node TEXT="immediately attempt to save the footprint to your current library. It will throw an error if it was named incorrectly. If so, you can edit the name&#xa;Edit &gt; Edit Properties&#xa;And at the bottom you can change the name where it says &quot;Footprint Name in Library&quot;" ID="ID_1260787553" CREATED="1467578865976" MODIFIED="1467578953911"/>
+<node TEXT="kicad will create a silkscreen and reference to the footprint. As you are only interested in the logo itself, edit both of these things to set them invisible (Press E while hovering over them). Now you&apos;ll be presented with a blank screen upon which to draw your graphics" ID="ID_268467283" CREATED="1467578383611" MODIFIED="1467589726975">
+<hook URI="images/new_footprint_references_show_up.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node TEXT="Draw your graphics, (using all layers you wish) then save it." ID="ID_407079585" CREATED="1467589728054" MODIFIED="1467589749819"/>
+</node>
+<node TEXT="2 ) import image as rasterized layer" ID="ID_571999025" CREATED="1467592858984" MODIFIED="1467592880508">
+<node TEXT="From Kicad&apos;s main menu, click Bitmap2Component" ID="ID_1608072222" CREATED="1467592906839" MODIFIED="1467592979349">
+<hook URI="images/icon_bitmap2component.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_236874555" CREATED="1467593054585" MODIFIED="1467593375270"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      This will open a blank window. There are three tabs:
+    </p>
+    <p>
+      Original Image
+    </p>
+    <p>
+      Greyscale
+    </p>
+    <p>
+      Black and White Picture&#160;&#160;&#160;&lt;--- This is the one you'll want to see
+    </p>
+    <p>
+      Press <b>Load Bitmap</b>, and select the image you wish to use
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/window_bitmap2component.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_78461009" CREATED="1467593611987" MODIFIED="1467593807130"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>The size of the output rasterized image is changed HERE</b>. Change the x &amp; y resolution (generally keep them the same) to change the size of the output in mm. You can see how changing the DPI higher will make the object smaller. It's a good idea to measure how large you want the logo, then fiddle with the Resolution until you get the desired size. <b>It is recommended to use a large image here and scale it down using the Resolution parameters to ensure a smooth graphic.</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="To output to footprint: select format Pcbnew    (this is the one needed for a custom silkscreen)&#xa;To output to schematic component, select Eeschema    (this is for custom symbols in schematics)" ID="ID_1133771728" CREATED="1467593271089" MODIFIED="1467593348595"/>
+<node TEXT="Everything that you see as white will be exported as the selected board layer." ID="ID_64535755" CREATED="1467593383463" MODIFIED="1467593813940">
+<font BOLD="true"/>
+</node>
+<node TEXT="Alpha channel defaults to black, which is the opposite of what most people want. Usually I remove the alpha channel in GIMP and set the background to white" ID="ID_754008327" CREATED="1467594358847" MODIFIED="1467594445740"/>
+<node TEXT="Drag the threshold Value until you see the objects you want in white, then press export.&#xa;For custom footprints its customary to save under the &lt;project name&gt;.pretty folder, where other custom footprints are generally stored" ID="ID_1644769869" CREATED="1467593434554" MODIFIED="1467593492587"/>
+<node TEXT="Select &quot;negative&quot; under Options to negate picture. It&apos;s often necessary to get the image desired image outline. Threshold usually has to be adjusted then" ID="ID_251170618" CREATED="1467594361921" MODIFIED="1467594403044"/>
+</node>
+<node TEXT="Now you can add the footprint." ID="ID_1468206303" CREATED="1467592895484" MODIFIED="1467592901168"/>
+<node ID="ID_387307771" CREATED="1467589736223" MODIFIED="1467589906040"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      close footprint editor. Open pcbnew.
+    </p>
+    <p>
+      On the right side, you can add additional footprints to the board by:
+    </p>
+    <p>
+      clicking the &quot;Add footprint&quot;&#160;&#160;&#160;&#160;&#160;&#160;--or--
+    </p>
+    <p>
+      keyboard shortcut O&#160;&#160;&#160;&#160;(oh)&#160;&#160;&#160;&#160;&#160;--or--
+    </p>
+    <p>
+      <b>Place &gt; Footprints</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/location_add_footprint_to_pcb.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_1532878430" CREATED="1467589909809" MODIFIED="1467590123542"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Click somewhere on the board. A menu will pop up to locate the footprint. If you get errors due to github footprints not loading, you'll have choose
+    </p>
+    <p>
+      <b>Select by Browser</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<hook URI="images/window_load_footprint_into_pcbnew.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node ID="ID_685358608" CREATED="1467593501389" MODIFIED="1467593855233"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      note that you'll have to have added the footprint to the list of footprints first.
+    </p>
+    <p>
+      <b>Generally, if you saved the footprint in the same &lt;project name&gt;.pretty folder as the rest of the custom footprints, it should be there. If not, restart Kicad (Kicad will reload footprints on startup)</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="Find the correct library (usually your custom library)&#xa;Select the custom footprint (double click it) to place it on pcb" ID="ID_1401201471" CREATED="1467594008578" MODIFIED="1467594069535">
+<hook URI="images/window_library_browser_selecting_footprint.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+<node TEXT="The custom silkscreen placed on the board" ID="ID_61576567" CREATED="1467594071476" MODIFIED="1467594151476">
+<hook URI="images/example_custom_footprint_on_pcb.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
 </node>
 <node TEXT="Part 7: Reviewing your work" POSITION="right" ID="ID_928753829" CREATED="1457643584130" MODIFIED="1457643593299">
@@ -722,7 +882,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/plot_to_gerber.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -750,7 +909,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/generate_drill_files.png" SIZE="0.8941878" NAME="ExternalObject"/>
 </node>
