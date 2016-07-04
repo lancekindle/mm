@@ -302,6 +302,7 @@
 <node TEXT="Edit footprint" ID="ID_1944345975" CREATED="1457056271947" MODIFIED="1457056275556">
 <node TEXT="There are 3 types of connections for components:&#xa;1) through-hole&#xa;2) SMD&#xa;3) Connector&#xa;For gameboy-style type cartridge / edge connector choose 3rd option: &quot;Connector&quot;" ID="ID_809181125" CREATED="1457114948490" MODIFIED="1457115012573"/>
 <node TEXT="May need to adjust &quot;clearance&quot; as well  (which idk how to do it)" ID="ID_453851863" CREATED="1457115206901" MODIFIED="1457218486240"/>
+<node TEXT="Different views enable different features to be used within the editor. For example, you must be in &quot;default&quot; mode to rotate a footprint.&#xa;You can change view modes by:&#xa;View &gt; Switch Canvas To Default     (OR choose OpenGL OR Cairo)" ID="ID_1201083355" CREATED="1467594956351" MODIFIED="1467595037972"/>
 </node>
 <node TEXT="Save footprint in new library" ID="ID_883432281" CREATED="1457056255544" MODIFIED="1457056270078"/>
 <node TEXT="Add custom footprint library to project" ID="ID_368017635" CREATED="1457056514892" MODIFIED="1457056561072">
@@ -538,6 +539,26 @@
 </node>
 <node TEXT="Part 6: Laying out the copper tracings on pcb board" POSITION="right" ID="ID_982342538" CREATED="1457762433220" MODIFIED="1457762464402">
 <edge COLOR="#00007c"/>
+<node ID="ID_175263917" CREATED="1467595084478" MODIFIED="1467595360696"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      It is advised to be in OpenGL mode when drawing Traces. This lets you use the routing assist tool, to shove or walk-around traces. Extremely useful!
+    </p>
+    <p>
+      <b>View &gt; Switch Canvas to OpenGL </b>
+    </p>
+    <p>
+      <b>But please note that some keyboard shortcuts change between Default and OpenGL, and Ctrl+Z doesn't work in OpenGL. You'll just need to get used to switching between the two views as you work. F9 is Default. F11 is OpenGL</b>
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 <node TEXT="Press X to begin drawing traces (it will immediately place the beginning trace at your mouse&apos;s location). Or, click on the &quot;add tracks and vias&quot; button.&#xa;Make sure that you have a copper trace layer selected&#xa;Click once to bend/curve from that point. Doubleclick to finalize the trace. Click once to start a new trace." ID="ID_1319224371" CREATED="1456881910170" MODIFIED="1457919437816">
 <hook URI="images/icon_add_tracks_and_vias.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -546,7 +567,7 @@
 <hook URI="images/tracing_options.png" SIZE="0.7246377" NAME="ExternalObject"/>
 </node>
 <node TEXT="Select the layer (front or back) to draw on each. Or simply press V to swap between top and bottom layers if you are not currently drawing a trace." ID="ID_1310111675" CREATED="1456882485389" MODIFIED="1457909398698"/>
-<node ID="ID_1759689992" CREATED="1457917179294" MODIFIED="1457917189412"><richcontent TYPE="NODE">
+<node ID="ID_1759689992" CREATED="1457917179294" MODIFIED="1467595531217"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -554,10 +575,14 @@
   </head>
   <body>
     <p>
-      <b>Using the routing assist tool:</b>
+      <b>Using the routing assist tool: </b>
+    </p>
+    <p>
+      <b>Aka using OpenGL ( a must read )</b>
     </p>
   </body>
 </html>
+
 </richcontent>
 <node ID="ID_1729232466" CREATED="1457917190998" MODIFIED="1457919345001"><richcontent TYPE="NODE">
 
@@ -603,7 +628,7 @@
 </html>
 </richcontent>
 </node>
-<node TEXT="Some keyboard shortcuts while in auto-routing mode:&#xa;Ctrl + click -&gt; Select and drag (maintaining connection) via/segment/corner to new location&#xa;D -&gt; same as Ctrl + click&#xa;E -&gt; popup preferences for autorouting mode + options" ID="ID_1038105682" CREATED="1457923591782" MODIFIED="1457924481628"/>
+<node TEXT="Some keyboard shortcuts while in auto-routing mode:&#xa;Ctrl + click -&gt; Select and drag (maintaining connection) via/segment/corner to new location&#xa;D -&gt; drag             (same as Ctrl + click)&#xa;E -&gt; popup preferences for autorouting mode + options" ID="ID_1038105682" CREATED="1457923591782" MODIFIED="1467595472153"/>
 <node TEXT="You can revise any track by clicking on the trace you wish to revise at the location you wish to fork off from. If you connect it to the same end destination, the old duplicate section will be automatically deleted (except vias)" ID="ID_1632636995" CREATED="1457920014468" MODIFIED="1457923148208"/>
 <node ID="ID_1662280344" CREATED="1457923153919" MODIFIED="1457923271561"><richcontent TYPE="NODE">
 
@@ -627,7 +652,7 @@
 </node>
 <node TEXT="While in OpenGL track placing mode, Ctrl + Z and Delete don&apos;t seem to work.&#xa;You&apos;ll have to select a different tool (like normal mode) to be able to undo tracks" ID="ID_1182094286" CREATED="1457919711291" MODIFIED="1457923130029"/>
 <node TEXT="Also, delete only deletes track segments in OpenGL mode" ID="ID_1849833414" CREATED="1457919767097" MODIFIED="1457919782687"/>
-<node ID="ID_748478444" CREATED="1457919836919" MODIFIED="1457921681362"><richcontent TYPE="NODE">
+<node ID="ID_748478444" CREATED="1457919836919" MODIFIED="1467595515503"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -635,13 +660,14 @@
   </head>
   <body>
     <p>
-      To delete a full trace, right-click on wire, select <b>Select &gt; Trivial Connection</b>&#160;and then press Delete once it's highlighted the full track
+      To delete a full trace, right-click on wire, select <b>Select &gt; Trivial Connection</b>&#160;and it should highlight the full track. Then press Delete.
     </p>
     <p>
       You can also press U to select the full trivial connection track
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 </node>
@@ -681,7 +707,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/icon_pcb_footprint_editor.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -721,7 +746,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/window_bitmap2component.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -737,7 +761,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="To output to footprint: select format Pcbnew    (this is the one needed for a custom silkscreen)&#xa;To output to schematic component, select Eeschema    (this is for custom symbols in schematics)" ID="ID_1133771728" CREATED="1467593271089" MODIFIED="1467593348595"/>
@@ -773,7 +796,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/location_add_footprint_to_pcb.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -792,7 +814,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 <hook URI="images/window_load_footprint_into_pcbnew.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -811,7 +832,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 <node TEXT="Find the correct library (usually your custom library)&#xa;Select the custom footprint (double click it) to place it on pcb" ID="ID_1401201471" CREATED="1467594008578" MODIFIED="1467594069535">
