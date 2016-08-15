@@ -49,14 +49,18 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="11"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="1"/>
 <node TEXT="IT support experience" POSITION="left" ID="ID_984940357" CREATED="1460998821948" MODIFIED="1460998841948">
 <edge COLOR="#007c7c"/>
 <node TEXT="Setup Norton Antivirus on ~ 12 on-site desktop computers" ID="ID_1202944976" CREATED="1460998864242" MODIFIED="1460998894717">
 <node TEXT="In at least one case I had to fiddle with registry key in order to uninstall and reinstall.&#xa;It was an ugly hack that was necessary because we lost the password" ID="ID_788237878" CREATED="1460998898619" MODIFIED="1460998944412"/>
 </node>
-<node TEXT="Recognized, backed-up, and replaced a failing Network-Attached Hard-drive (NAS)" ID="ID_1569936180" CREATED="1460998948123" MODIFIED="1460998976373"/>
-<node TEXT="Found and replaced an intermittently-bad ethernet cable" ID="ID_99277313" CREATED="1460998977261" MODIFIED="1460999002146"/>
+<node TEXT="Recognized, backed-up, and replaced a failing Network-Attached Hard-drive (NAS)" ID="ID_1569936180" CREATED="1460998948123" MODIFIED="1460998976373">
+<node TEXT="Drive began failing after ~ 5 minutes of use, so I setup a sync utility to sync all its files to my laptop, then plugged the NAS in and began syncing. Hard drive was barely responsive by the time I finished." ID="ID_1916967414" CREATED="1466536016222" MODIFIED="1466536113517"/>
+</node>
+<node TEXT="Found and replaced an intermittently-bad ethernet cable" ID="ID_99277313" CREATED="1460998977261" MODIFIED="1460999002146">
+<node TEXT="Printer was having occasional difficulty, so I investigated and eventually started pinging the printer and noticed a variable delay between pings" ID="ID_1834808737" CREATED="1466535965882" MODIFIED="1466536006907"/>
+</node>
 <node TEXT="Wrote a program to auto-restart critical computer software when it&apos;s accidentally closed by employees" ID="ID_1202429701" CREATED="1460999126427" MODIFIED="1460999971071"/>
 </node>
 <node TEXT="experience gained during air liquide" POSITION="right" ID="ID_1104447412" CREATED="1459204095023" MODIFIED="1459204101596">
@@ -95,6 +99,53 @@
 <node TEXT="Helium is obtained from pressurized Helium bottles. Usually from 3000PSI bottles, which is immediately reduced to 120PSI, and later further reduced to 30? PSI." ID="ID_1724475579" CREATED="1459206561886" MODIFIED="1459206644312"/>
 <node TEXT="Reducing the pressure down 2 times immensely helps with controlling pressure. Otherwise directly reducing from 3000PSI to 30PSI might experience blips as the pressure-controlling valve adjusts around it&apos;s setpoint. Each Pressure-Controlling valve is used in it&apos;s stable range. The 3k one can adjust with accuracy in the 100&apos;s. The 200PSI one can adjust with acuracy in the 1&apos;s." ID="ID_56200835" CREATED="1459206644773" MODIFIED="1459206777917"/>
 <node TEXT="We also found that helium bottles seemed to produce bad-quality helium after it dropped to 300PSI or so. As a result, we&apos;d replace the bottles once they dropped to 400PSI" ID="ID_161008658" CREATED="1459206778420" MODIFIED="1459206834243"/>
+</node>
+<node TEXT="Office work: Data entry and document edits" POSITION="left" ID="ID_584907315" CREATED="1466536209793" MODIFIED="1466536233099">
+<edge COLOR="#7c7c00"/>
+<node TEXT="Rewrote and enchanced many SOPs for operating onsite equipment" ID="ID_145912796" CREATED="1466536234494" MODIFIED="1466536272057">
+<node TEXT="cooling glycol loop startup" ID="ID_1345982357" CREATED="1466536251652" MODIFIED="1466536261415"/>
+<node TEXT="liquide hydrogen offload" ID="ID_1019056105" CREATED="1466536262673" MODIFIED="1466536281689"/>
+<node TEXT="steam methan reformer (SMR) startup" ID="ID_981575204" CREATED="1466536282221" MODIFIED="1466536301471"/>
+<node TEXT="CDA compressor shutdown" ID="ID_897357126" CREATED="1466536307911" MODIFIED="1466536312250"/>
+<node TEXT="CDA dryer switching" ID="ID_1408857629" CREATED="1466536315509" MODIFIED="1466536320027"/>
+<node TEXT="High-Pressure Cryogenic Nitrogen Pump operation" ID="ID_797819482" CREATED="1466536330308" MODIFIED="1466536355850"/>
+</node>
+<node TEXT="Printed from and entered completed work orders into Maximo" ID="ID_1690118631" CREATED="1466536464839" MODIFIED="1466536556568">
+<node TEXT="Developed a system to print off all the work orders and add barcodes to them" ID="ID_438628745" CREATED="1466536476510" MODIFIED="1466536492698"/>
+<node TEXT="each repair had a number of hours and comments associated that needed to be completed" ID="ID_1630535780" CREATED="1466536452946" MODIFIED="1466536515048"/>
+</node>
+</node>
+<node TEXT="Mechanical work" POSITION="left" ID="ID_1845854085" CREATED="1466536751864" MODIFIED="1466536755408">
+<edge COLOR="#ff0000"/>
+<node TEXT="Refurbished / Replaced" ID="ID_804953312" CREATED="1466536756708" MODIFIED="1466536984658">
+<node TEXT="refurbished methane compressor check-valves" ID="ID_511961960" CREATED="1466536772138" MODIFIED="1466536784335"/>
+<node TEXT="Changed oil filters, air filters, potable water filters, RO water filters (membranes)" ID="ID_141853259" CREATED="1466536802742" MODIFIED="1466536865444"/>
+<node TEXT="Changed Nitrogen cylinders, Helium cylinders, DI bottles" ID="ID_666857711" CREATED="1466536865974" MODIFIED="1466536894923"/>
+<node TEXT="Replaced faulty Drain-all" ID="ID_1734659760" CREATED="1466536911291" MODIFIED="1466536925179"/>
+<node TEXT="Hunted out and replaced runs of stainless steel tubing with pinhole leaks" ID="ID_1321821172" CREATED="1466536925941" MODIFIED="1466536949445"/>
+</node>
+<node TEXT="Major repairs" ID="ID_1205484553" CREATED="1466536986132" MODIFIED="1466536989006">
+<node TEXT="replaced massive compressor intercooler. Replaced piping gaskets in the process&#xa;Had to order new gaskets, more glycol" ID="ID_1323599123" CREATED="1466536990593" MODIFIED="1466537071216"/>
+<node TEXT="Installed custom glycol line tap for compressor repair.&#xa;Carried glycol line tap from inception to completion including billing, schematics and redlines, and scheduling contractors." ID="ID_1835916043" CREATED="1466537073939" MODIFIED="1466537132033"/>
+<node TEXT="Setup replacement of methane flowmeter: Included ordering part and scheduling onsite technical help during turnaround" ID="ID_425469891" CREATED="1466537180078" MODIFIED="1466537244469"/>
+</node>
+<node TEXT="Troubleshooting" ID="ID_762206533" CREATED="1466536973083" MODIFIED="1466536977443">
+<node TEXT="Air Invading Glycol" ID="ID_1240239816" CREATED="1466537272077" MODIFIED="1466537281440">
+<node TEXT="after a large turnaround, we began to experience high-pressure in the glycol line. In desperation (to prevent plant shutdown), we began bleading out glycol and realized the line was very frothy. We rigged a system to bleed the glycol into a barrel and pumped it back into the line after it had de-frothed. For several days this was happening. We assumed there was a pocket of air that was being drained from when we had changed a portion of the glycol setup in our turnaround. But after the 3rd day... I began to get suspicious. We had just bled out too much air by that point. Somehow air must be getting introduced into the system." ID="ID_1582570580" CREATED="1466537282380" MODIFIED="1466537566747"/>
+<node TEXT="There were only a few ways gas could get into the system. Nitrogen gas was present throughout our plant at pressures &gt; 60psi (which was what our glycol line ran). So I bled out ~5 gallons of the glycol froth into a container and held my air monitor inside the barrel. It didn&apos;t read low oxygen, so that meant it was NOT full of nitrogen. That left only our air compressors as a likely culprit. To test those, I cycled each one off for an hour (we had ~5 running). I quickly located the problematic one: compressor #3. Once compressor #3 was off, the glycol pressure stabilized." ID="ID_1208677489" CREATED="1466537568288" MODIFIED="1466537775977"/>
+<node TEXT="Knowing it was the compressor, I next needed to drill down to which intercooler was leaking (the intercooler was the only place where pressurized air and glycol come close to each other). I opened the drains for each intercooler air-side chamber and drained to a bucket.&#xa;For a full day, nothing showed up. The next day, intercooler #2 had begun to show some leaking glycol. And that&apos;s how I proved intercooler 2 was at fault." ID="ID_1530561023" CREATED="1466537776470" MODIFIED="1466537890655"/>
+<node TEXT="Then I had to schedule our compressor guy to come help take out the intercooler. And I talked to the Cameron guys to get a quote for buying a new intercooler. Once we pulled out the intercooler and proved it was at fault, I got the go-ahead to purchase the new intercooler.&#xa;Then I had to order new piping gaskets (we had ruined some while putting them back on the first time).  Eventually we got the new system setup." ID="ID_1412362979" CREATED="1466537931868" MODIFIED="1466538143312"/>
+<node TEXT=" But as we were looking to pump glycol back into the system, I realized that there were two large vertical portions of the glycol legs that would remain filled with air. This was WAY too much air to leave, so I talked to the rest of the guys about it, and figured it would be easiest to put a tap in the piping. So I drew up the changes in the redlines, then obtained the cost from a local welding contractor, and scheduled them to come in and weld in new taps. Finally, FINALLY that was done and we could fill up the glycol lines and put the compressor back into service." ID="ID_782134056" CREATED="1466538143947" MODIFIED="1466538351603"/>
+</node>
+<node TEXT="too-good gas purity during plant startup" ID="ID_1652493256" CREATED="1466538353640" MODIFIED="1466538403333">
+<node TEXT="After a turnaround, we had the hydrochem up and running and ready to go into the pipeline. We just needed to verify the purity. So the guys started up the GCs (gas chromatographs) and very quickly got a satisfactory purity. I was a little suspicious though. It was too good, too soon. So I traced the gas sample line from where it&apos;s pulled to the GC, checking that all the valves were open. INSIDE the GC casing, I found a valve that had been closed during turnaround. Notified the guys and I opened it (after confirming with them). Gas purity shot to hell, and it took another 5 hours before the purity became good enough. So I saved us from accidentally pumping a whole load of impure hydrogen into our pipeline." ID="ID_1415844819" CREATED="1466538404755" MODIFIED="1466538592645"/>
+</node>
+<node TEXT="Glitchy H2 flowmeter" ID="ID_1029856644" CREATED="1466538628193" MODIFIED="1466538650815">
+<node TEXT="I noticed that occasionally we got glitchy hydrogen flows, where hydrogen would dip just briefly and come back up." ID="ID_229506915" CREATED="1466538651312" MODIFIED="1466538732251"/>
+<node TEXT="I&apos;m not an instrument technician, so I decided to see if something was causing those bumps... that maybe it wasn&apos;t just a faulty flowmeter" ID="ID_1881241031" CREATED="1466538733670" MODIFIED="1466538768484"/>
+<node TEXT="As I was looking at the piping I noticed a brief *csshhhh* sound. I stood stock still, and waited but it didn&apos;t repeat. As I was investigating the nearby piping, I heard it again; This time I knew it was coming from the flow control valves. So I watched it. About 10 minutes later, the flow valve does a quick &quot;adjustment&quot;. I realized that our flow control valve was behaving slightly irrationally. So luckily we have two flow-control valves on that piping, both of which control the pressure at a set-point. So I swapped the two flow-control valves set-points so that the glitchy one would be at 100% open. This set the good fcv to do most of the regulating. I let the other guys know what I had done, and we all discussed getting a technician to come fix it" ID="ID_328737531" CREATED="1466538768706" MODIFIED="1466539118879"/>
+</node>
+</node>
 </node>
 </node>
 </map>

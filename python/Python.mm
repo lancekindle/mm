@@ -50,7 +50,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="12"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="1"/>
 <node TEXT="Data Types:" POSITION="right" ID="ID_58961891" CREATED="1385057099009" MODIFIED="1390585624890">
 <edge COLOR="#ff0000"/>
 <hook NAME="AlwaysUnfoldedNode"/>
@@ -1044,6 +1044,7 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="threadingExample.py" ID="ID_36297734" CREATED="1405450994272" MODIFIED="1405451026035" LINK="code_examples/threadingExample.py"/>
 </node>
 <node TEXT="System Tray Icon" ID="ID_745856141" CREATED="1405437116554" MODIFIED="1405451049990">
+<node TEXT="Older, Windows-Only version" ID="ID_1147919458" CREATED="1466531884022" MODIFIED="1466531899971">
 <node TEXT="Running an application in the background, with a System Tray Icon, usable to right-click and select &quot;quit&quot; to exit program" ID="ID_1153874994" CREATED="1405437152848" MODIFIED="1405451094257"/>
 <node TEXT="I found online a small one-file module called SysTrayIcon, which allows you to use it to set the system tray and specify different popup menus when the user right-clicks. It can be used to run a quick function, or change the variables in a threaded python process" ID="ID_225966199" CREATED="1405457553180" MODIFIED="1405457679639" LINK="http://stackoverflow.com/questions/1085694/whats-the-simplest-way-to-put-a-python-script-into-the-system-tray-windows"/>
 <node TEXT="systemTrayExample.py" ID="ID_76665057" CREATED="1405457688176" MODIFIED="1405457718311" LINK="code_examples/systemTrayExample.py">
@@ -1053,6 +1054,11 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="view source code (warning very big)" ID="ID_536360211" CREATED="1405457750994" MODIFIED="1405457759256">
 <node TEXT="#!/usr/bin/env python&#xa;# Module     : SysTrayIcon.py&#xa;# Synopsis   : Windows System tray icon.&#xa;# Programmer : Simon Brunning - simon@brunningonline.net&#xa;# Date       : 11 April 2005&#xa;# Notes      : Based on (i.e. ripped off from) Mark Hammond&apos;s&#xa;#              win32gui_taskbar.py and win32gui_menu.py demos from PyWin32&#xa;# http://stackoverflow.com/questions/1085694/whats-the-simplest-way-to-put-a-python-script-into-the-system-tray-windows&#xa;&apos;&apos;&apos;TODO&#xa;&#xa;For now, the demo at the bottom shows how to use it...&apos;&apos;&apos;&#xa;        &#xa;import os&#xa;import sys&#xa;import win32api&#xa;import win32con&#xa;import win32gui_struct&#xa;try:&#xa;    import winxpgui as win32gui&#xa;except ImportError:&#xa;    import win32gui&#xa;&#xa;class SysTrayIcon(object):&#xa;    &apos;&apos;&apos;TODO&apos;&apos;&apos;&#xa;    QUIT = &apos;QUIT&apos;&#xa;    SPECIAL_ACTIONS = [QUIT]&#xa;   &#xa;    FIRST_ID = 1023&#xa;   &#xa;    def __init__(self,&#xa;                 icon,&#xa;                 hover_text,&#xa;                 menu_options,&#xa;                 on_quit=None,&#xa;                 default_menu_index=None,&#xa;                 window_class_name=None,):&#xa;       &#xa;        self.icon = icon&#xa;        self.hover_text = hover_text&#xa;        self.on_quit = on_quit&#xa;       &#xa;        menu_options = menu_options + ((&apos;Quit&apos;, None, self.QUIT),)&#xa;        self._next_action_id = self.FIRST_ID&#xa;        self.menu_actions_by_id = set()&#xa;        self.menu_options = self._add_ids_to_menu_options(list(menu_options))&#xa;        self.menu_actions_by_id = dict(self.menu_actions_by_id)&#xa;        del self._next_action_id&#xa;       &#xa;       &#xa;        self.default_menu_index = (default_menu_index or 0)&#xa;        self.window_class_name = window_class_name or &quot;SysTrayIconPy&quot;&#xa;       &#xa;        message_map = {win32gui.RegisterWindowMessage(&quot;TaskbarCreated&quot;): self.restart,&#xa;                       win32con.WM_DESTROY: self.destroy,&#xa;                       win32con.WM_COMMAND: self.command,&#xa;                       win32con.WM_USER+20 : self.notify,}&#xa;        # Register the Window class.&#xa;        window_class = win32gui.WNDCLASS()&#xa;        hinst = window_class.hInstance = win32gui.GetModuleHandle(None)&#xa;        window_class.lpszClassName = self.window_class_name&#xa;        window_class.style = win32con.CS_VREDRAW | win32con.CS_HREDRAW;&#xa;        window_class.hCursor = win32gui.LoadCursor(0, win32con.IDC_ARROW)&#xa;        window_class.hbrBackground = win32con.COLOR_WINDOW&#xa;        window_class.lpfnWndProc = message_map # could also specify a wndproc.&#xa;        classAtom = win32gui.RegisterClass(window_class)&#xa;        # Create the Window.&#xa;        style = win32con.WS_OVERLAPPED | win32con.WS_SYSMENU&#xa;        self.hwnd = win32gui.CreateWindow(classAtom,&#xa;                                          self.window_class_name,&#xa;                                          style,&#xa;                                          0,&#xa;                                          0,&#xa;                                          win32con.CW_USEDEFAULT,&#xa;                                          win32con.CW_USEDEFAULT,&#xa;                                          0,&#xa;                                          0,&#xa;                                          hinst,&#xa;                                          None)&#xa;        win32gui.UpdateWindow(self.hwnd)&#xa;        self.notify_id = None&#xa;        self.refresh_icon()&#xa;       &#xa;        win32gui.PumpMessages()&#xa;&#xa;    def _add_ids_to_menu_options(self, menu_options):&#xa;        result = []&#xa;        for menu_option in menu_options:&#xa;            option_text, option_icon, option_action = menu_option&#xa;            if callable(option_action) or option_action in self.SPECIAL_ACTIONS:&#xa;                self.menu_actions_by_id.add((self._next_action_id, option_action))&#xa;                result.append(menu_option + (self._next_action_id,))&#xa;            elif non_string_iterable(option_action):&#xa;                result.append((option_text,&#xa;                               option_icon,&#xa;                               self._add_ids_to_menu_options(option_action),&#xa;                               self._next_action_id))&#xa;            else:&#xa;                print &apos;Unknown item&apos;, option_text, option_icon, option_action&#xa;            self._next_action_id += 1&#xa;        return result&#xa;       &#xa;    def refresh_icon(self):&#xa;        # Try and find a custom icon&#xa;        hinst = win32gui.GetModuleHandle(None)&#xa;        if os.path.isfile(self.icon):&#xa;            icon_flags = win32con.LR_LOADFROMFILE | win32con.LR_DEFAULTSIZE&#xa;            hicon = win32gui.LoadImage(hinst,&#xa;                                       self.icon,&#xa;                                       win32con.IMAGE_ICON,&#xa;                                       0,&#xa;                                       0,&#xa;                                       icon_flags)&#xa;        else:&#xa;            print &quot;Can&apos;t find icon file - using default.&quot;&#xa;            hicon = win32gui.LoadIcon(0, win32con.IDI_APPLICATION)&#xa;&#xa;        if self.notify_id: message = win32gui.NIM_MODIFY&#xa;        else: message = win32gui.NIM_ADD&#xa;        self.notify_id = (self.hwnd,&#xa;                          0,&#xa;                          win32gui.NIF_ICON | win32gui.NIF_MESSAGE | win32gui.NIF_TIP,&#xa;                          win32con.WM_USER+20,&#xa;                          hicon,&#xa;                          self.hover_text)&#xa;        win32gui.Shell_NotifyIcon(message, self.notify_id)&#xa;&#xa;    def restart(self, hwnd, msg, wparam, lparam):&#xa;        self.refresh_icon()&#xa;&#xa;    def destroy(self, hwnd, msg, wparam, lparam):&#xa;        if self.on_quit: self.on_quit(self)&#xa;        nid = (self.hwnd, 0)&#xa;        win32gui.Shell_NotifyIcon(win32gui.NIM_DELETE, nid)&#xa;        win32gui.PostQuitMessage(0) # Terminate the app.&#xa;&#xa;    def notify(self, hwnd, msg, wparam, lparam):&#xa;        if lparam==win32con.WM_LBUTTONDBLCLK:&#xa;            self.execute_menu_option(self.default_menu_index + self.FIRST_ID)&#xa;        elif lparam==win32con.WM_RBUTTONUP:&#xa;            self.show_menu()&#xa;        elif lparam==win32con.WM_LBUTTONUP:&#xa;            pass&#xa;        return True&#xa;       &#xa;    def show_menu(self):&#xa;        menu = win32gui.CreatePopupMenu()&#xa;        self.create_menu(menu, self.menu_options)&#xa;        #win32gui.SetMenuDefaultItem(menu, 1000, 0)&#xa;       &#xa;        pos = win32gui.GetCursorPos()&#xa;        # See http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winui/menus_0hdi.asp&#xa;        win32gui.SetForegroundWindow(self.hwnd)&#xa;        win32gui.TrackPopupMenu(menu,&#xa;                                win32con.TPM_LEFTALIGN,&#xa;                                pos[0],&#xa;                                pos[1],&#xa;                                0,&#xa;                                self.hwnd,&#xa;                                None)&#xa;        win32gui.PostMessage(self.hwnd, win32con.WM_NULL, 0, 0)&#xa;   &#xa;    def create_menu(self, menu, menu_options):&#xa;        for option_text, option_icon, option_action, option_id in menu_options[::-1]:&#xa;            if option_icon:&#xa;                option_icon = self.prep_menu_icon(option_icon)&#xa;           &#xa;            if option_id in self.menu_actions_by_id:               &#xa;                item, extras = win32gui_struct.PackMENUITEMINFO(text=option_text,&#xa;                                                                hbmpItem=option_icon,&#xa;                                                                wID=option_id)&#xa;                win32gui.InsertMenuItem(menu, 0, 1, item)&#xa;            else:&#xa;                submenu = win32gui.CreatePopupMenu()&#xa;                self.create_menu(submenu, option_action)&#xa;                item, extras = win32gui_struct.PackMENUITEMINFO(text=option_text,&#xa;                                                                hbmpItem=option_icon,&#xa;                                                                hSubMenu=submenu)&#xa;                win32gui.InsertMenuItem(menu, 0, 1, item)&#xa;&#xa;    def prep_menu_icon(self, icon):&#xa;        # First load the icon.&#xa;        ico_x = win32api.GetSystemMetrics(win32con.SM_CXSMICON)&#xa;        ico_y = win32api.GetSystemMetrics(win32con.SM_CYSMICON)&#xa;        hicon = win32gui.LoadImage(0, icon, win32con.IMAGE_ICON, ico_x, ico_y, win32con.LR_LOADFROMFILE)&#xa;&#xa;        hdcBitmap = win32gui.CreateCompatibleDC(0)&#xa;        hdcScreen = win32gui.GetDC(0)&#xa;        hbm = win32gui.CreateCompatibleBitmap(hdcScreen, ico_x, ico_y)&#xa;        hbmOld = win32gui.SelectObject(hdcBitmap, hbm)&#xa;        # Fill the background.&#xa;        brush = win32gui.GetSysColorBrush(win32con.COLOR_MENU)&#xa;        win32gui.FillRect(hdcBitmap, (0, 0, 16, 16), brush)&#xa;        # unclear if brush needs to be feed.  Best clue I can find is:&#xa;        # &quot;GetSysColorBrush returns a cached brush instead of allocating a new&#xa;        # one.&quot; - implies no DeleteObject&#xa;        # draw the icon&#xa;        win32gui.DrawIconEx(hdcBitmap, 0, 0, hicon, ico_x, ico_y, 0, 0, win32con.DI_NORMAL)&#xa;        win32gui.SelectObject(hdcBitmap, hbmOld)&#xa;        win32gui.DeleteDC(hdcBitmap)&#xa;       &#xa;        return hbm&#xa;&#xa;    def command(self, hwnd, msg, wparam, lparam):&#xa;        id = win32gui.LOWORD(wparam)&#xa;        self.execute_menu_option(id)&#xa;       &#xa;    def execute_menu_option(self, id):&#xa;        menu_action = self.menu_actions_by_id[id]     &#xa;        if menu_action == self.QUIT:&#xa;            win32gui.DestroyWindow(self.hwnd)&#xa;        else:&#xa;            menu_action(self)&#xa;           &#xa;def non_string_iterable(obj):&#xa;    try:&#xa;        iter(obj)&#xa;    except TypeError:&#xa;        return False&#xa;    else:&#xa;        return not isinstance(obj, basestring)&#xa;&#xa;# Minimal self test. You&apos;ll need a bunch of ICO files in the current working&#xa;# directory in order for this to work...&#xa;if __name__ == &apos;__main__&apos;:&#xa;    import itertools, glob&#xa;   &#xa;    icons = itertools.cycle(glob.glob(&apos;*.ico&apos;))&#xa;    hover_text = &quot;SysTrayIcon.py Demo&quot;&#xa;    def hello(sysTrayIcon): print &quot;Hello World.&quot;&#xa;    def simon(sysTrayIcon): print &quot;Hello Simon.&quot;&#xa;    def switch_icon(sysTrayIcon):&#xa;        sysTrayIcon.icon = icons.next()&#xa;        sysTrayIcon.refresh_icon()&#xa;    menu_options = ((&apos;Say Hello&apos;, icons.next(), hello),&#xa;                    (&apos;Switch Icon&apos;, None, switch_icon),&#xa;                    (&apos;A sub-menu&apos;, icons.next(), ((&apos;Say Hello to Simon&apos;, icons.next(), simon),&#xa;                                                  (&apos;Switch Icon&apos;, icons.next(), switch_icon),&#xa;                                                 ))&#xa;                   )&#xa;    def bye(sysTrayIcon): print &apos;Bye, then.&apos;&#xa;   &#xa;    SysTrayIcon(icons.next(), hover_text, menu_options, on_quit=bye, default_menu_index=1)" ID="ID_1272801871" CREATED="1405457760137" MODIFIED="1405457770886"/>
 </node>
+</node>
+</node>
+<node TEXT="pystray" ID="ID_1798779339" CREATED="1466531909970" MODIFIED="1466532168854" LINK="https://pypi.python.org/pypi/pystray/0.2">
+<node TEXT="OS-agnostic tray icon program" ID="ID_274750328" CREATED="1466534663864" MODIFIED="1466534681600"/>
+<node TEXT="pip3 install pystray&#xa;AND (because it cannot specify to install Xlib)&#xa;pip3 install python3-xlib" ID="ID_1130103904" CREATED="1466531935586" MODIFIED="1466531961231"/>
 </node>
 </node>
 </node>
@@ -1100,6 +1106,7 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <edge COLOR="#7c7c00"/>
 <node TEXT="You can trace a scripts&apos; execution using pdb.&#xa;Normally you&apos;d call:&#xa;python my_script.py arg1 arg2&#xa;now you call&#xa;pdb myscrip.py arg1 arg2&#xa;--or--&#xa;to run pdb within a script:&#xa;import pdb&#xa;pdb.set_trace()  # run at location where you wish to break into debugger" ID="ID_1421582536" CREATED="1461388367508" MODIFIED="1462990546926" LINK="https://docs.python.org/3/library/pdb.html"/>
 <node TEXT="With Pdb you can navigate a script&apos;s execution, setting breakpoints at line numbers or when certain conditions are met&#xa;Most pdb keywords can be a single letter, or the full word, such as n(ext). typing n &lt;enter&gt; or next &lt;enter&gt; do the same thing" ID="ID_265855851" CREATED="1462990704362" MODIFIED="1462990948227"/>
+<node TEXT="hitting [enter] repeats the last action. So n [enter] [enter] will traverse two lines. When returning from a function, a summary of the returned results is displayed." ID="ID_113463205" CREATED="1467059959649" MODIFIED="1467060008152"/>
 <node TEXT="Navigation" ID="ID_813987520" CREATED="1462990734848" MODIFIED="1462990738119">
 <node TEXT="jumping up or down the stack trace does NOT rewind the program. It just jumps up / down a level, making each step execute more / less per step, respectively" ID="ID_1740887898" CREATED="1462991228492" MODIFIED="1462991279692"/>
 <node ID="ID_1133349188" CREATED="1462991048362" MODIFIED="1462991421143"><richcontent TYPE="NODE">
@@ -1286,6 +1293,24 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 </html>
 </richcontent>
 </node>
+<node ID="ID_1389448593" CREATED="1467062151271" MODIFIED="1467062212539"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>cl(ear)&#160;[filename:lineno | bpnumber [bpnumber ...]] </b>
+    </p>
+    <p>
+      Clears all breakpoints if no arguments supplied. Otherwise clear specified breakpoint
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
 </node>
 <node TEXT="Information" ID="ID_1256014673" CREATED="1462991657296" MODIFIED="1462991666280">
 <node ID="ID_472000108" CREATED="1462991668514" MODIFIED="1462991690124"><richcontent TYPE="NODE">
@@ -1303,6 +1328,42 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
     </p>
   </body>
 </html>
+</richcontent>
+</node>
+<node ID="ID_466462388" CREATED="1467060088183" MODIFIED="1467060121824"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b><i>variable_name [enter] </i></b>
+    </p>
+    <p>
+      typing just the variable name and enter will try to print the variable if it exists in the current context.
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node ID="ID_491252293" CREATED="1467062114742" MODIFIED="1467062142364"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>ll&#160;&#160;(LL)</b>
+    </p>
+    <p>
+      print current function in which execution resides and point to current line
+    </p>
+  </body>
+</html>
+
 </richcontent>
 </node>
 </node>

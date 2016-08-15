@@ -144,7 +144,7 @@
 </html>
 </richcontent>
 </node>
-<node ID="ID_1836124448" CREATED="1462217082649" MODIFIED="1462217332433"><richcontent TYPE="NODE">
+<node ID="ID_1836124448" CREATED="1462217082649" MODIFIED="1465396748261"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -152,13 +152,14 @@
   </head>
   <body>
     <p>
-      SELECT <i>value_name </i>FROM <i>table_name </i>ORDER BY <i>specific_value_name</i>;
+      SELECT <i>column_name </i>FROM <i>table_name </i>ORDER BY <i>specific_column_name</i>;
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
-<node ID="ID_1397974978" CREATED="1462217084616" MODIFIED="1462217312778"><richcontent TYPE="NODE">
+<node ID="ID_1397974978" CREATED="1462217084616" MODIFIED="1465396739455"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -166,10 +167,11 @@
   </head>
   <body>
     <p>
-      SELECT <i>value_name </i>FROM <i>table_name </i>WHERE <i>specific_table_name &gt; 0</i>;
+      SELECT <i>column_name </i>FROM <i>table_name </i>WHERE <i>specific_column_name &gt; 0</i>;
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node ID="ID_1462206771" CREATED="1462217208480" MODIFIED="1462217282852"><richcontent TYPE="NODE">
@@ -198,6 +200,21 @@
     </p>
   </body>
 </html>
+</richcontent>
+</node>
+<node ID="ID_944154140" CREATED="1465396788721" MODIFIED="1465396822580"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      SELECT SUM(<i>name</i>) <i>as somname</i>&#160;FROM <i>table_name</i>;
+    </p>
+  </body>
+</html>
+
 </richcontent>
 </node>
 </node>
@@ -757,7 +774,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>

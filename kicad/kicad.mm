@@ -16,7 +16,7 @@
   </body>
 </html>
 </richcontent>
-<hook NAME="MapStyle">
+<hook NAME="MapStyle" zoom="0.909">
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node">
@@ -135,6 +135,7 @@
 </node>
 <node TEXT="Part 1: creating the schematic" POSITION="right" ID="ID_487561022" CREATED="1454959103074" MODIFIED="1454959128700">
 <edge COLOR="#ff0000"/>
+<node TEXT="Dragging a block of components in eeschema&#xa;click + drag to select block to drag.&#xa;Press Tab to cycle from Move to Drag functionality" ID="ID_464810406" CREATED="1468186792684" MODIFIED="1468186849944"/>
 </node>
 <node TEXT="Part 1.5: symbol creation for schematic" POSITION="right" ID="ID_1260616838" CREATED="1456954337194" MODIFIED="1456954430999">
 <edge COLOR="#7c007c"/>
@@ -274,6 +275,21 @@
 <node TEXT="THIS PROCESS MAY TAKE SEVERAL MINUTES" ID="ID_934818122" CREATED="1457055184860" MODIFIED="1457055204648"/>
 <node TEXT="CvPcb window should eventuallly pop-up" ID="ID_1255112803" CREATED="1454959993582" MODIFIED="1457055214760">
 <hook URI="images/CvPcb_window.png" SIZE="0.4" NAME="ExternalObject"/>
+</node>
+<node ID="ID_948465500" CREATED="1468191407365" MODIFIED="1468191467350"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>WARNING. In some cases, no footprints will show up in the left pane. I once had to disable &quot;filter library by keywords&quot; to display footprints on the left.</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
 </node>
 <node TEXT="Now with each part highlighted (in middle pane) you can associate it with an available footprint (on right) by double-clicking the footprint." ID="ID_1352951781" CREATED="1457048762360" MODIFIED="1457048890161"/>
 <node ID="ID_820108027" CREATED="1457048890688" MODIFIED="1457055490496"><richcontent TYPE="NODE">
