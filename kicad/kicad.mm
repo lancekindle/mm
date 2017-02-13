@@ -1,4 +1,4 @@
-<map version="freeplane 1.3.0">
+<map version="freeplane 1.5.9">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1454959096546"><richcontent TYPE="NODE">
 
@@ -15,23 +15,29 @@
     </p>
   </body>
 </html>
+
 </richcontent>
-<hook NAME="MapStyle">
+<hook NAME="MapStyle" zoom="0.909">
+    <properties fit_to_viewport="false;"/>
 
 <map_styles>
-<stylenode LOCALIZED_TEXT="styles.root_node">
-<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right">
-<stylenode LOCALIZED_TEXT="default" MAX_WIDTH="600" COLOR="#000000" STYLE="as_parent">
+<stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
+<font SIZE="24"/>
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="default" MAX_WIDTH="600.0 px" COLOR="#000000" STYLE="as_parent">
 <font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
 </stylenode>
 <stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.attributes">
+<font SIZE="9"/>
+</stylenode>
 <stylenode LOCALIZED_TEXT="defaultstyle.note"/>
 <stylenode LOCALIZED_TEXT="defaultstyle.floating">
 <edge STYLE="hide_edge"/>
 <cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
 </stylenode>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right">
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="styles.topic" COLOR="#18898b" STYLE="fork">
 <font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
 </stylenode>
@@ -45,7 +51,7 @@
 <icon BUILTIN="yes"/>
 </stylenode>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right">
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#000000">
 <font SIZE="18"/>
 </stylenode>
@@ -65,7 +71,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="9"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="11" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="Links to documentation / etc" POSITION="left" ID="ID_573174418" CREATED="1457296982404" MODIFIED="1457296988922">
 <edge COLOR="#0000ff"/>
 <node ID="ID_949094641" CREATED="1457049101160" MODIFIED="1457296991565" LINK="https://www.youtube.com/watch?v=iTyi3RvNoB0&amp;index=1&amp;list=PLy2022BX6Esr6yxwDzhqYZyuuenJE2s5B"><richcontent TYPE="NODE">
@@ -83,6 +89,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node ID="ID_1570677491" CREATED="1457296993060" MODIFIED="1457297117685" LINK="http://kicad-pcb.org/help/file-formats/"><richcontent TYPE="NODE">
@@ -100,6 +107,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="OSHPark documentation about &quot;preflight check&quot;" ID="ID_1861602801" CREATED="1457937391333" MODIFIED="1457937410009" LINK="http://docs.oshpark.com/submitting-orders/preflight-checklist/"/>
@@ -119,6 +127,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 </node>
@@ -131,10 +140,58 @@
 <node TEXT="Generally you enter a mode by pressing a keyboard shortcut. One click of the mouse completes the action. If a single click does not complete the action (like in creating traces), then double-clicking will finish the action." ID="ID_1037635421" CREATED="1456883241584" MODIFIED="1457924350896"/>
 <node TEXT="Use mouse zooming to recenter yourself. Zoom out, then back in, and board recenters around zoom-point. Alternatively, dragging the mouse to the edge of the screen will move the board view in a smooth manner" ID="ID_591436293" CREATED="1456883308419" MODIFIED="1456883358304"/>
 <node TEXT="Some Keyboard shortcuts  (that usually deal with the area / component under the mouse):&#xa;A  -&gt; Add a component&#xa;M  -&gt; Move components around board&#xa;R  -&gt;  Rotate components on board. Usually need to be moving component already&#xa;E   -&gt;  Edit component values (over which mouse hovers)&#xa;Del  -&gt;   Delete component / anything under mouse&#xa;BackSpace  -&gt; Delete part of component?? Can use it to delete sections of tracing..." ID="ID_1326430921" CREATED="1456883035978" MODIFIED="1456953971679"/>
+<node TEXT="Within schematics" ID="ID_466774811" CREATED="1485731809724" MODIFIED="1485731814857">
+<node TEXT="W to add wire" ID="ID_1502444345" CREATED="1485731815607" MODIFIED="1485731820113"/>
+<node TEXT="C to copy component" ID="ID_1404941640" CREATED="1485731820464" MODIFIED="1485731826555"/>
+</node>
 <node TEXT="Some Mouse shortcuts&#xa;middle click  -&gt; center drawing on cursor&#xa;scroll  -&gt; zoom in/out  (board centers around zoom point)&#xa;shift + scroll  -&gt; move drawing vertically&#xa;ctrl + scroll  -&gt; move drawing horizontally" ID="ID_604459951" CREATED="1456953736177" MODIFIED="1456953862899"/>
 </node>
 <node TEXT="Part 1: creating the schematic" POSITION="right" ID="ID_487561022" CREATED="1454959103074" MODIFIED="1454959128700">
 <edge COLOR="#ff0000"/>
+<node TEXT="Dragging a block of components in eeschema&#xa;click + drag to select block to drag.&#xa;Press Tab to cycle from Move to Drag functionality" ID="ID_464810406" CREATED="1468186792684" MODIFIED="1468186849944"/>
+<node ID="ID_1234930753" CREATED="1486938735296" MODIFIED="1486941904343"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Use Eeschema to create a schematic of the circuit you wish to use.
+    </p>
+    <p>
+      Press <b>A </b>to add a component at the mouse's location
+    </p>
+    <p>
+      <b>C </b>to copy a component (may require clarification)
+    </p>
+    <p>
+      <b>R </b>to rotate a component (floating with or under mouse)
+    </p>
+    <p>
+      <b>G </b>to grab a component (drag it around, and wires will remain attached)
+    </p>
+    <p>
+      (G, in fact, grabs a component and it's surrounding components, but only it's immediate surrounding components)
+    </p>
+    <p>
+      <b>M </b>to move a component (wires will NOT move with it)
+    </p>
+    <p>
+      <b>V </b>to edit the component's value (such as Capacitance or Resistance)
+    </p>
+    <p>
+      <b>E </b>to edit properties of the component
+    </p>
+    <p>
+      <b>Shift + drag-selection-box</b>&#160;to copy the highlighted components (to a new clicked location)
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="use E to edit the component values for resistors and capacitors&#xa;(these will show up as labels on the pcb which makes soldering components easier)" ID="ID_1690067248" CREATED="1486940325153" MODIFIED="1486940390092"/>
 </node>
 <node TEXT="Part 1.5: symbol creation for schematic" POSITION="right" ID="ID_1260616838" CREATED="1456954337194" MODIFIED="1456954430999">
 <edge COLOR="#7c007c"/>
@@ -150,6 +207,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/icon_library_editor.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -168,6 +226,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/location_create_new_component.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -187,10 +246,11 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/location_save_component_libary.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
-<node ID="ID_889598998" CREATED="1456957484267" MODIFIED="1456957675962"><richcontent TYPE="NODE">
+<node ID="ID_889598998" CREATED="1456957484267" MODIFIED="1485732942626" LINK="#ID_1621873631"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -202,6 +262,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/dialog_need_to_load_library.png" SIZE="0.8791209" NAME="ExternalObject"/>
 </node>
@@ -219,10 +280,11 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/location_add_pins_to_component.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
-<node TEXT="Click on diagram to add a pin (and give it a descriptive name, etc)&#xa;Note: the connection point is the circle at the end of the pin. So make sure the connection points are facing the desired direction (usually outside of the component graphics/outline)" ID="ID_1534567865" CREATED="1456958550183" MODIFIED="1456965910784">
+<node TEXT="Click on diagram to add a pin (and give it a descriptive name, etc)&#xa;Note: the connection point is the circle at the end of the pin. So make sure the connection points are facing the desired direction (usually outside of the component graphics/outline). Usually this means that the label / pin name is INSIDE the component box" ID="ID_1534567865" CREATED="1456958550183" MODIFIED="1485733170633">
 <hook URI="images/component_pin_example.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
 <node TEXT="To add graphics, click on any of the graphic icons on the sidebar: such as rectable, circle, arc, or polygon" ID="ID_1065947747" CREATED="1456958671708" MODIFIED="1456958703827">
@@ -242,6 +304,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/adding_custom_component_library.png" SIZE="0.8583691" NAME="ExternalObject"/>
 </node>
@@ -265,6 +328,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/CvPCB_icon.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -275,8 +339,27 @@
 <node TEXT="CvPcb window should eventuallly pop-up" ID="ID_1255112803" CREATED="1454959993582" MODIFIED="1457055214760">
 <hook URI="images/CvPcb_window.png" SIZE="0.4" NAME="ExternalObject"/>
 </node>
+<node ID="ID_948465500" CREATED="1468191407365" MODIFIED="1486942594906"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>WARNING. In some cases, no footprints will show up in the right pane. I once had to disable &quot;filter library by keywords&quot; to display footprints on the right. </b>
+    </p>
+    <p>
+      <b>(If you do this, I recommend you choose to filter by Library instead)</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+<node TEXT="To be clear.. the &quot;Filter by keyword&quot; essentially filters the list of footprints to those that seem likely to be associated to your component by a keyword. Sometimes this doesn&apos;t work. In that case, you need to (temporarily) disable filtering by keyword. The list of footprints on the right pane will then be unfiltered (it&apos;ll show everything). So to narrow down that list, I recommend enabling &quot;Filter by library&quot; and then highlight a library in the left-pane. THEN the footprints in the right-pane will be only those in the library you&apos;ve selected" ID="ID_606979060" CREATED="1486942436542" MODIFIED="1486942655770"/>
+</node>
 <node TEXT="Now with each part highlighted (in middle pane) you can associate it with an available footprint (on right) by double-clicking the footprint." ID="ID_1352951781" CREATED="1457048762360" MODIFIED="1457048890161"/>
-<node ID="ID_820108027" CREATED="1457048890688" MODIFIED="1457055490496"><richcontent TYPE="NODE">
+<node ID="ID_820108027" CREATED="1457048890688" MODIFIED="1486942609349"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -287,10 +370,11 @@
       Footprints are organized by library (left pane).
     </p>
     <p>
-      To filter by library, click the <b>Filter footprint list by library </b>(on top-bar), and then&#160;highlight the library whose footprints you wish to see. The list on the left will then contain only footprints from that library
+      <b>To filter by library, click the Filter footprint list by library (on top-bar), and then&#160;highlight the library whose footprints you wish to see. </b>The list on the right will then contain only footprints from that library
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/location_filter_footprints_by_library.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -298,6 +382,27 @@
 </node>
 <node TEXT="Part 2.5: creating custom footprint" POSITION="right" ID="ID_746850548" CREATED="1456954306629" MODIFIED="1456954335970">
 <edge COLOR="#007c00"/>
+<node TEXT="Browse / modify existing footprints" ID="ID_938230707" CREATED="1486945136135" MODIFIED="1486945740475">
+<node TEXT="You may want to brows the current footprints to find one that you want to modify. The easiest way to browse footprints is to open up the footprint editor&#xa;File &gt; Load Footprint &gt; Load Footprint from Current Library &gt; Select By Browser&#xa;(this&apos;ll pop up a nice browser showing all footprints along with a visual view nearby)" ID="ID_874629181" CREATED="1486945141884" MODIFIED="1486945546296"/>
+<node ID="ID_1774143174" CREATED="1486945554003" MODIFIED="1486945611985"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Once you have found a footprint you want to modify, select it and <b>Verify Your Active Library is Set to YOUR library</b>
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+<node TEXT="That way you&apos;ll have open the footprint you like, and your active library is your personal library" ID="ID_1894274170" CREATED="1486945612564" MODIFIED="1486945649364"/>
+<node TEXT="Save it in your library and then modify the pins&#xa;Delete unneeded pins, and MAKE SURE TO RENAME PINS TO MATCH THE SCHEMATIC #&apos;s" ID="ID_1775496959" CREATED="1486945726290" MODIFIED="1486945987650"/>
+<node TEXT="It&apos;s important that pin #&apos;s match between the schematics and the footprints,&#xa;So that the nets / wires connect to the proper pins between schematic and footprint" ID="ID_441114426" CREATED="1486946304356" MODIFIED="1486946369887"/>
+</node>
 <node TEXT="Create footprint" ID="ID_1536820117" CREATED="1457056242588" MODIFIED="1457056255309"/>
 <node TEXT="Edit footprint" ID="ID_1944345975" CREATED="1457056271947" MODIFIED="1457056275556">
 <node TEXT="There are 3 types of connections for components:&#xa;1) through-hole&#xa;2) SMD&#xa;3) Connector&#xa;For gameboy-style type cartridge / edge connector choose 3rd option: &quot;Connector&quot;" ID="ID_809181125" CREATED="1457114948490" MODIFIED="1457115012573"/>
@@ -320,6 +425,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/loading_footprint_library_1.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -341,6 +447,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/loading_footprint_library_2.png" SIZE="0.5625879" NAME="ExternalObject"/>
 </node>
@@ -364,6 +471,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="double-click footprint (in right pane) to associate it with highlighted component (in middle pane)" ID="ID_1927995542" CREATED="1457056492306" MODIFIED="1457057717206"/>
@@ -386,6 +494,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <node ID="ID_26842501" CREATED="1457642806450" MODIFIED="1457643070929"><richcontent TYPE="NODE">
 
@@ -402,6 +511,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/pcbnew_edit_footprint_menu_nav.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -420,6 +530,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/pcbnew_change_footprint_menu.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -436,6 +547,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/Pcbnew_icon.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -457,13 +569,14 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/netlist_icon.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
 <node TEXT="click &quot;Read current netlist&quot; (and assuming it&apos;s been read, close it)" ID="ID_114001051" CREATED="1454960903345" MODIFIED="1454961015964">
 <hook URI="images/read_netlist_popup.png" SIZE="0.7029877" NAME="ExternalObject"/>
 </node>
-<node ID="ID_20774315" CREATED="1454961019274" MODIFIED="1454961454536"><richcontent TYPE="NODE">
+<node ID="ID_20774315" CREATED="1454961019274" MODIFIED="1486946821231"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -474,16 +587,20 @@
       Your parts should show up in the middle of the board, in a clump.
     </p>
     <p>
-      Spread them out by entering Mode footprint (icon shown below),
+      Spread them out by <b>entering Mode footprint (click on icon shown below)</b>,
     </p>
     <p>
-      right-click on board and navigate to
+      then right-click on board and navigate to
     </p>
     <p>
-      <b>Global Spread and Place</b>&#160;&gt; <b>Spread out All Footprints</b>
+      <b>Global Spread and Place</b>&#160;&gt; <b>Spread out All Footprints </b>
+    </p>
+    <p>
+      <b>(you need to be in Default view -- not openGL)</b>
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/modefootprint_icon.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -512,6 +629,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="select the &quot;add graphic line or polygon&quot; icon to be able to draw edges" ID="ID_721856411" CREATED="1456873115144" MODIFIED="1456879448006">
@@ -558,6 +676,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <node ID="ID_1729232466" CREATED="1457917190998" MODIFIED="1457919345001"><richcontent TYPE="NODE">
 
@@ -574,6 +693,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/location_switch_canvas_to_opengl.png" SIZE="1.0" NAME="ExternalObject"/>
 </node>
@@ -601,6 +721,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="Some keyboard shortcuts while in auto-routing mode:&#xa;Ctrl + click -&gt; Select and drag (maintaining connection) via/segment/corner to new location&#xa;D -&gt; same as Ctrl + click&#xa;E -&gt; popup preferences for autorouting mode + options" ID="ID_1038105682" CREATED="1457923591782" MODIFIED="1457924481628"/>
@@ -623,6 +744,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="While in OpenGL track placing mode, Ctrl + Z and Delete don&apos;t seem to work.&#xa;You&apos;ll have to select a different tool (like normal mode) to be able to undo tracks" ID="ID_1182094286" CREATED="1457919711291" MODIFIED="1457923130029"/>
@@ -642,6 +764,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 </node>
@@ -679,6 +802,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 </node>
@@ -782,6 +906,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <node TEXT="https://github.com/KiCad/Connect.pretty/issues/8" ID="ID_1117768164" CREATED="1466022383225" MODIFIED="1466022390536" LINK="https://github.com/KiCad/Connect.pretty/issues/8"/>
 <node TEXT="https://forum.kicad.info/t/cvpcb-error-loading-footprints/1747/13" ID="ID_222858499" CREATED="1466022354666" MODIFIED="1466022370314" LINK="https://forum.kicad.info/t/cvpcb-error-loading-footprints/1747/13"/>
@@ -803,6 +928,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/pcb_library_tables_default.png" SIZE="0.8298755" NAME="ExternalObject"/>
 </node>
@@ -821,6 +947,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 <hook URI="images/pcb_library_add_footprint_wizard0.png" SIZE="0.9478673" NAME="ExternalObject"/>
 </node>
@@ -847,6 +974,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node ID="ID_39191545" CREATED="1466034483292" MODIFIED="1466034511270"><richcontent TYPE="NODE">
@@ -867,6 +995,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 <node TEXT="Underneath are two &quot;membership&quot; lists. You now need to find the track(s) you wish to change in the LEFT-side of the list. On the RIGHT side, be sure the new class style (with thicker lines) is selected. Then move the track from the left side to right side. Click OK once all desired tracks are moved over to thicker list" ID="ID_1061085819" CREATED="1466034511719" MODIFIED="1466034779941">
@@ -887,6 +1016,7 @@
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 </node>
