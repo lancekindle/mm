@@ -1,22 +1,26 @@
-<map version="freeplane 1.3.0">
+<map version="freeplane 1.5.9">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="Python" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1385057096149"><hook NAME="MapStyle">
-    <properties show_icon_for_attributes="true" show_note_icons="true" show_notes_in_map="true"/>
+<node TEXT="Python" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1487045049668"><hook NAME="MapStyle">
+    <properties show_icon_for_attributes="true" show_note_icons="true" show_notes_in_map="true" fit_to_viewport="false;"/>
 
 <map_styles>
-<stylenode LOCALIZED_TEXT="styles.root_node">
-<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right">
-<stylenode LOCALIZED_TEXT="default" MAX_WIDTH="600" COLOR="#000000" STYLE="as_parent">
+<stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
+<font SIZE="24"/>
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="default" MAX_WIDTH="600.0 px" COLOR="#000000" STYLE="as_parent">
 <font NAME="SansSerif" SIZE="10" BOLD="false" ITALIC="false"/>
 </stylenode>
 <stylenode LOCALIZED_TEXT="defaultstyle.details"/>
+<stylenode LOCALIZED_TEXT="defaultstyle.attributes">
+<font SIZE="9"/>
+</stylenode>
 <stylenode LOCALIZED_TEXT="defaultstyle.note"/>
 <stylenode LOCALIZED_TEXT="defaultstyle.floating">
 <edge STYLE="hide_edge"/>
 <cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
 </stylenode>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right">
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="styles.topic" COLOR="#18898b" STYLE="fork">
 <font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
 </stylenode>
@@ -30,7 +34,7 @@
 <icon BUILTIN="yes"/>
 </stylenode>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right">
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#000000">
 <font SIZE="18"/>
 </stylenode>
@@ -50,7 +54,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<hook NAME="AutomaticEdgeColor" COUNTER="12"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="1" RULE="ON_BRANCH_CREATION"/>
 <node TEXT="Data Types:" POSITION="right" ID="ID_58961891" CREATED="1385057099009" MODIFIED="1390585624890">
 <edge COLOR="#ff0000"/>
 <hook NAME="AlwaysUnfoldedNode"/>
@@ -131,168 +135,29 @@
 <edge COLOR="#0000ff"/>
 <node TEXT="Mutable Default Argument" ID="ID_1605148467" CREATED="1385058966317" MODIFIED="1385059236287">
 <node TEXT="--Stack Overflow--" ID="ID_1165608425" CREATED="1385058987971" MODIFIED="1385059069294" LINK="http://stackoverflow.com/questions/1132941/least-astonishment-in-python-the-mutable-default-argument"/>
-<node ID="ID_839826953" CREATED="1385059237865" MODIFIED="1428271060228"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      During definition of function, default arguments are calculated and remain in-memory for multiple calls to the same function
-    </p>
-    <p>
-      
-    </p>
-    <pre style="font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px" http-equiv="content-type" content="text/html; charset=utf-8"><b><font face="Monospaced" color="rgb(0, 128, 0)">def</font></b><font face="Monospaced"> </font><font face="Monospaced" color="rgb(0, 0, 255)">x</font><font face="Monospaced">(a</font><font face="Monospaced" color="rgb(102, 102, 102)">=</font><font face="Monospaced">[]):
-    a</font><font face="Monospaced" color="rgb(102, 102, 102)">.</font><font face="Monospaced">append(</font><font face="Monospaced" color="rgb(102, 102, 102)">3</font><font face="Monospaced">)
-    </font><b><font face="Monospaced" color="rgb(0, 128, 0)">return</font></b><font face="Monospaced"> a</font></pre>
-    <p>
-      <font face="Monospaced">&gt;&gt;&gt; x() </font>
-    </p>
-    <p>
-      <font face="Monospaced">[3] </font>
-    </p>
-    <p>
-      <font face="Monospaced">&gt;&gt;&gt; x() </font>
-    </p>
-    <p>
-      <font face="Monospaced">[3,3]</font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_351977029" CREATED="1385581711459" MODIFIED="1428271072256"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Even after passing in an argument, a call again reverting to default arguments will use the original set default argument
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      <font face="Monospaced">&gt;&gt;&gt; x() </font>
-    </p>
-    <p>
-      <font face="Monospaced">[3] </font>
-    </p>
-    <p>
-      <font face="Monospaced">&gt;&gt;&gt; x(5) </font>
-    </p>
-    <p>
-      <font face="Monospaced">[5] </font>
-    </p>
-    <p>
-      <font face="Monospaced">&gt;&gt;&gt; x() </font>
-    </p>
-    <p>
-      <font face="Monospaced">[3,3]</font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_107672799" CREATED="1387774189132" MODIFIED="1428271023458"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      The fix? Set default argument to None, define as [] if None&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-    </p>
-    <p>
-      
-    </p>
-    <pre style="font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px" http-equiv="content-type" content="text/html; charset=utf-8"><b><font color="rgb(0, 128, 0)">def</font></b> <font color="rgb(0, 0, 255)">x</font>(a<font color="rgb(102, 102, 102)">=</font><font color="rgb(0, 128, 0)">None</font>):
-    <b><font color="rgb(0, 128, 0)">if</font></b> a <b><font color="rgb(170, 34, 255)">is</font></b> <font color="rgb(0, 128, 0)">None</font>:
-        a <font color="rgb(102, 102, 102)">=</font> []
-    a<font color="rgb(102, 102, 102)">.</font>append(<font color="rgb(102, 102, 102)">3</font>)
-    <b><font color="rgb(0, 128, 0)">return</font></b></pre>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      During definition of function, default arguments are calculated and remain in-memory for multiple calls to the same function&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &#xa;    &lt;/p&gt;&#xa;    &lt;pre style=&quot;font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px&quot; http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;b&gt;&lt;font face=&quot;Monospaced&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;def&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;Monospaced&quot;&gt; &lt;/font&gt;&lt;font face=&quot;Monospaced&quot; color=&quot;rgb(0, 0, 255)&quot;&gt;x&lt;/font&gt;&lt;font face=&quot;Monospaced&quot;&gt;(a&lt;/font&gt;&lt;font face=&quot;Monospaced&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font face=&quot;Monospaced&quot;&gt;[]):&#xa;    a&lt;/font&gt;&lt;font face=&quot;Monospaced&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;.&lt;/font&gt;&lt;font face=&quot;Monospaced&quot;&gt;append(&lt;/font&gt;&lt;font face=&quot;Monospaced&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;3&lt;/font&gt;&lt;font face=&quot;Monospaced&quot;&gt;)&#xa;    &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;Monospaced&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;return&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;Monospaced&quot;&gt; a&lt;/font&gt;&lt;/pre&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;&amp;gt;&amp;gt;&amp;gt; x() &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;[3] &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;&amp;gt;&amp;gt;&amp;gt; x() &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;[3,3]&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_839826953" CREATED="1385059237865" MODIFIED="1428271060228"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      Even after passing in an argument, a call again reverting to default arguments will use the original set default argument&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;&amp;gt;&amp;gt;&amp;gt; x() &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;[3] &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;&amp;gt;&amp;gt;&amp;gt; x(5) &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;[5] &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;&amp;gt;&amp;gt;&amp;gt; x() &lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font face=&quot;Monospaced&quot;&gt;[3,3]&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_351977029" CREATED="1385581711459" MODIFIED="1428271072256"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      The fix? Set default argument to None, define as [] if None&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &#xa;    &lt;/p&gt;&#xa;    &lt;pre style=&quot;font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px&quot; http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;def&lt;/font&gt;&lt;/b&gt; &lt;font color=&quot;rgb(0, 0, 255)&quot;&gt;x&lt;/font&gt;(a&lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;None&lt;/font&gt;):&#xa;    &lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;if&lt;/font&gt;&lt;/b&gt; a &lt;b&gt;&lt;font color=&quot;rgb(170, 34, 255)&quot;&gt;is&lt;/font&gt;&lt;/b&gt; &lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;None&lt;/font&gt;:&#xa;        a &lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt; []&#xa;    a&lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;.&lt;/font&gt;append(&lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;3&lt;/font&gt;)&#xa;    &lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;return&lt;/font&gt;&lt;/b&gt;&lt;/pre&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_107672799" CREATED="1387774189132" MODIFIED="1428271023458"/>
 </node>
 <node TEXT="Lists Are Passed by Reference" ID="ID_682795164" CREATED="1394647371865" MODIFIED="1394647458106" LINK="#ID_1775989327"/>
 <node TEXT="Closures in a Loop" ID="ID_1057109660" CREATED="1454342520101" MODIFIED="1454342542594">
 <node TEXT="A definition of Closure" ID="ID_410134399" CREATED="1454342544405" MODIFIED="1454343676393" LINK="#ID_1987367637"/>
 <node TEXT="A closure depends on the environment variables during which is was created" ID="ID_896290905" CREATED="1454342556791" MODIFIED="1454342850979"/>
 <node TEXT="x = 8&#xa;x_r = lambda : x&#xa;print(x_r())&#xa;&gt;&gt;&gt; 8" ID="ID_415776546" CREATED="1454342852793" MODIFIED="1454344924769"/>
-<node ID="ID_876227008" CREATED="1454342871059" MODIFIED="1454343903199"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      but what if the environment variables <i>changed.</i>&#160;Normally, that's impossible since the environment variable is set at any point in code. <i>But inside loops,</i>&#160;the environment variables are not so solid.&#160; <b>(click inside to see more examples of bad closures)</b>
-    </p>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      but what if the environment variables &lt;i&gt;changed.&lt;/i&gt;&amp;#160;Normally, that&apos;s impossible since the environment variable is set at any point in code. &lt;i&gt;But inside loops,&lt;/i&gt;&amp;#160;the environment variables are not so solid.&amp;#160; &lt;b&gt;(click inside to see more examples of bad closures)&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_876227008" CREATED="1454342871059" MODIFIED="1454343903199">
 <node TEXT="printers = []&#xa;for x in range(3):&#xa;    px = lambda : print(x)&#xa;    printers.append(px)&#xa;for p in printers():&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_1235798941" CREATED="1454343059308" MODIFIED="1454343292113"/>
 <node TEXT="This also plagues in-loop-defined functions!&#xa;printers = []&#xa;for x in range(3):&#xa;    def print_x():&#xa;        print(x)&#xa;    printers.append(print_x)&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_261022292" CREATED="1454343000150" MODIFIED="1454344240274"/>
 </node>
 <node TEXT="printers = [lambda : print(x) for x in range(3)]&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2&#xa;&gt;&gt;&gt; 2" ID="ID_365000931" CREATED="1454343296303" MODIFIED="1454343932742"/>
 <node TEXT="This happens because the environment variables in a loop are &quot;finalized&quot; when the loop finishes. Since lookup of the variable &apos;x&apos; happens post-loop, &apos;x&apos; is always its last-known value from the loop." ID="ID_810503771" CREATED="1454343937898" MODIFIED="1454344042043"/>
-<node ID="ID_1998718680" CREATED="1454344059562" MODIFIED="1454344317148"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      So how to get around it?
-    </p>
-    <p>
-      Find some way to store the value of x. Pre-compute it, cast it to int, etc, in such a way that the returned value is not associated with a loop-defined variable
-    </p>
-    <p>
-      <b>(click inside to see more examples of fixing a closure)</b>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      So how to get around it?&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Find some way to store the value of x. Pre-compute it, cast it to int, etc, in such a way that the returned value is not associated with a loop-defined variable&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;(click inside to see more examples of fixing a closure)&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1998718680" CREATED="1454344059562" MODIFIED="1454344317148"/>
 <node TEXT="An example of a fix:&#xa;printers = [lambda x=x: print(x) for x in range(3)]&#xa;for p in printers:&#xa;    p()&#xa;&gt;&gt;&gt; 0&#xa;&gt;&gt;&gt; 1&#xa;&gt;&gt;&gt; 2" ID="ID_1019736122" CREATED="1454343296303" MODIFIED="1454344273910"/>
 </node>
 </node>
 <node TEXT="Programming Lessons" POSITION="left" ID="ID_1471298900" CREATED="1387912548901" MODIFIED="1387912852841">
 <edge COLOR="#00ff00"/>
 <node TEXT="Decorators" ID="ID_275699305" CREATED="1435852637812" MODIFIED="1435852641573">
-<node ID="ID_428020255" CREATED="1435852665284" MODIFIED="1435852827332"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Decorators are used for wrapping a function with some additional logic.
-    </p>
-    <p>
-      it actually <i>Replaces</i>&#160;the function during runtime by calling the decorator
-    </p>
-    <p>
-      and passing it the defined function. The decorator returns an altered
-    </p>
-    <p>
-      version of the function, which is then used when you call it
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      Decorators are used for wrapping a function with some additional logic.&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      it actually &lt;i&gt;Replaces&lt;/i&gt;&amp;#160;the function during runtime by calling the decorator&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      and passing it the defined function. The decorator returns an altered&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      version of the function, which is then used when you call it&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_428020255" CREATED="1435852665284" MODIFIED="1435852827332"/>
 <node TEXT="I got this example from http://stackoverflow.com/a/1594484" ID="ID_979028902" CREATED="1435857792714" MODIFIED="1435857821015" LINK="http://stackoverflow.com/a/1594484"/>
 <node TEXT="Decorator Basics" ID="ID_1501432159" CREATED="1435857850841" MODIFIED="1435857852645">
 <node TEXT="Python&#x2019;s functions are objects" ID="ID_1701945347" CREATED="1435857855071" MODIFIED="1435857866200">
@@ -314,47 +179,11 @@
 <node TEXT="List Comprehension" ID="ID_59927465" CREATED="1387912629847" MODIFIED="1387912635093">
 <node TEXT="PEP 202" ID="ID_1742152017" CREATED="1452304989193" MODIFIED="1452305017070" LINK="https://www.python.org/dev/peps/pep-0202/"/>
 <node TEXT="Stack Overflow" ID="ID_222436418" CREATED="1387912636327" MODIFIED="1387912773831" LINK="http://stackoverflow.com/a/2397192"/>
-<node ID="ID_486440109" CREATED="1387912776303" MODIFIED="1428270895537"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      A common for-loop can be greatly simplified from:
-    </p>
-    <pre style="font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px" http-equiv="content-type" content="text/html; charset=utf-8"><font face="SansSerif">bag </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="SansSerif">&#160;[]<br face="SansSerif"/></font><b><font face="SansSerif" color="rgb(0, 128, 0)">for</font></b><font face="SansSerif">&#160;item </font><b><font face="SansSerif" color="rgb(170, 34, 255)">in</font></b><font face="SansSerif">&#160;some_iterable: 
-&#160;&#160;&#160;&#160;bag</font><font face="SansSerif" color="rgb(102, 102, 102)">.</font><font face="SansSerif">append(<i>expression</i>)<br face="SansSerif"/><br face="SansSerif"/>to: 
-
-bag </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="SansSerif"> [<i>expression</i> </font><b><font face="SansSerif" color="rgb(0, 128, 0)">for</font></b><font face="SansSerif"> item </font><b><font face="SansSerif" color="rgb(170, 34, 255)">in</font></b><font face="SansSerif"> some_iterable</font></pre>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      A common for-loop can be greatly simplified from:&#xa;    &lt;/p&gt;&#xa;    &lt;pre style=&quot;font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px&quot; http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;font face=&quot;SansSerif&quot;&gt;bag &lt;/font&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font face=&quot;SansSerif&quot;&gt;&amp;#160;[]&lt;br face=&quot;SansSerif&quot;&gt;&lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;for&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt;&amp;#160;item &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(170, 34, 255)&quot;&gt;in&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt;&amp;#160;some_iterable: &#xa;&amp;#160;&amp;#160;&amp;#160;&amp;#160;bag&lt;/font&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;.&lt;/font&gt;&lt;font face=&quot;SansSerif&quot;&gt;append(&lt;i&gt;expression&lt;/i&gt;)&lt;br face=&quot;SansSerif&quot;&gt;&lt;br face=&quot;SansSerif&quot;&gt;to: &#xa;&#xa;bag &lt;/font&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font face=&quot;SansSerif&quot;&gt; [&lt;i&gt;expression&lt;/i&gt; &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;for&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt; item &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(170, 34, 255)&quot;&gt;in&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt; some_iterable&lt;/font&gt;&lt;/pre&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_486440109" CREATED="1387912776303" MODIFIED="1428270895537"/>
 </node>
 <node TEXT="Dictionary Comprehension" ID="ID_1911467174" CREATED="1391699872946" MODIFIED="1391699878394">
 <node TEXT="PEP 274" ID="ID_390619484" CREATED="1452305027686" MODIFIED="1452305058840" LINK="https://www.python.org/dev/peps/pep-0274/"/>
-<node ID="ID_27099931" CREATED="1387912776303" MODIFIED="1428270793623"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      A common for-loop can be greatly simplified from:
-    </p>
-    <pre style="font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px" http-equiv="content-type" content="text/html; charset=utf-8"><font face="SansSerif">d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="SansSerif">&#160;{}</font><br/><b><font face="SansSerif" color="rgb(0, 128, 0)">for</font></b><font face="SansSerif">&#160;item </font><b><font face="SansSerif" color="rgb(170, 34, 255)">in</font></b><font face="SansSerif">&#160;some_iterable: </font>
-<font face="SansSerif">    d[key] </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="SansSerif"> <i>expression</i>
-
-to:
-
-d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="SansSerif"> {key: <i>expression</i> </font><b><font face="SansSerif" color="rgb(0, 128, 0)">for</font></b><font face="SansSerif"> item </font><b><font face="SansSerif" color="rgb(170, 34, 255)">in</font></b><font face="SansSerif"> some_iterable}</font></pre>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      A common for-loop can be greatly simplified from:&#xa;    &lt;/p&gt;&#xa;    &lt;pre style=&quot;font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px&quot; http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;font face=&quot;SansSerif&quot;&gt;d &lt;/font&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font face=&quot;SansSerif&quot;&gt;&amp;#160;{}&lt;/font&gt;&lt;br&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;for&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt;&amp;#160;item &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(170, 34, 255)&quot;&gt;in&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt;&amp;#160;some_iterable: &lt;/font&gt;&#xa;&lt;font face=&quot;SansSerif&quot;&gt;    d[key] &lt;/font&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font face=&quot;SansSerif&quot;&gt; &lt;i&gt;expression&lt;/i&gt;&#xa;&#xa;to:&#xa;&#xa;d &lt;/font&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font face=&quot;SansSerif&quot;&gt; {key: &lt;i&gt;expression&lt;/i&gt; &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;for&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt; item &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(170, 34, 255)&quot;&gt;in&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt; some_iterable}&lt;/font&gt;&lt;/pre&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_27099931" CREATED="1387912776303" MODIFIED="1428270793623"/>
 </node>
 <node TEXT="Generator Comprehension" ID="ID_170829617" CREATED="1452305066317" MODIFIED="1452305071512">
 <node TEXT="PEP289" ID="ID_1160664979" CREATED="1452305087038" MODIFIED="1452305096424" LINK="https://www.python.org/dev/peps/pep-0289/"/>
@@ -362,126 +191,20 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 <node TEXT="TL;DR: use generator comprehension in place of list comprehensions when you don&apos;t intend to iterate full list" ID="ID_1977250604" CREATED="1452305228624" MODIFIED="1452305254943"/>
 </node>
 <node TEXT="Advanced Comprehension" ID="ID_936319093" CREATED="1391700020426" MODIFIED="1391700025358">
-<node ID="ID_1596288214" CREATED="1391700026327" MODIFIED="1428270684094"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      You can also add in an if statement:
-    </p>
-    <p>
-      
-    </p>
-    <pre style="font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px" http-equiv="content-type" content="text/html; charset=utf-8"><font face="SansSerif">ls </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="SansSerif"> [<i>expression</i> </font><b><font face="SansSerif" color="rgb(0, 128, 0)">for</font></b><font face="SansSerif"> item </font><b><font face="SansSerif" color="rgb(170, 34, 255)">in</font></b><font face="SansSerif"> some_iterable </font><b><font face="SansSerif" color="rgb(0, 128, 0)">if</font></b><font face="SansSerif"> <i>conditional</i>]</font></pre>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_296032139" CREATED="1396903203994" MODIFIED="1428270669208" LINK="http://stackoverflow.com/a/4260304"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      You can also add an IF-ELSE statement, but it no longer follows correct list comprehension syntax
-    </p>
-    <p>
-      The syntax is now ternary operator syntax
-    </p>
-    <pre style="font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px" http-equiv="content-type" content="text/html; charset=utf-8"><font size="2" face="SansSerif">ls </font><font size="2" color="rgb(102, 102, 102)" face="SansSerif">=</font><font size="2" face="SansSerif"> [<i>expression</i> </font><b><font size="2" color="rgb(0, 128, 0)" face="SansSerif">if</font></b><font size="2" face="SansSerif"> <i>conditional</i> </font><b><font size="2" color="rgb(0, 128, 0)" face="SansSerif">else</font></b><font size="2" face="SansSerif"> <i>other expression</i> </font><b><font size="2" color="rgb(0, 128, 0)" face="SansSerif">for</font></b><font size="2" face="SansSerif"> item </font><b><font size="2" color="rgb(170, 34, 255)" face="SansSerif">in</font></b><font size="2" face="SansSerif"> some_iterable]</font></pre>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      You can also add in an if statement:&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &#xa;    &lt;/p&gt;&#xa;    &lt;pre style=&quot;font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px&quot; http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;font face=&quot;SansSerif&quot;&gt;ls &lt;/font&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(102, 102, 102)&quot;&gt;=&lt;/font&gt;&lt;font face=&quot;SansSerif&quot;&gt; [&lt;i&gt;expression&lt;/i&gt; &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;for&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt; item &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(170, 34, 255)&quot;&gt;in&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt; some_iterable &lt;/font&gt;&lt;b&gt;&lt;font face=&quot;SansSerif&quot; color=&quot;rgb(0, 128, 0)&quot;&gt;if&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;SansSerif&quot;&gt; &lt;i&gt;conditional&lt;/i&gt;]&lt;/font&gt;&lt;/pre&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1596288214" CREATED="1391700026327" MODIFIED="1428270684094"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      You can also add an IF-ELSE statement, but it no longer follows correct list comprehension syntax&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      The syntax is now ternary operator syntax&#xa;    &lt;/p&gt;&#xa;    &lt;pre style=&quot;font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px&quot; http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;font size=&quot;2&quot; face=&quot;SansSerif&quot;&gt;ls &lt;/font&gt;&lt;font size=&quot;2&quot; color=&quot;rgb(102, 102, 102)&quot; face=&quot;SansSerif&quot;&gt;=&lt;/font&gt;&lt;font size=&quot;2&quot; face=&quot;SansSerif&quot;&gt; [&lt;i&gt;expression&lt;/i&gt; &lt;/font&gt;&lt;b&gt;&lt;font size=&quot;2&quot; color=&quot;rgb(0, 128, 0)&quot; face=&quot;SansSerif&quot;&gt;if&lt;/font&gt;&lt;/b&gt;&lt;font size=&quot;2&quot; face=&quot;SansSerif&quot;&gt; &lt;i&gt;conditional&lt;/i&gt; &lt;/font&gt;&lt;b&gt;&lt;font size=&quot;2&quot; color=&quot;rgb(0, 128, 0)&quot; face=&quot;SansSerif&quot;&gt;else&lt;/font&gt;&lt;/b&gt;&lt;font size=&quot;2&quot; face=&quot;SansSerif&quot;&gt; &lt;i&gt;other expression&lt;/i&gt; &lt;/font&gt;&lt;b&gt;&lt;font size=&quot;2&quot; color=&quot;rgb(0, 128, 0)&quot; face=&quot;SansSerif&quot;&gt;for&lt;/font&gt;&lt;/b&gt;&lt;font size=&quot;2&quot; face=&quot;SansSerif&quot;&gt; item &lt;/font&gt;&lt;b&gt;&lt;font size=&quot;2&quot; color=&quot;rgb(170, 34, 255)&quot; face=&quot;SansSerif&quot;&gt;in&lt;/font&gt;&lt;/b&gt;&lt;font size=&quot;2&quot; face=&quot;SansSerif&quot;&gt; some_iterable]&lt;/font&gt;&lt;/pre&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_296032139" CREATED="1396903203994" MODIFIED="1428270669208" LINK="http://stackoverflow.com/a/4260304"/>
 </node>
 </node>
-</node>
-<node ID="ID_68247838" CREATED="1442204525345" MODIFIED="1452304856042"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Context Manager (the <b><i>with</i></b>&#160;statment)
-    </p>
-  </body>
-</html>
-</richcontent>
-<node ID="ID_932026885" CREATED="1442204556032" MODIFIED="1442205451572" LINK="https://www.python.org/dev/peps/pep-0343/"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      PEP343 outlines using <b><i>with</i></b>.
-    </p>
-    <p>
-      CTRL+F&#160;&#160;Examples
-    </p>
-    <p>
-      to find very informative examples
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1020237672" CREATED="1442204659321" MODIFIED="1442205458892" LINK="http://preshing.com/20110920/the-python-with-statement-by-example/"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      This guy explains <b><i>with </i></b>very well
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      Context Manager (the &lt;b&gt;&lt;i&gt;with&lt;/i&gt;&lt;/b&gt;&amp;#160;statment)&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_68247838" CREATED="1442204525345" MODIFIED="1452304856042">
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      PEP343 outlines using &lt;b&gt;&lt;i&gt;with&lt;/i&gt;&lt;/b&gt;.&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      CTRL+F&amp;#160;&amp;#160;Examples&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      to find very informative examples&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_932026885" CREATED="1442204556032" MODIFIED="1442205451572" LINK="https://www.python.org/dev/peps/pep-0343/"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      This guy explains &lt;b&gt;&lt;i&gt;with &lt;/i&gt;&lt;/b&gt;very well&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1020237672" CREATED="1442204659321" MODIFIED="1442205458892" LINK="http://preshing.com/20110920/the-python-with-statement-by-example/"/>
 <node TEXT="Suggested Naming Standard" ID="ID_35248848" CREATED="1442204857549" MODIFIED="1442204863813">
 <node TEXT="The tense used in the names of the example contexts is not&#xa;arbitrary. Past tense (&quot;-ed&quot;) is used when the name refers to an&#xa;action which is done in the __enter__ method and undone in the&#xa;__exit__ method. Progressive tense (&quot;-ing&quot;) is used when the name&#xa;refers to an action which is to be done in the __exit__ method." ID="ID_83843091" CREATED="1442205072094" MODIFIED="1442205085034"/>
 <node TEXT="So for example:&#xa;use past tense when the action happens immediately&#xa;opened, locked, ignored, disabled, enabled, etc... if you immediately do the action before yielding a value&#xa;&#xa;use present tense (ing) when the action happens after scope&#xa;opening, locking, ignoring, disabling, enabling, etc.... if the action is done in __exit__" ID="ID_736811921" CREATED="1442206020421" MODIFIED="1442206182573"/>
 <node TEXT="@contextmanager&#xa;def locked(lock):&#xa;    lock.acquire()&#xa;    try:&#xa;        yield&#xa;    finally:&#xa;        lock.release()&#xa;&#xa;Used as follows:&#xa;&#xa;with locked(myLock):&#xa;# Code here executes with myLock held.  The lock is&#xa;# guaranteed to be released when the block is left (even&#xa;# if via return or by an uncaught exception)." ID="ID_900908084" CREATED="1442205166857" MODIFIED="1442205206290"/>
 </node>
 <node TEXT="General Use" ID="ID_973953547" CREATED="1442205477928" MODIFIED="1442205481759">
-<node ID="ID_1685920304" CREATED="1442206204452" MODIFIED="1442206341502"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Always do your actions before the
-    </p>
-    <p>
-      try:
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;yield x
-    </p>
-    <p>
-      Because you don't want <i>try:</i>&#160;to catch any error in your code.
-    </p>
-    <p>
-      You want <i>try:</i>&#160;to only catch an error in users code (where he
-    </p>
-    <p>
-      does something after yield gives your value).
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      Always do your actions before the&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      try:&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &amp;#160;&amp;#160;&amp;#160;&amp;#160;yield x&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Because you don&apos;t want &lt;i&gt;try:&lt;/i&gt;&amp;#160;to catch any error in your code.&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      You want &lt;i&gt;try:&lt;/i&gt;&amp;#160;to only catch an error in users code (where he&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      does something after yield gives your value).&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1685920304" CREATED="1442206204452" MODIFIED="1442206341502"/>
 <node TEXT="Most Likely, you&apos;ll use the one example using @contextmanager to wrap your generator&#xa;However, you can also create a context manager class, which needs to have __enter__&#xa;and __exit__ methods." ID="ID_99819693" CREATED="1442205483471" MODIFIED="1442205609021"/>
 </node>
 <node TEXT="Error Handling" ID="ID_1525034042" CREATED="1442205610481" MODIFIED="1442205613508">
@@ -538,253 +261,38 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 <node TEXT="Magic Methods are methods that get called when special events happen to your class&#xa;all __MagicMethods__ are surrounded by double underscores.&#xa;Some examples include:&#xa;__init__&#xa;__str__&#xa;__getitem__" ID="ID_1884304004" CREATED="1397669688882" MODIFIED="1455911425419"/>
 <node TEXT="__get__, __set__ are for descriptor classes. These call __get__ any time its variables is accessed.&#xa;NOTE: such a class is called a descriptor, and can ONLY HAVE ONE VARIABLE (in general). It is called when the value of object is retrieved, i.e.&#xa;&gt;&gt;&gt; m.x" ID="ID_1925339946" CREATED="1397670780298" MODIFIED="1397671591246" LINK="https://docs.python.org/2/howto/descriptor.html#id6"/>
 <node TEXT="math operators" ID="ID_1045192011" CREATED="1455909316665" MODIFIED="1455909895153">
-<node ID="ID_1683788453" CREATED="1455911580163" MODIFIED="1455912556739"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      each operator has a corresponding
-    </p>
-    <p>
-      <b>reflected</b>&#160;operator and <b>augmented / in-place </b>operator
-    </p>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      each operator has a corresponding&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;reflected&lt;/b&gt;&amp;#160;operator and &lt;b&gt;augmented / in-place &lt;/b&gt;operator&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1683788453" CREATED="1455911580163" MODIFIED="1455912556739">
 <node TEXT="It&apos;s not necessary to implement augmented / in-place operators" ID="ID_489443285" CREATED="1455912562620" MODIFIED="1455913498225">
 <font BOLD="true"/>
 </node>
-<node ID="ID_294272564" CREATED="1455912592676" MODIFIED="1455913465033"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>Use a reflected operator (e.g. __rsub__) if your object interacts with anything more than other instances of itself.</b>
-    </p>
-    <p>
-      IE if you want to subtract your object from an integer, you need to implement both __rsub__
-    </p>
-    <p>
-      to subtract integer from your object, implement __sub__
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;Use a reflected operator (e.g. __rsub__) if your object interacts with anything more than other instances of itself.&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      IE if you want to subtract your object from an integer, you need to implement both __rsub__&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      to subtract integer from your object, implement __sub__&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_294272564" CREATED="1455912592676" MODIFIED="1455913465033"/>
 <node TEXT="__rsub__ is called if other object&apos;s __sub__ cannot handle input (aka python&apos;s integer object is not built to handle your object)" ID="ID_171611770" CREATED="1455912740908" MODIFIED="1455913312341"/>
 <node TEXT="order is important!&#xa;__sub__(self, other)    =&gt;   self - other&#xa;__rsub__(self, other)   =&gt;   other - self    (iff other couldn&apos;t handle subtracting self)&#xa;&#xa;(only in __radd__ and __add__ is order generally not important)" ID="ID_1676608387" CREATED="1455913001596" MODIFIED="1455913817190"/>
 </node>
-<node ID="ID_518092783" CREATED="1455909277270" MODIFIED="1455915035639"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <font size="2">__add__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font><font size="1">&#160; <i>__radd__ &#160;&#160;__iadd__</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;font size=&quot;2&quot;&gt;__add__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;+&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;/font&gt;&lt;font size=&quot;1&quot;&gt;&amp;#160; &lt;i&gt;__radd__ &amp;#160;&amp;#160;__iadd__&lt;/i&gt;&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_518092783" CREATED="1455909277270" MODIFIED="1455915035639">
 <font SIZE="10"/>
 </node>
-<node ID="ID_1831173414" CREATED="1455909286088" MODIFIED="1455915031596"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __sub__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <font size="4">-</font>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rsub__&#160;&#160;__isub__</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_260398759" CREATED="1455909342562" MODIFIED="1455915027510"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __mul__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;*&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rmul__&#160;&#160;&#160;__imul__</font></i>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_938241818" CREATED="1455909619256" MODIFIED="1455915021592"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __truediv__&#160;&#160;&#160;&#160;&#160;&#160;&#160;/&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rtruediv__&#160;&#160;&#160;__itruediv__</font></i>
-    </p>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __sub__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160; &lt;font size=&quot;4&quot;&gt;-&lt;/font&gt;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;font size=&quot;1&quot;&gt;&lt;i&gt;__rsub__&amp;#160;&amp;#160;__isub__&lt;/i&gt;&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1831173414" CREATED="1455909286088" MODIFIED="1455915031596"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __mul__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;*&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;i&gt;&lt;font size=&quot;1&quot;&gt;__rmul__&amp;#160;&amp;#160;&amp;#160;__imul__&lt;/font&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_260398759" CREATED="1455909342562" MODIFIED="1455915027510"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __truediv__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;/&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;i&gt;&lt;font size=&quot;1&quot;&gt;__rtruediv__&amp;#160;&amp;#160;&amp;#160;__itruediv__&lt;/font&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_938241818" CREATED="1455909619256" MODIFIED="1455915021592">
 <node TEXT="Implements float division. In python3 standard division is __truediv__" ID="ID_1396920415" CREATED="1455911964931" MODIFIED="1455914677078"/>
 <node TEXT="in python 2,  __div__ is used (unless from __future__ import true_division is used)" ID="ID_321967045" CREATED="1455914681127" MODIFIED="1455914703268"/>
 </node>
-<node ID="ID_848427440" CREATED="1455909351901" MODIFIED="1455914856743"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __floordiv__&#160;&#160;&#160;&#160;&#160;&#160;//&#160;&#160;&#160;&#160;<font size="1"><i>__rfloordiv__&#160;&#160;&#160;__ifloordiv__</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-<node ID="ID_780038305" CREATED="1455909933458" MODIFIED="1455910005397"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>4 // 5 = 0&#160;&#160;&#160;&#160;*__floordiv__*</b>
-    </p>
-    <p>
-      4 / 5 = 0.8
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __floordiv__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;//&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;font size=&quot;1&quot;&gt;&lt;i&gt;__rfloordiv__&amp;#160;&amp;#160;&amp;#160;__ifloordiv__&lt;/i&gt;&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_848427440" CREATED="1455909351901" MODIFIED="1455914856743">
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;4 // 5 = 0&amp;#160;&amp;#160;&amp;#160;&amp;#160;*__floordiv__*&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      4 / 5 = 0.8&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_780038305" CREATED="1455909933458" MODIFIED="1455910005397"/>
 <node TEXT="Python3 division returns float UNLESS // is used. Then floordiv is used instead" ID="ID_1334578541" CREATED="1455909903379" MODIFIED="1455910029565"/>
 <node TEXT="python3 syntax. To use this in python2, use&#xa;from __future__ import true_division" ID="ID_1329828692" CREATED="1455914734884" MODIFIED="1455914759765"/>
 </node>
-<node ID="ID_1948155947" CREATED="1455909617032" MODIFIED="1455915015759"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __mod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;%&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__imod__</font></i>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1064699779" CREATED="1455909659951" MODIFIED="1455915347310"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __divmod__&#160;&#160;&#160;&#160;&#160;divmod() &#160;&#160;&#160;&#160;<i><font size="1">__rdivmod__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__idivmod__</font></i>
-    </p>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __mod__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;%&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;i&gt;&lt;font size=&quot;1&quot;&gt;__rmod__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__imod__&lt;/font&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1948155947" CREATED="1455909617032" MODIFIED="1455915015759"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __divmod__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;divmod() &amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;i&gt;&lt;font size=&quot;1&quot;&gt;__rdivmod__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__idivmod__&lt;/font&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1064699779" CREATED="1455909659951" MODIFIED="1455915347310">
 <node TEXT="overrides behavior when python&apos;s builtin divmod() is called" ID="ID_1412116113" CREATED="1455915356972" MODIFIED="1455915623746" LINK="#ID_1357185450"/>
 </node>
-<node ID="ID_1200732710" CREATED="1455909663445" MODIFIED="1455915011238"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __pow__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;**&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rpow__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ipow__</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1542009614" CREATED="1455909667393" MODIFIED="1455915041268"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __lshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&gt;&gt;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rlshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ilshift__</font></i>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1501852632" CREATED="1455909674881" MODIFIED="1455915045045"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __rshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;&lt;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rrshift__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__irshift__</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1889833793" CREATED="1455909682337" MODIFIED="1455915049164"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __and__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&amp;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<i><font size="1">__rand__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__iand__</font></i>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1126583837" CREATED="1455909684989" MODIFIED="1455915055118"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __or__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__ror__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ior__</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_173205810" CREATED="1455909687182" MODIFIED="1455915059722"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      __xor__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;^&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font size="1"><i>__rxor__&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;__ixor__</i></font>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __pow__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;**&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;font size=&quot;1&quot;&gt;&lt;i&gt;__rpow__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__ipow__&lt;/i&gt;&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1200732710" CREATED="1455909663445" MODIFIED="1455915011238"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __lshift__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;gt;&amp;gt;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;i&gt;&lt;font size=&quot;1&quot;&gt;__rlshift__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__ilshift__&lt;/font&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1542009614" CREATED="1455909667393" MODIFIED="1455915041268"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __rshift__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;lt;&amp;lt;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;font size=&quot;1&quot;&gt;&lt;i&gt;__rrshift__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__irshift__&lt;/i&gt;&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1501852632" CREATED="1455909674881" MODIFIED="1455915045045"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __and__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;amp;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;i&gt;&lt;font size=&quot;1&quot;&gt;__rand__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__iand__&lt;/font&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1889833793" CREATED="1455909682337" MODIFIED="1455915049164"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __or__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;|&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;font size=&quot;1&quot;&gt;&lt;i&gt;__ror__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__ior__&lt;/i&gt;&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1126583837" CREATED="1455909684989" MODIFIED="1455915055118"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      __xor__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;^&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;font size=&quot;1&quot;&gt;&lt;i&gt;__rxor__&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;__ixor__&lt;/i&gt;&lt;/font&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_173205810" CREATED="1455909687182" MODIFIED="1455915059722"/>
 </node>
 </node>
 <node TEXT="Interfacing with a Class" ID="ID_176961056" CREATED="1389984715386" MODIFIED="1389984722703"/>
@@ -812,27 +320,7 @@ d </font><font face="SansSerif" color="rgb(102, 102, 102)">=</font><font face="S
 <edge COLOR="#7c007c"/>
 <node TEXT="Pygments" ID="ID_1869112955" CREATED="1428268807190" MODIFIED="1428268813388">
 <node TEXT="Pygments is a library for coloring code in various formats.&#xa;I used it to output an html version of some code I wrote,&#xa;to paste into freeplane as colorized text. Much cleaner." ID="ID_1969965125" CREATED="1428268814741" MODIFIED="1428268882392"/>
-<node ID="ID_870890060" CREATED="1428268886472" MODIFIED="1428269627278"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <pre style="font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px" http-equiv="content-type" content="text/html; charset=utf-8"><b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">from</span></font></b> <b><font color="rgb(0, 0, 255)"><span style="font-weight: bold; color: rgb(0, 0, 255)">pygments</span></font></b> <b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">import</span></font></b> highlight
-<b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">from</span></font></b> <b><font color="rgb(0, 0, 255)"><span style="font-weight: bold; color: rgb(0, 0, 255)">pygments.lexers</span></font></b> <b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">import</span></font></b> PythonLexer
-<b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">from</span></font></b> <b><font color="rgb(0, 0, 255)"><span style="font-weight: bold; color: rgb(0, 0, 255)">pygments.formatters</span></font></b> <b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">import</span></font></b> HtmlFormatter
-
-<b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">with</span></font></b> <font color="rgb(0, 128, 0)"><span style="color: rgb(0, 128, 0)">open</span></font>(<font color="rgb(186, 33, 33)"><span style="color: rgb(186, 33, 33)">'test.py'</span></font>, <font color="rgb(186, 33, 33)"><span style="color: rgb(186, 33, 33)">'r'</span></font>) <b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">as</span></font></b> f:
-    code <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102)">=</span></font> f<font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102)">.</span></font>read()
-lexer <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102)">=</span></font> PythonLexer()
-formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102)">=</span></font> HtmlFormatter(noclasses<font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102)">=</span></font><font color="rgb(0, 128, 0)"><span style="color: rgb(0, 128, 0)">True</span></font>)  <font color="rgb(64, 128, 128)"><i><span style="font-style: italic; color: rgb(64, 128, 128)"># noclasses means it uses simple html, instead of css</span></i></font>
-<b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">with</span></font></b> <font color="rgb(0, 128, 0)"><span style="color: rgb(0, 128, 0)">open</span></font>(<font color="rgb(186, 33, 33)"><span style="color: rgb(186, 33, 33)">'test.html'</span></font>, <font color="rgb(186, 33, 33)"><span style="color: rgb(186, 33, 33)">'w'</span></font>) <b><font color="rgb(0, 128, 0)"><span style="font-weight: bold; color: rgb(0, 128, 0)">as</span></font></b> outfile:
-    result <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102)">=</span></font> highlight(code, lexer, formatter, outfile)</pre>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;pre style=&quot;font-weight: normal; font-style: normal; text-align: start; text-transform: none; line-height: 16.25px; word-spacing: 0px; font-variant: normal; letter-spacing: normal; color: rgb(0, 0, 0); text-indent: 0px&quot; http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;&lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;from&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;b&gt;&lt;font color=&quot;rgb(0, 0, 255)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 0, 255)&quot;&gt;pygments&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;import&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; highlight&#xa;&lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;from&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;b&gt;&lt;font color=&quot;rgb(0, 0, 255)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 0, 255)&quot;&gt;pygments.lexers&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;import&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; PythonLexer&#xa;&lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;from&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;b&gt;&lt;font color=&quot;rgb(0, 0, 255)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 0, 255)&quot;&gt;pygments.formatters&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;import&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; HtmlFormatter&#xa;&#xa;&lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;with&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;color: rgb(0, 128, 0)&quot;&gt;open&lt;/span&gt;&lt;/font&gt;(&lt;font color=&quot;rgb(186, 33, 33)&quot;&gt;&lt;span style=&quot;color: rgb(186, 33, 33)&quot;&gt;&apos;test.py&apos;&lt;/span&gt;&lt;/font&gt;, &lt;font color=&quot;rgb(186, 33, 33)&quot;&gt;&lt;span style=&quot;color: rgb(186, 33, 33)&quot;&gt;&apos;r&apos;&lt;/span&gt;&lt;/font&gt;) &lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;as&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; f:&#xa;    code &lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;&lt;span style=&quot;color: rgb(102, 102, 102)&quot;&gt;=&lt;/span&gt;&lt;/font&gt; f&lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;&lt;span style=&quot;color: rgb(102, 102, 102)&quot;&gt;.&lt;/span&gt;&lt;/font&gt;read()&#xa;lexer &lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;&lt;span style=&quot;color: rgb(102, 102, 102)&quot;&gt;=&lt;/span&gt;&lt;/font&gt; PythonLexer()&#xa;formatter &lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;&lt;span style=&quot;color: rgb(102, 102, 102)&quot;&gt;=&lt;/span&gt;&lt;/font&gt; HtmlFormatter(noclasses&lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;&lt;span style=&quot;color: rgb(102, 102, 102)&quot;&gt;=&lt;/span&gt;&lt;/font&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;color: rgb(0, 128, 0)&quot;&gt;True&lt;/span&gt;&lt;/font&gt;)  &lt;font color=&quot;rgb(64, 128, 128)&quot;&gt;&lt;i&gt;&lt;span style=&quot;font-style: italic; color: rgb(64, 128, 128)&quot;&gt;# noclasses means it uses simple html, instead of css&lt;/span&gt;&lt;/i&gt;&lt;/font&gt;&#xa;&lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;with&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; &lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;color: rgb(0, 128, 0)&quot;&gt;open&lt;/span&gt;&lt;/font&gt;(&lt;font color=&quot;rgb(186, 33, 33)&quot;&gt;&lt;span style=&quot;color: rgb(186, 33, 33)&quot;&gt;&apos;test.html&apos;&lt;/span&gt;&lt;/font&gt;, &lt;font color=&quot;rgb(186, 33, 33)&quot;&gt;&lt;span style=&quot;color: rgb(186, 33, 33)&quot;&gt;&apos;w&apos;&lt;/span&gt;&lt;/font&gt;) &lt;b&gt;&lt;font color=&quot;rgb(0, 128, 0)&quot;&gt;&lt;span style=&quot;font-weight: bold; color: rgb(0, 128, 0)&quot;&gt;as&lt;/span&gt;&lt;/font&gt;&lt;/b&gt; outfile:&#xa;    result &lt;font color=&quot;rgb(102, 102, 102)&quot;&gt;&lt;span style=&quot;color: rgb(102, 102, 102)&quot;&gt;=&lt;/span&gt;&lt;/font&gt; highlight(code, lexer, formatter, outfile)&lt;/pre&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_870890060" CREATED="1428268886472" MODIFIED="1428269627278"/>
 </node>
 <node TEXT="os" ID="ID_1977101915" CREATED="1442865644633" MODIFIED="1442865646737">
 <node TEXT="get current terminal width and height" ID="ID_1734260515" CREATED="1442865648243" MODIFIED="1442865661703">
@@ -921,38 +409,13 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="Create Executable File (using PyInstaller)" ID="ID_1271705425" CREATED="1397164423044" MODIFIED="1397164438440">
 <node TEXT="Requires PyInstaller package&#xa;This will gather and compress all the packages into&#xa;a single executable file to launch your program.&#xa;You can also define an icon (but if you fail to define all resolutions, some of the icons at different resolutions will be different)" ID="ID_116276614" CREATED="1397511832989" MODIFIED="1405443061503" LINK="http://www.pyinstaller.org/"/>
 <node TEXT="Example .bat program:" ID="ID_1940358007" CREATED="1397164542374" MODIFIED="1398355171994">
-<node ID="ID_532740515" CREATED="1397164546936" MODIFIED="1405447759193"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      python <i>C:\<b>path_to_pyinstaller</b></i>\main.py --onefile&#160;&#160;--icon=<i><b>icon.ico</b></i>&#160; --windowed<i><b>&#160;script.py</b></i>
-    </p>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      python &lt;i&gt;C:\&lt;b&gt;path_to_pyinstaller&lt;/b&gt;&lt;/i&gt;\main.py --onefile&amp;#160;&amp;#160;--icon=&lt;i&gt;&lt;b&gt;icon.ico&lt;/b&gt;&lt;/i&gt;&amp;#160; --windowed&lt;i&gt;&lt;b&gt;&amp;#160;script.py&lt;/b&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_532740515" CREATED="1397164546936" MODIFIED="1405447759193">
 <node TEXT="A specific example: an install.bat file you use to create the executable" ID="ID_874674152" CREATED="1397164467126" MODIFIED="1397512246464">
 <node TEXT="C:\python27\python.exe C:\Python27\Lib\site-packages\PyInstaller-2.1-py2.7.egg\PyInstaller\main.py --onefile --windowed dragn.py" ID="ID_363463007" CREATED="1397164444047" MODIFIED="1397164460613"/>
 </node>
 </node>
 <node TEXT="--OR--" ID="ID_1894482854" CREATED="1451433788925" MODIFIED="1451433792018"/>
-<node ID="ID_815755497" CREATED="1397164546936" MODIFIED="1451433786249"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      python -m PyInstaller&#160;--onefile&#160;&#160;--icon=<i><b>icon.ico</b></i>&#160; --windowed<i><b>&#160;script.py</b></i>
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      python -m PyInstaller&amp;#160;--onefile&amp;#160;&amp;#160;--icon=&lt;i&gt;&lt;b&gt;icon.ico&lt;/b&gt;&lt;/i&gt;&amp;#160; --windowed&lt;i&gt;&lt;b&gt;&amp;#160;script.py&lt;/b&gt;&lt;/i&gt;&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_815755497" CREATED="1397164546936" MODIFIED="1451433786249"/>
 </node>
 <node TEXT="PyInstaller.bat" ID="ID_995972033" CREATED="1397164676030" MODIFIED="1397164676030" LINK="code_examples/PyInstaller.bat"/>
 </node>
@@ -960,52 +423,7 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="Requires py2exe install. Will gather and compress files into one executable, and launch application WITHOUT a console window. So the program will run invisibly unless you design it to include a GUI or System Tray Icon. You can run the setup.py directly, or call it with a .bat file.&#xa;&#xa;Also allows you to specify an EXE icon. Niiiiice" ID="ID_1102298177" CREATED="1405437589996" MODIFIED="1405442085761" LINK="http://www.py2exe.org/"/>
 <node TEXT="If you want a console window to appear, change the line: &#xa;&quot;windows = [{&quot;&#xa;to&#xa;&quot;console = [{&quot;" ID="ID_1358811430" CREATED="1405440670088" MODIFIED="1405440736854"/>
 <node TEXT="Example setup.py" ID="ID_1926789573" CREATED="1405440748505" MODIFIED="1405440759249">
-<node ID="ID_436333929" CREATED="1405441069646" MODIFIED="1405441169582"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      from distutils.core import setup
-    </p>
-    <p>
-      import py2exe, sys, os
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      sys.argv.append('py2exe')
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      setup(
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;options = {'py2exe': {'bundle_files': 1, 'compressed': True}},&#160;&#160;# this compresses the files AND puts all dependencies into one file, so that you can just pass an executable to someone
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;windows = [{
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'script': '<i><b>your_script.py</b></i>',
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'icon_resources' : [(0, &quot;<i><b>your_icon.ico</b></i>&quot;)] }],&#160;&#160;# using windows= instead of console= means that a console will not popup. The exe will be effectively hidden
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;zipfile = None,&#160;&#160;&#160;&#160;# this has something to do with making just one executable
-    </p>
-    <p>
-      )
-    </p>
-  </body>
-</html>
-</richcontent>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      from distutils.core import setup&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      import py2exe, sys, os&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      sys.argv.append(&apos;py2exe&apos;)&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      setup(&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &amp;#160;&amp;#160;&amp;#160;&amp;#160;options = {&apos;py2exe&apos;: {&apos;bundle_files&apos;: 1, &apos;compressed&apos;: True}},&amp;#160;&amp;#160;# this compresses the files AND puts all dependencies into one file, so that you can just pass an executable to someone&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &amp;#160;&amp;#160;&amp;#160;&amp;#160;windows = [{&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&apos;script&apos;: &apos;&lt;i&gt;&lt;b&gt;your_script.py&lt;/b&gt;&lt;/i&gt;&apos;,&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&amp;#160;&apos;icon_resources&apos; : [(0, &amp;quot;&lt;i&gt;&lt;b&gt;your_icon.ico&lt;/b&gt;&lt;/i&gt;&amp;quot;)] }],&amp;#160;&amp;#160;# using windows= instead of console= means that a console will not popup. The exe will be effectively hidden&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &amp;#160;&amp;#160;&amp;#160;&amp;#160;zipfile = None,&amp;#160;&amp;#160;&amp;#160;&amp;#160;# this has something to do with making just one executable&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      )&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_436333929" CREATED="1405441069646" MODIFIED="1405441169582">
 <node TEXT="a more specific example (the one linked)" ID="ID_1789007384" CREATED="1405441171975" MODIFIED="1405441184227">
 <node TEXT="from distutils.core import setup&#xa;import py2exe, sys, os&#xa;&#xa;sys.argv.append(&apos;py2exe&apos;)&#xa;&#xa;setup(&#xa;    options = {&apos;py2exe&apos;: {&apos;bundle_files&apos;: 1, &apos;compressed&apos;: True}},  # this compresses the files AND puts all dependencies into one file, so that you can just pass an executable to someone&#xa;    windows = [{&#xa;        &apos;script&apos;: &apos;Qt_Drag_N_Drop_Example.py&apos;,&#xa;        &apos;icon_resources&apos; : [(0, &quot;icon.ico&quot;)] }],  # using windows= instead of console= means that a console will not popup. The exe will be effectively hidden&#xa;    zipfile = None,    # this has something to do with making just one executable&#xa;)" ID="ID_564242790" CREATED="1405441185174" MODIFIED="1405441190303"/>
 </node>
@@ -1015,20 +433,7 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="Errors you&apos;ll recieve" ID="ID_1083297909" CREATED="1405441297543" MODIFIED="1405441308298">
 <node TEXT="  File &quot;C:\Python27\lib\distutils\core.py&quot;, line 162, in setup&#xa;    raise SystemExit, error&#xa;SystemExit: error: MSVCP90.dll: No such file or directory" ID="ID_1100297067" CREATED="1405441309270" MODIFIED="1405441311350">
 <node TEXT="this means that the script could not find the microsoft DLL that everybody needs. I think you need Visual Studios installed to have it. I&apos;ve included it in my code (and linked it here) so hopefully you won&apos;t have that problem." ID="ID_1517509741" CREATED="1405441312950" MODIFIED="1405441367686"/>
-<node ID="ID_1190488051" CREATED="1405441781516" MODIFIED="1405441925135" LINK="http://stackoverflow.com/questions/323424/py2exe-fails-to-generate-an-executable"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Best answer from Stack Overflow: Download <i>Microsoft Visual C++ 2008 Redistributable Package</i>, and install to python27\DLLs
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      Best answer from Stack Overflow: Download &lt;i&gt;Microsoft Visual C++ 2008 Redistributable Package&lt;/i&gt;, and install to python27\DLLs&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1190488051" CREATED="1405441781516" MODIFIED="1405441925135" LINK="http://stackoverflow.com/questions/323424/py2exe-fails-to-generate-an-executable"/>
 <node TEXT="Second best answer from Stack Overflow: switch to PyInstaller (which is maintained)." ID="ID_1737734047" CREATED="1405441856126" MODIFIED="1405441892036" LINK="http://stackoverflow.com/questions/14815173/py2exe-cant-find-msvcp90-dll"/>
 </node>
 </node>
@@ -1044,6 +449,7 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="threadingExample.py" ID="ID_36297734" CREATED="1405450994272" MODIFIED="1405451026035" LINK="code_examples/threadingExample.py"/>
 </node>
 <node TEXT="System Tray Icon" ID="ID_745856141" CREATED="1405437116554" MODIFIED="1405451049990">
+<node TEXT="Older, Windows-Only version" ID="ID_1147919458" CREATED="1466531884022" MODIFIED="1466531899971">
 <node TEXT="Running an application in the background, with a System Tray Icon, usable to right-click and select &quot;quit&quot; to exit program" ID="ID_1153874994" CREATED="1405437152848" MODIFIED="1405451094257"/>
 <node TEXT="I found online a small one-file module called SysTrayIcon, which allows you to use it to set the system tray and specify different popup menus when the user right-clicks. It can be used to run a quick function, or change the variables in a threaded python process" ID="ID_225966199" CREATED="1405457553180" MODIFIED="1405457679639" LINK="http://stackoverflow.com/questions/1085694/whats-the-simplest-way-to-put-a-python-script-into-the-system-tray-windows"/>
 <node TEXT="systemTrayExample.py" ID="ID_76665057" CREATED="1405457688176" MODIFIED="1405457718311" LINK="code_examples/systemTrayExample.py">
@@ -1055,6 +461,11 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 </node>
 </node>
 </node>
+<node TEXT="pystray" ID="ID_1798779339" CREATED="1466531909970" MODIFIED="1466532168854" LINK="https://pypi.python.org/pypi/pystray/0.2">
+<node TEXT="OS-agnostic tray icon program" ID="ID_274750328" CREATED="1466534663864" MODIFIED="1466534681600"/>
+<node TEXT="pip3 install pystray&#xa;AND (because it cannot specify to install Xlib)&#xa;pip3 install python3-xlib" ID="ID_1130103904" CREATED="1466531935586" MODIFIED="1466531961231"/>
+</node>
+</node>
 </node>
 <node TEXT="Terminology" POSITION="right" ID="ID_1572413040" CREATED="1444310476419" MODIFIED="1444310483729">
 <edge COLOR="#00ff00"/>
@@ -1063,35 +474,7 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <node TEXT="A method has the implicit variable self attached to it, that will be the first variable in the function" ID="ID_381228070" CREATED="1444310599669" MODIFIED="1444310648767"/>
 </node>
 <node TEXT="Closure" ID="ID_1987367637" CREATED="1454341992192" MODIFIED="1454341995718">
-<node ID="ID_865141585" CREATED="1454341997763" MODIFIED="1454342242578"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      A closure is a function or definition that indirectly uses a variable not defined in it's scope.
-    </p>
-    <p>
-      So for example,
-    </p>
-    <p>
-      x = 8
-    </p>
-    <p>
-      x_return = lambda : x
-    </p>
-    <p>
-      is a closure becase x_return takes no arguments yet technically returns 'x'.
-    </p>
-    <p>
-      x_return <i>closes</i>&#160;around x.
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      A closure is a function or definition that indirectly uses a variable not defined in it&apos;s scope.&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      So for example,&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      x = 8&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      x_return = lambda : x&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      is a closure becase x_return takes no arguments yet technically returns &apos;x&apos;.&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      x_return &lt;i&gt;closes&lt;/i&gt;&amp;#160;around x.&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_865141585" CREATED="1454341997763" MODIFIED="1454342242578"/>
 <node TEXT="A closure is a function that has to look up some of its variables in the scope in which is was created. So when x_return fails to find the variable &apos;x&apos; in its list of variables, it looked up one scope into the list of local variables present when it was created. There, it finds &apos;x&apos; and returns it. But... this &quot;look up the variable once you need it&quot; is called closure, and can wreak havoc" ID="ID_1258602867" CREATED="1454342243289" MODIFIED="1454342486309"/>
 <node TEXT="See a Closure Gotcha Here" ID="ID_298016091" CREATED="1454342487074" MODIFIED="1454343688310" LINK="#ID_1057109660"/>
 </node>
@@ -1100,211 +483,27 @@ formatter <font color="rgb(102, 102, 102)"><span style="color: rgb(102, 102, 102
 <edge COLOR="#7c7c00"/>
 <node TEXT="You can trace a scripts&apos; execution using pdb.&#xa;Normally you&apos;d call:&#xa;python my_script.py arg1 arg2&#xa;now you call&#xa;pdb myscrip.py arg1 arg2&#xa;--or--&#xa;to run pdb within a script:&#xa;import pdb&#xa;pdb.set_trace()  # run at location where you wish to break into debugger" ID="ID_1421582536" CREATED="1461388367508" MODIFIED="1462990546926" LINK="https://docs.python.org/3/library/pdb.html"/>
 <node TEXT="With Pdb you can navigate a script&apos;s execution, setting breakpoints at line numbers or when certain conditions are met&#xa;Most pdb keywords can be a single letter, or the full word, such as n(ext). typing n &lt;enter&gt; or next &lt;enter&gt; do the same thing" ID="ID_265855851" CREATED="1462990704362" MODIFIED="1462990948227"/>
+<node TEXT="hitting [enter] repeats the last action. So n [enter] [enter] will traverse two lines. When returning from a function, a summary of the returned results is displayed." ID="ID_113463205" CREATED="1467059959649" MODIFIED="1467060008152"/>
 <node TEXT="Navigation" ID="ID_813987520" CREATED="1462990734848" MODIFIED="1462990738119">
 <node TEXT="jumping up or down the stack trace does NOT rewind the program. It just jumps up / down a level, making each step execute more / less per step, respectively" ID="ID_1740887898" CREATED="1462991228492" MODIFIED="1462991279692"/>
-<node ID="ID_1133349188" CREATED="1462991048362" MODIFIED="1462991421143"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>n(ext)</b>
-    </p>
-    <p>
-      continue to next line in current frame
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_435026073" CREATED="1462991422152" MODIFIED="1462991463650"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>s(tep)</b>
-    </p>
-    <p>
-      execute next statement, jumping up or down frame to follow thread. This is THE incremental execution command
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1897071944" CREATED="1462991497384" MODIFIED="1462991503079"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>unt(il) [lineno]</b>
-    </p>
-    <p>
-      Without argument, continue execution until the line with a number greater than the current one is reached.
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      With a line number, continue execution until a line with a number greater or equal to that is reached. In both cases, also stop when the current frame returns.
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_975431603" CREATED="1462991591889" MODIFIED="1462991608591"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>r(eturn)</b>
-    </p>
-    <p>
-      continue execution until current function returns
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1256386260" CREATED="1462991170552" MODIFIED="1462991328502"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>d(own)&#160;&#160;[count]</b>
-    </p>
-    <p>
-      Move the current frame count (default one) levels down in the stack trace (to a newer frame).
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_985613570" CREATED="1462991216882" MODIFIED="1462991331376"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>u(p) [count]</b>
-    </p>
-    <p>
-      Move the current frame count (default one) levels up in the stack trace (to an older frame).
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1009582822" CREATED="1462991560074" MODIFIED="1462991572503"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>l(ist)</b>
-    </p>
-    <p>
-      list 11 lines around the current line or continue the previous listing.
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;n(ext)&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      continue to next line in current frame&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1133349188" CREATED="1462991048362" MODIFIED="1462991421143"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;s(tep)&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      execute next statement, jumping up or down frame to follow thread. This is THE incremental execution command&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_435026073" CREATED="1462991422152" MODIFIED="1462991463650"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;unt(il) [lineno]&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Without argument, continue execution until the line with a number greater than the current one is reached.&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      With a line number, continue execution until a line with a number greater or equal to that is reached. In both cases, also stop when the current frame returns.&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1897071944" CREATED="1462991497384" MODIFIED="1462991503079"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;r(eturn)&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      continue execution until current function returns&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_975431603" CREATED="1462991591889" MODIFIED="1462991608591"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;d(own)&amp;#160;&amp;#160;[count]&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Move the current frame count (default one) levels down in the stack trace (to a newer frame).&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1256386260" CREATED="1462991170552" MODIFIED="1462991328502"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;u(p) [count]&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Move the current frame count (default one) levels up in the stack trace (to an older frame).&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_985613570" CREATED="1462991216882" MODIFIED="1462991331376"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;l(ist)&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      list 11 lines around the current line or continue the previous listing.&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1009582822" CREATED="1462991560074" MODIFIED="1462991572503"/>
 </node>
 <node TEXT="Breakpoints" ID="ID_1064042866" CREATED="1462990738504" MODIFIED="1462990740986">
-<node ID="ID_1795438608" CREATED="1462991059553" MODIFIED="1462991355925"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      b(reak) 34 -&gt;&#160;&#160;set breakpoint at specified line no.
-    </p>
-    <p>
-      b(reak) <i>function_name</i>&#160;&#160;-&gt;&#160;&#160;set breakpoint at first line within function
-    </p>
-    <p>
-      <b>b(reak) (line_no&#160;&#160;or&#160;&#160;&#160;function_name)&#160;&#160;[, condition] </b>
-    </p>
-    <p>
-      break at line_no or function entrance only if specified condition is met
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_530264174" CREATED="1462991313169" MODIFIED="1462991362808"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>tbreak [([filename:]lineno | function) [, condition]]</b>
-    </p>
-    <p>
-      Temporary breakpoint, which is removed automatically when it is first hit. The arguments are the same as for break.
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
-<node ID="ID_1766221923" CREATED="1462991392034" MODIFIED="1462991395699"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>condition bpnumber [condition]</b>
-    </p>
-    <p>
-      Set a new condition for the breakpoint, an expression which must evaluate to true before the breakpoint is honored. If condition is absent, any existing condition is removed; i.e., the breakpoint is made unconditional.
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      b(reak) 34 -&amp;gt;&amp;#160;&amp;#160;set breakpoint at specified line no.&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      b(reak) &lt;i&gt;function_name&lt;/i&gt;&amp;#160;&amp;#160;-&amp;gt;&amp;#160;&amp;#160;set breakpoint at first line within function&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;b(reak) (line_no&amp;#160;&amp;#160;or&amp;#160;&amp;#160;&amp;#160;function_name)&amp;#160;&amp;#160;[, condition] &lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      break at line_no or function entrance only if specified condition is met&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1795438608" CREATED="1462991059553" MODIFIED="1462991355925"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;tbreak [([filename:]lineno | function) [, condition]]&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Temporary breakpoint, which is removed automatically when it is first hit. The arguments are the same as for break.&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_530264174" CREATED="1462991313169" MODIFIED="1462991362808"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;condition bpnumber [condition]&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Set a new condition for the breakpoint, an expression which must evaluate to true before the breakpoint is honored. If condition is absent, any existing condition is removed; i.e., the breakpoint is made unconditional.&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1766221923" CREATED="1462991392034" MODIFIED="1462991395699"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;cl(ear)&amp;#160;[filename:lineno | bpnumber [bpnumber ...]] &lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Clears all breakpoints if no arguments supplied. Otherwise clear specified breakpoint&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_1389448593" CREATED="1467062151271" MODIFIED="1467062212539"/>
 </node>
 <node TEXT="Information" ID="ID_1256014673" CREATED="1462991657296" MODIFIED="1462991666280">
-<node ID="ID_472000108" CREATED="1462991668514" MODIFIED="1462991690124"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <b>source <i>object_name</i></b>
-    </p>
-    <p>
-      Try to get source code for the given object and display it.
-    </p>
-  </body>
-</html>
-</richcontent>
-</node>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;source &lt;i&gt;object_name&lt;/i&gt;&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      Try to get source code for the given object and display it.&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_472000108" CREATED="1462991668514" MODIFIED="1462991690124"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;&lt;i&gt;variable_name [enter] &lt;/i&gt;&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      typing just the variable name and enter will try to print the variable if it exists in the current context.&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_466462388" CREATED="1467060088183" MODIFIED="1467060121824"/>
+<node TEXT="&lt;html&gt;&#xa;  &lt;head&gt;&#xa;    &#xa;  &lt;/head&gt;&#xa;  &lt;body&gt;&#xa;    &lt;p&gt;&#xa;      &lt;b&gt;ll&amp;#160;&amp;#160;(LL)&lt;/b&gt;&#xa;    &lt;/p&gt;&#xa;    &lt;p&gt;&#xa;      print current function in which execution resides and point to current line&#xa;    &lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;" ID="ID_491252293" CREATED="1467062114742" MODIFIED="1467062142364"/>
 </node>
 <node TEXT="w(here)  -&gt;  print a stack trace with most recent frame at bottom" ID="ID_966921872" CREATED="1462990860572" MODIFIED="1462990890244"/>
 <node TEXT="h(elp)  -&gt;  print list of commands.&#xa;h(elp) [command]  -&gt;  print help information on command" ID="ID_1878884477" CREATED="1462990893545" MODIFIED="1462990983989"/>
